@@ -48,4 +48,4 @@
 
 ---
 
-*Looking for: senior QA / test-automation contracting, agentic AI infrastructure integrations, MCP & observability work. Reach out at eugene@serviceofothers.org.*
+*Looking for meaningful work: senior QA / test-automation, agentic AI infrastructure integrations, MCP & observability work. Reach out at eugene@serviceofothers.org.*
