@@ -4,7 +4,7 @@
 
 > 27 years building, breaking, and shipping software — from Windows NT test benches to AI agent gateways. Currently extending [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) and [herdr](https://github.com/ogulcancelik/herdr) with Rust-based observability and MCP integrations.
 
-📍 San Quintín, BCN, MX · 📧 eugene@serviceofothers.org · ✶ Open to senior QA / test-automation / agentic-infra contract work
+📍 San Quintín, BCN, MX / Apple Valley, CA, USA· 📧 eugene@serviceofothers.org · ✶ Open to senior QA / test-automation / agentic-infra contract work
 
 ---
 
