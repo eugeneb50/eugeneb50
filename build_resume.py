@@ -45,7 +45,7 @@ FONT_B  = "DJ-B"
 # ----------------------------------------------------------------------------
 PW, PH = letter                 # 612 x 792
 ML = MR = 40
-HEADER_H = 152
+HEADER_H = 140
 TOP_GAP = 16
 BODY_BOTTOM = 46
 
@@ -74,57 +74,69 @@ def draw_gradient(c, x, y, w, h, c1, c2, vertical=True, steps=48):
 # Custom flowables
 # ----------------------------------------------------------------------------
 class HeaderBand(Flowable):
-    def __init__(self, width=PW, height=HEADER_H):
+    def __init__(self, width=PW, height=HEADER_H, photo=None):
         super().__init__()
         self.width = width
         self.height = height
+        self.photo = photo
 
     def draw(self):
         c = self.canv
         W, H = self.width, self.height
         # gradient background (navy top -> dark teal bottom)
         draw_gradient(c, 0, 0, W, H, TEAL_D, NAVY, vertical=True)
-        # decorative translucent circles
+
+        # profile photo (or monogram fallback) in top-right circle
+        pcx, pcy, pr = W - 46, H - 46, 34
         c.saveState()
-        c.setFillAlpha(0.08); c.setFillColor(colors.white)
-        c.circle(W - 72, H - 58, 74, fill=1, stroke=0)
-        c.setFillAlpha(0.05)
-        c.circle(W - 130, H - 120, 40, fill=1, stroke=0)
+        path = c.beginPath()
+        path.circle(pcx, pcy, pr)
+        c.clipPath(path, stroke=0, fill=0)
+        if self.photo and os.path.exists(self.photo):
+            c.drawImage(self.photo, pcx - pr, pcy - pr, 2 * pr, 2 * pr,
+                        preserveAspectRatio=True, anchor="c", mask="auto")
+        else:
+            c.setFillColor(NAVY2)
+            c.rect(pcx - pr, pcy - pr, 2 * pr, 2 * pr, fill=1, stroke=0)
+            c.setFillColor(colors.white)
+            c.setFont(FONT_B, 26)
+            c.drawCentredString(pcx, pcy - 9, "EB")
         c.restoreState()
-        # monogram
-        c.setFillColor(colors.white)
-        c.setFont(FONT_B, 30)
-        c.drawCentredString(W - 72, H - 80, "EB")
+        c.setStrokeColor(colors.white); c.setLineWidth(2)
+        c.circle(pcx, pcy, pr, fill=0, stroke=1)
+
         # name
+        c.setFillColor(colors.white)
         c.setFont(FONT_B, 27)
         c.drawString(28, H - 50, "EUGENE L. BUCHANAN")
         # title
         c.setFillColor(colors.HexColor("#bfe9e4"))
         c.setFont(FONT, 13)
         c.drawString(28, H - 74, "Technical Support Specialist  \u2014  Healthcare Technology")
-        # separator
+        # separator (stops before the photo)
         c.setStrokeColor(colors.white); c.setFillAlpha(0.22); c.setLineWidth(0.6)
-        c.line(28, H - 88, W - 28, H - 88); c.setFillAlpha(1)
+        c.line(28, H - 88, pcx - pr - 12, H - 88); c.setFillAlpha(1)
         # contact strip
-        items = [("L", "Apple Valley, CA"),
-                 ("T", "+1 (909) 545 5384"),
-                 ("M", "eugene@serviceofothers.org"),
-                 ("G", "github.com/eugeneb50")]
+        items = [("L", "Apple Valley, CA", None),
+                 ("T", "+1 (909) 545 5384", None),
+                 ("M", "eugene@serviceofothers.org", "mailto:eugene@serviceofothers.org"),
+                 ("G", "github.com/eugeneb50", "https://github.com/eugeneb50")]
         x = 28
-        cy = H - 108
-        for letter, txt in items:
+        cy = H - 106
+        link_rects = []
+        for letter, txt, url in items:
             c.setFillColor(colors.white); c.setFillAlpha(0.20)
             c.circle(x + 8, cy + 4, 8, fill=1, stroke=0); c.setFillAlpha(1)
             c.setFillColor(colors.white); c.setFont(FONT_B, 8.5)
             c.drawCentredString(x + 8, cy + 1, letter)
             c.setFillColor(colors.HexColor("#eaf6f4")); c.setFont(FONT, 8.5)
             c.drawString(x + 19, cy, txt)
-            x += 19 + pdfmetrics.stringWidth(txt, FONT, 8.5) + 16
-        # clickable links (email + github)
-        c.linkURL("mailto:eugene@serviceofothers.org",
-                  (W - 300, cy - 2, W - 150, cy + 12), relative=1)
-        c.linkURL("https://github.com/eugeneb50",
-                  (W - 150, cy - 2, W - 28, cy + 12), relative=1)
+            tw = pdfmetrics.stringWidth(txt, FONT, 8.5)
+            if url:
+                link_rects.append((url, x + 19, cy - 2, x + 19 + tw, cy + 12))
+            x += 19 + tw + 16
+        for url, x1, y1, x2, y2 in link_rects:
+            c.linkURL(url, (x1, y1, x2, y2), relative=1)
 
 
 class SectionTitle(Flowable):
@@ -157,7 +169,7 @@ class SkillBar(Flowable):
         self.label = label
         self.pct = pct
         self.width = width
-        self.height = 30
+        self.height = 21
 
     def wrap(self, a, h):
         self.width = a
@@ -166,16 +178,16 @@ class SkillBar(Flowable):
     def draw(self):
         c = self.canv
         H = self.height
-        c.setFont(FONT_B, 9.2); c.setFillColor(DARK)
-        c.drawString(0, H - 12, self.label)
-        c.setFont(FONT, 9.2); c.setFillColor(TEAL_D)
-        c.drawRightString(self.width, H - 12, f"{self.pct}%")
-        bx, by, bh = 0, 3, 7
+        c.setFont(FONT_B, 8.8); c.setFillColor(DARK)
+        c.drawString(0, H - 11, self.label)
+        c.setFont(FONT, 8.8); c.setFillColor(TEAL_D)
+        c.drawRightString(self.width, H - 11, f"{self.pct}%")
+        bx, by, bh = 0, 2, 5.5
         bw = self.width
-        c.setFillColor(TRACK); c.roundRect(bx, by, bw, bh, 3, fill=1, stroke=0)
+        c.setFillColor(TRACK); c.roundRect(bx, by, bw, bh, 2.5, fill=1, stroke=0)
         fw = max(bw * self.pct / 100.0, 6)
         draw_gradient(c, bx, by, fw, bh, TEAL_D, TEAL, vertical=False, steps=24)
-        c.setFillColor(TEAL); c.roundRect(bx, by, fw, bh, 3, fill=1, stroke=0)
+        c.setFillColor(TEAL); c.roundRect(bx, by, fw, bh, 2.5, fill=1, stroke=0)
 
 
 class TagCloud(Flowable):
@@ -227,17 +239,17 @@ class TagCloud(Flowable):
 # ----------------------------------------------------------------------------
 # Styles
 # ----------------------------------------------------------------------------
-summary_style = ParagraphStyle("sum", fontName=FONT, fontSize=9.6, leading=13.6,
+summary_style = ParagraphStyle("sum", fontName=FONT, fontSize=9.4, leading=12.8,
                                textColor=INK, alignment=TA_JUSTIFY)
-role_style = ParagraphStyle("role", fontName=FONT_B, fontSize=11.3, leading=14,
+role_style = ParagraphStyle("role", fontName=FONT_B, fontSize=11, leading=13.5,
                             textColor=DARK, spaceAfter=0)
-date_style = ParagraphStyle("date", fontName=FONT, fontSize=8.8, leading=12,
+date_style = ParagraphStyle("date", fontName=FONT, fontSize=8.6, leading=11.5,
                             textColor=GREY, alignment=2)
-sub_style = ParagraphStyle("sub", fontName=FONT, fontSize=9.3, leading=12,
-                           textColor=TEAL_D, spaceAfter=4)
-bullet_style = ParagraphStyle("bul", fontName=FONT, fontSize=9.1, leading=12.4,
+sub_style = ParagraphStyle("sub", fontName=FONT, fontSize=9.1, leading=11.5,
+                           textColor=TEAL_D, spaceAfter=3)
+bullet_style = ParagraphStyle("bul", fontName=FONT, fontSize=8.9, leading=11.8,
                               leftIndent=12, bulletIndent=1, bulletColor=TEAL,
-                              spaceAfter=3.6, textColor=INK)
+                              spaceAfter=2.2, textColor=INK)
 str_style = ParagraphStyle("str", fontName=FONT, fontSize=9.2, leading=12.6,
                            leftIndent=12, bulletIndent=0, bulletColor=TEAL,
                            spaceAfter=4.5, textColor=INK)
@@ -282,7 +294,7 @@ def experience_card(role, company_loc, dates, bullets):
         ("TOPPADDING", (0, 0), (0, 0), 2),
         ("BOTTOMPADDING", (0, 0), (0, 0), 2),
     ]))
-    return [card, Spacer(1, 11)]
+    return [card, Spacer(1, 5)]
 
 # ----------------------------------------------------------------------------
 # Content
@@ -292,36 +304,30 @@ EXPERIENCE = [
      "Knowledgecity LLC  \u00b7  Remote", "Dec 2020 \u2013 Aug 2025", [
         "On average actively working 10\u201315 concurrent tickets across integration, backend, API, database, and frontend surfaces using SQL queries, Elastic logs, and application code review.",
         "Used co-pilot assisted code reading to understand expected behavior and identify root causes of complex cross-service failures.",
-        "Built regression test suites with health dashboards and alert systems covering complex deployment scenarios.",
         "Authored internal runbooks and knowledge base articles for common failure patterns, reducing repeat escalations.",
         "Managed customer integrations via REST APIs, SFTP, SAML, and OAuth \u2014 debugging authentication issues, data discrepancies, and payload mismatches.",
         "Communicated technical findings to both engineering teams and non-technical stakeholders, translating database anomalies and API errors into clear remediation steps.",
-        "Coordinated with engineering on bug escalations with evidence-backed write-ups that required minimal back-and-forth.",
      ]),
     ("Business Consultant \u2014 Foremost Senior Center",
      "Foremost Organization  \u00b7  Hesperia, CA", "2013 \u2013 2016", [
         "Evaluated, selected, and troubleshot medical billing software for senior center operations.",
         "Investigated software billing discrepancies, claims submission workflows, and eligibility verification processes.",
         "Served as technical liaison between clinical staff and software vendors, translating operational requirements into system configurations.",
-        "Documented troubleshooting procedures and trained staff on billing software workflows, reducing repeat support requests.",
      ]),
     ("Senior Software Engineer / Technical Support & Presales Engineering",
      "RealNetworks  \u00b7  Seattle, WA", "1999 \u2013 2001", [
         "Provided global presales engineering and technical support for a streaming media platform.",
         "Investigated customer-reported issues across server infrastructure, mobile platforms, and network configurations.",
-        "Trained new hires on technical escalation procedures and debugging methodologies.",
      ]),
     ("Technical Support Agent II",
      "Keene Inc.  \u00b7  Seattle, WA", "1996", [
         "Provided Tier 2 technical support for Windows 95/NT systems across enterprise clients.",
         "Managed multiple concurrent customer issues, triaging by urgency and impact.",
-        "Documented resolutions in an internal knowledge base for team reference.",
      ]),
     ("Senior Software Test Engineer",
      "Microsoft  \u00b7  Redmond, WA", "1997 \u2013 1999", [
         "White box testing for Windows 98/NT and Windows Media Server.",
         "Built automated regression suites and defect tracking workflows.",
-        "Collaborated with development teams to reproduce and resolve complex bugs.",
      ]),
 ]
 
@@ -401,45 +407,48 @@ def build():
     ])
 
     story = []
-    story.append(HeaderBand())
+    story.append(HeaderBand(photo=os.path.join(out_dir, "profile.jpg")))
     story.append(NextPageTemplate("content"))
-    story.append(Spacer(1, 6))
+    story.append(Spacer(1, 4))
 
     # Summary
-    story.append(KeepTogether([SectionTitle("Professional Summary"), Spacer(1, 4),
+    story.append(KeepTogether([SectionTitle("Professional Summary"), Spacer(1, 3),
                                P(SUMMARY, summary_style)]))
-    story.append(Spacer(1, 12))
+    story.append(Spacer(1, 8))
 
     # Technical Expertise
     story.append(SectionTitle("Technical Expertise"))
-    story.append(Spacer(1, 6))
+    story.append(Spacer(1, 4))
     for label, pct in SKILLS:
         story.append(SkillBar(label, pct))
-    story.append(Spacer(1, 6))
-    story.append(P("Tools &amp; Technologies", tagcap_style))
-    story.append(TagCloud(TAGS))
-    story.append(Spacer(1, 12))
+    story.append(Spacer(1, 8))
 
     # Experience
     story.append(SectionTitle("Experience"))
-    story.append(Spacer(1, 6))
+    story.append(Spacer(1, 4))
     for role, cl, dates, bullets in EXPERIENCE:
         story.extend(experience_card(role, cl, dates, bullets))
     story.append(Spacer(1, 4))
 
-    # Education & Certifications
-    story.append(SectionTitle("Education & Certifications"))
-    story.append(Spacer(1, 4))
+    # Education & Certifications  +  Key Strengths (side-by-side)
+    edu_col = [SectionTitle("Education & Certifications"), Spacer(1, 3)]
     for e in EDUCATION:
-        story.append(P(e, edu_style, bullet="\u2022"))
-    story.append(Spacer(1, 12))
-
-    # Key Strengths
-    story.append(SectionTitle("Key Strengths"))
-    story.append(Spacer(1, 4))
+        edu_col.append(P(e, edu_style, bullet="\u2022"))
+    str_col = [SectionTitle("Key Strengths"), Spacer(1, 3)]
     for title, desc in STRENGTHS:
         txt = f'<b><font color="#0e2c4c">{title}.</font></b>  {desc}'
-        story.append(P(txt, str_style, bullet="\u25aa"))
+        str_col.append(P(txt, str_style, bullet="\u25aa"))
+    two_col = Table([[edu_col, str_col]], colWidths=[FW * 0.42, FW * 0.58])
+    two_col.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (0, 0), 0),
+        ("RIGHTPADDING", (0, 0), (0, 0), 14),
+        ("LEFTPADDING", (1, 0), (1, 0), 0),
+        ("RIGHTPADDING", (1, 0), (1, 0), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+    ]))
+    story.append(two_col)
 
     doc.build(story)
     print("WROTE", out_path, os.path.getsize(out_path), "bytes")
