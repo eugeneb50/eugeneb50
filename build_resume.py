@@ -475,6 +475,14 @@ def build():
     ]))
     story.append(two_col)
 
+    # --- Skill tag table (restored at bottom of page 2) ---
+    story.append(Spacer(1, 14))
+    story.append(KeepTogether([
+        SectionTitle("Core Skills & Tools", width=FW),
+        Spacer(1, 6),
+        TagCloud(TAGS, width=FW),
+    ]))
+
     doc.build(story)
     print("WROTE", out_path, os.path.getsize(out_path), "bytes")
 
