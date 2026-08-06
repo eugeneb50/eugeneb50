@@ -2,6 +2,8 @@
 """Generate a visually dynamic resume PDF for Eugene L. Buchanan using reportlab."""
 
 import os
+import tempfile
+from PIL import Image, ImageDraw
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.lib import colors
@@ -53,6 +55,27 @@ FW = PW - ML - MR              # frame width = 532
 BODY_W = FW                    # card width
 
 # ----------------------------------------------------------------------------
+# Circular profile photo (masked PNG, no canvas clipping needed)
+# ----------------------------------------------------------------------------
+def make_circular_photo(src_jpg, size=240):
+    try:
+        im = Image.open(src_jpg).convert("RGBA")
+        w, h = im.size
+        m = min(w, h)
+        left, top = (w - m) // 2, (h - m) // 2
+        im = im.crop((left, top, left + m, top + m)).resize((size, size), Image.LANCZOS)
+        mask = Image.new("L", (size, size), 0)
+        ImageDraw.Draw(mask).ellipse((0, 0, size - 1, size - 1), fill=255)
+        im.putalpha(mask)
+        fd, path = tempfile.mkstemp(suffix=".png")
+        os.close(fd)
+        im.save(path, "PNG")
+        return path
+    except Exception:
+        return None
+
+
+# ----------------------------------------------------------------------------
 # Gradient helper
 # ----------------------------------------------------------------------------
 def draw_gradient(c, x, y, w, h, c1, c2, vertical=True, steps=48):
@@ -80,6 +103,13 @@ class HeaderBand(Flowable):
         self.height = height
         self.photo = photo
 
+    def _draw_monogram(self, c, pcx, pcy, pr):
+        c.setFillColor(NAVY2)
+        c.rect(pcx - pr, pcy - pr, 2 * pr, 2 * pr, fill=1, stroke=0)
+        c.setFillColor(colors.white)
+        c.setFont(FONT_B, 26)
+        c.drawCentredString(pcx, pcy - 9, "EB")
+
     def draw(self):
         c = self.canv
         W, H = self.width, self.height
@@ -88,20 +118,14 @@ class HeaderBand(Flowable):
 
         # profile photo (or monogram fallback) in top-right circle
         pcx, pcy, pr = W - 46, H - 46, 34
-        c.saveState()
-        path = c.beginPath()
-        path.circle(pcx, pcy, pr)
-        c.clipPath(path, stroke=0, fill=0)
         if self.photo and os.path.exists(self.photo):
-            c.drawImage(self.photo, pcx - pr, pcy - pr, 2 * pr, 2 * pr,
-                        preserveAspectRatio=True, anchor="c", mask="auto")
+            try:
+                c.drawImage(self.photo, pcx - pr, pcy - pr, 2 * pr, 2 * pr,
+                            preserveAspectRatio=True, anchor="c", mask="auto")
+            except Exception:
+                self._draw_monogram(c, pcx, pcy, pr)
         else:
-            c.setFillColor(NAVY2)
-            c.rect(pcx - pr, pcy - pr, 2 * pr, 2 * pr, fill=1, stroke=0)
-            c.setFillColor(colors.white)
-            c.setFont(FONT_B, 26)
-            c.drawCentredString(pcx, pcy - 9, "EB")
-        c.restoreState()
+            self._draw_monogram(c, pcx, pcy, pr)
         c.setStrokeColor(colors.white); c.setLineWidth(2)
         c.circle(pcx, pcy, pr, fill=0, stroke=1)
 
@@ -407,7 +431,8 @@ def build():
     ])
 
     story = []
-    story.append(HeaderBand(photo=os.path.join(out_dir, "profile.jpg")))
+    photo_path = make_circular_photo(os.path.join(out_dir, "pic.jpg"))
+    story.append(HeaderBand(photo=photo_path))
     story.append(NextPageTemplate("content"))
     story.append(Spacer(1, 4))
 
