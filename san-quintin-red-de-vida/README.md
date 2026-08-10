@@ -24,7 +24,7 @@ Build a **5-layer mutual aid fabric** that closes the full loop — from prevent
 
 ---
 
-## Las 5 Capas / The 5 Layers
+## Las 5 Capas + Red Transversal / The 5 Layers + Guardian Network
 
 | Capa | Nombre | Qué hace |
 |------|--------|----------|
@@ -33,8 +33,9 @@ Build a **5-layer mutual aid fabric** that closes the full loop — from prevent
 | **3** | **Centro de Bienestar y Adopción** `Adoption & Recovery Center` | No es perrera. Es centro de tránsito, rehabilitación, adopción y reencuentro. 72h+ tenencia, fotos en <2h, pasarela de adopción. |
 | **4** | **Honra Final: Aquamación** `Aquamation Services` | Hidrólisis alcalina (agua, no fuego) para animales fallecidos. 90% menos energía, 20% más cenizas de retorno, cero emisiones. Opción comunal o privada. |
 | **5** | **Bioliquidadora Móvil + Fertirriego** `Mobile Bioliquidator` | Unidad remolcable que bioliquida mortalidad pecuaria y restos no reclamados. Efluente esterilizado → fertilizante líquido certificado para parques y ranchos participantes. |
+| **♥** | **Red de Guardianes Solidarios** `Guardian Network` | **Transversal.** Registro digno + paquete mensual (alimento, salud prioritaria, sombra/agua, taller, respiro) + vitrina colectiva y traslados. Para quien ya rescata con su bolsillo. |
 
-**Todas conectadas por:** Fondo común, app/WhatsApp + papel, y tablero público.
+**Todas conectadas por:** Fondo común, app/WhatsApp + papel, y tablero público. La **Red de Guardianes** es el corazón humano que atraviesa las 5 capas.
 
 ---
 
@@ -46,18 +47,22 @@ san-quintin-red-de-vida/
 ├── PROPUESTA_INTEGRAL.md     ← Documento maestro (ES, 30 páginas)
 ├── PROPOSAL_EN.md            ← Executive Proposal (EN)
 ├── docs/
+│   ├── 00-carta-presentacion.md
 │   ├── 01-sistema-vales.md
 │   ├── 02-clinicas-barrio.md
 │   ├── 03-centro-bienestar-aquamacion.md
 │   ├── 04-bioliquidadora-movil.md
 │   ├── 05-ciclo-fertilizante.md
 │   ├── 06-gobernanza-finanzas.md
-│   └── 07-tecnologia-operacion.md
+│   ├── 07-tecnologia-operacion.md
+│   └── 08-red-guardianes.md  ← NUEVO: Apoyo a buenos samaritanos + vitrina colectiva
 ├── site/
-│   ├── index.html            ← Landing interactiva (preview en vivo)
+│   ├── index.html            ← Landing interactiva con #guardianes (preview en vivo)
 │   └── style.css
 └── assets/
-    └── diagramas/
+    ├── diagrama-ciclo.png
+    ├── hero-san-quintin.png
+    └── vale-mockup.png
 ```
 
 ---
