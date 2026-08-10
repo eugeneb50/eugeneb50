@@ -1,3 +1,5 @@
+> 🌱 **Nuevo / New:** [**Red de Vida San Quintín — Propuesta Integral + Presupuesto por Programa**](san-quintin-red-de-vida/README.md) — 5 capas + Red de Guardianes: vales, quirófanos de barrio, Centro de Vida, aquamación, bioliquidadora con fertilizante y apoyo a rescatistas. [Sitio interactivo →](san-quintin-red-de-vida/site/index.html) | [Presupuesto imprimible (PDF 5 pág) →](san-quintin-red-de-vida/Plan-Presupuesto-Red-de-Vida-2026-2028.pdf) | [Detalle por programa →](san-quintin-red-de-vida/PLAN-Y-PRESUPUESTO-DETALLADO.md)
+
 # Eugene Buchanan
 
 **Senior Software Engineer | QA Lead | Agentic AI Infrastructure (Rust)**
