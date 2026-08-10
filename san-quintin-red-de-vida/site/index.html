@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Red de Vida San Quintín — Tejido de Ayuda Mutua</title>
+<meta name="description" content="Voucher de esterilización, quirófanos de barrio, centro de adopción, aquamación y bioliquidadora móvil que convierte mortalidad en fertilizante. Un estándar para México.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <div class="brand">
+      <div class="logo">◉</div>
+      <div>
+        Red de Vida San Quintín
+        <small>San Quintín Life Network • BCN • 2026</small>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#capas" data-es="Capas" data-en="Layers">Capas</a>
+      <a href="#vale" data-es="Vale" data-en="Voucher">Vale</a>
+      <a href="#clinicas" data-es="Quirófanos" data-en="Clinics">Quirófanos</a>
+      <a href="#centro" data-es="Centro" data-en="Center">Centro</a>
+      <a href="#fertilizante" data-es="Fertilizante" data-en="Fertilizer">Fertilizante</a>
+      <a href="#tablero" data-es="Tablero" data-en="Dashboard">Tablero</a>
+      <div class="lang-toggle" role="group" aria-label="Idioma">
+        <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="btn btn-primary" href="#vale" style="padding:8px 14px;font-size:12px" data-es="Obtener vale" data-en="Get voucher">Obtener vale</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="eyebrow"><span data-es="Municipio de San Quintín • 2026" data-en="Municipality of San Quintín • 2026">Municipio de San Quintín • 2026</span> <span style="background:#f59e0b;color:#0e2a47;border-color:transparent" data-es="Propuesta lista para piloto 90 días" data-en="Ready for 90-day pilot">Propuesta lista para piloto 90 días</span></div>
+      <h1>
+        <span data-es="El municipio más joven de BC puede crear" data-en="BC's youngest municipality can set">El municipio más joven de BC puede crear</span><br>
+        <em data-es="el estándar nacional de bienestar animal." data-en="Mexico's national standard for animal welfare.">el estándar nacional de bienestar animal.</em>
+      </h1>
+      <p class="lead" data-es="Cinco capas que se sostienen entre sí: vales para esterilizar gratis en tu veterinaria, quirófanos que van al barrio, centro de adopción que no mata, aquamación con agua en vez de fuego, y bioliquidadora móvil que convierte mortalidad en fertilizante para parques y ranchos." data-en="Five layers that hold each other: free spay/neuter vouchers at your vet, clinics that come to you, a no-kill adoption center, water-based aquamation instead of flame, and a mobile BioLiquidator that turns mortality into fertilizer for parks and ranches.">
+        Cinco capas que se sostienen entre sí: vales para esterilizar gratis en tu veterinaria, quirófanos que van al barrio, centro de adopción que no mata, aquamación con agua en vez de fuego, y bioliquidadora móvil que convierte mortalidad en fertilizante para parques y ranchos.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <a class="btn btn-primary" href="#tablero" data-es="Ver tablero en vivo →" data-en="See live dashboard →">Ver tablero en vivo →</a>
+        <a class="btn btn-ghost" href="../PROPUESTA_INTEGRAL.md" data-es="Leer propuesta completa (30 pág.)" data-en="Read full proposal (30 pp)">Leer propuesta completa (30 pág.)</a>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <span class="badge">✦ <span data-es="Esterilizar" data-en="Spay">Esterilizar</span></span>
+        <span class="badge">♥ <span data-es="Adoptar" data-en="Adopt">Adoptar</span></span>
+        <span class="badge">💧 <span data-es="Honrar" data-en="Honor">Honrar</span></span>
+        <span class="badge">🌱 <span data-es="Regenerar" data-en="Regenerate">Regenerar</span></span>
+      </div>
+      <p style="font-size:12px;opacity:.85;margin-top:10px" data-es="Costo per cápita: 31 MXN/año. Arranque: 5.2 MDP. Autosustentable 40% desde año 2." data-en="Per-capita cost: ~$1.60/year. Launch: ~$275k USD. 40% self-sustaining by Year 2.">Costo per cápita: 31 MXN/año. Arranque: 5.2 MDP. Autosustentable 40% desde año 2.</p>
+    </div>
+
+    <div class="hero-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+        <b style="font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--teal-dark)" data-es="Tablero — piloto 90 días" data-en="Dashboard — 90-day pilot">Tablero — piloto 90 días</b>
+        <span style="font-size:11px;background:#dcfce7;color:#065f46;padding:4px 8px;border-radius:999px;font-weight:800">● <span data-es="En vivo" data-en="Live">En vivo</span></span>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><b id="kpi-vales">247</b><span data-es="Vales canjeados" data-en="Vouchers redeemed">Vales canjeados</span></div>
+        <div class="kpi"><b id="kpi-cir">412</b><span data-es="Cirugías" data-en="Surgeries">Cirugías</span></div>
+        <div class="kpi"><b id="kpi-adop">38</b><span data-es="Adopciones" data-en="Adoptions">Adopciones</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+        <div class="kpi" style="background:white"><b style="color:var(--navy)">2,140 L</b><span data-es="Fertilizante aplicado" data-en="Fertilizer applied">Fertilizante aplicado</span></div>
+        <div class="kpi" style="background:white"><b style="color:var(--navy)">0%</b><span data-es="Sacrificio por cupo" data-en="Kill for space">Sacrificio por cupo</span></div>
+      </div>
+      <div style="margin-top:12px;background:var(--navy);color:white;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center">
+        <div><div style="font-size:11px;letter-spacing:.7px;text-transform:uppercase;opacity:.7" data-es="Fondo común" data-en="Common fund">Fondo común</div><b id="fondo-txt">1,842,500 MXN</b> <span style="font-size:11px;opacity:.7">/ 5.2M</span></div>
+        <div style="text-align:right"><b style="color:#5eead4">+12</b><div style="font-size:11px;opacity:.7" data-es="vales hoy" data-en="vouchers today">vales hoy</div></div>
+      </div>
+      <div class="bar" style="height:8px;margin-top:10px"><i id="fondo-bar" style="width:35%"></i></div>
+      <p style="font-size:11px;color:var(--muted);margin:6px 0 0" data-es="Actualizado diario. Cada vale, cirugía y litro es público." data-en="Updated daily. Every voucher, surgery and liter is public.">Actualizado diario. Cada vale, cirugía y litro es público.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 layers -->
+<section id="capas" class="section">
+  <div class="container">
+    <h2 data-es="Las 5 capas — cómo se sostienen" data-en="The 5 layers — how they hold together">Las 5 capas — cómo se sostienen</h2>
+    <p class="muted" data-es="Ninguna capa funciona sola. Juntas cierran el ciclo completo: de la prevención al duelo, del desecho al fertilizante." data-en="No layer works alone. Together they close the full loop: from prevention to grief, from waste to fertilizer.">Ninguna capa funciona sola. Juntas cierran el ciclo completo: de la prevención al duelo, del desecho al fertilizante.</p>
+    <div class="layers">
+      <div class="layer"><div class="num">01</div><b data-es="Vales solidarios" data-en="Vouchers">Vales solidarios</b><h3 data-es="Esteriliza gratis" data-en="Free spay/neuter">Esteriliza gratis</h3><p data-es="QR/papel válido en veterinarias voluntarias. Reembolso 72h." data-en="QR/paper valid at volunteer vets. 72h reimbursement.">QR/papel válido en veterinarias voluntarias. Reembolso 72h.</p></div>
+      <div class="layer"><div class="num">02</div><b data-es="Quirófanos de barrio" data-en="Pop-up clinics">Quirófanos de barrio</b><h3 data-es="La cirugía va a ti" data-en="Surgery comes to you">La cirugía va a ti</h3><p data-es="40-60/día en tu colonia. Con promotoras que te conocen." data-en="40-60/day in your neighborhood. With trusted local promoters.">40-60/día en tu colonia. Con promotoras que te conocen.</p></div>
+      <div class="layer"><div class="num">03</div><b data-es="Centro de Vida" data-en="Life Center">Centro de Vida</b><h3 data-es="Rescata, no mata" data-en="Rescue, don't kill">Rescata, no mata</h3><p data-es="Foto en <2h, 10 días de reencuentro, adopción con seguimiento." data-en="Photo in <2h, 10-day reunion, supported adoption.">Foto en &lt;2h, 10 días de reencuentro, adopción con seguimiento.</p></div>
+      <div class="layer"><div class="num">04</div><b>Aquamación</b><h3 data-es="Honra con agua" data-en="Honor with water">Honra con agua</h3><p data-es="90% menos energía, cero humo, cenizas dignas." data-en="90% less energy, zero smoke, dignified ashes.">90% menos energía, cero humo, cenizas dignas.</p></div>
+      <div class="layer"><div class="num">05</div><b data-es="Bioliquidadora" data-en="BioLiquidator">Bioliquidadora</b><h3 data-es="Mortalidad → fertilizante" data-en="Mortality → fertilizer">Mortalidad → fertilizante</h3><p data-es="Remolque 2,400L. Efluente estéril → fertirriego." data-en="2,400L trailer. Sterile effluent → fertigation.">Remolque 2,400L. Efluente estéril → fertirriego.</p></div>
+    </div>
+
+    <div class="diagram">
+      <div>
+        <h3 style="margin:0 0 6px" data-es="Ciclo cerrado" data-en="Closed loop">Ciclo cerrado</h3>
+        <p style="font-size:13px;color:var(--muted);margin:0" data-es="Cada flecha es dinero, materia o confianza que vuelve." data-en="Every arrow is money, matter or trust returning.">Cada flecha es dinero, materia o confianza que vuelve.</p>
+        <svg viewBox="0 0 520 220" role="img" aria-label="diagrama ciclo">
+          <!-- Vales -->
+          <rect x="18" y="18" width="130" height="54" rx="12" fill="#e7f4f2" stroke="#15a39a"/>
+          <text x="83" y="38" text-anchor="middle" font-size="11" font-weight="800" fill="#0e2a47">VALES</text>
+          <text x="83" y="52" text-anchor="middle" font-size="10" fill="#0e7c75">Voucher</text>
+          <text x="83" y="64" text-anchor="middle" font-size="9" fill="#5b6b7b">financia demanda</text>
+          <!-- Clinicas -->
+          <rect x="18" y="98" width="130" height="54" rx="12" fill="#fff7ed" stroke="#f59e0b"/>
+          <text x="83" y="118" text-anchor="middle" font-size="11" font-weight="800" fill="#0e2a47">QUIRÓFANOS</text>
+          <text x="83" y="132" text-anchor="middle" font-size="10" fill="#b45309">Clínicas</text>
+          <text x="83" y="144" text-anchor="middle" font-size="9" fill="#5b6b7b">ejecuta territorio</text>
+          <!-- Centro -->
+          <rect x="190" y="58" width="140" height="64" rx="14" fill="#0e2a47" />
+          <text x="260" y="84" text-anchor="middle" font-size="12" font-weight="800" fill="white">CENTRO DE VIDA</text>
+          <text x="260" y="98" text-anchor="middle" font-size="9" fill="#bfe9e4">acoge • cura • conecta</text>
+          <!-- Aquamacion -->
+          <rect x="372" y="18" width="130" height="54" rx="12" fill="#e0f2fe" stroke="#0ea5e9"/>
+          <text x="437" y="38" text-anchor="middle" font-size="11" font-weight="800" fill="#0e2a47">AQUAMACIÓN</text>
+          <text x="437" y="52" text-anchor="middle" font-size="10" fill="#0284c7">agua, no fuego</text>
+          <!-- Bio -->
+          <rect x="372" y="98" width="130" height="64" rx="12" fill="#ecfdf5" stroke="#15a39a"/>
+          <text x="437" y="118" text-anchor="middle" font-size="11" font-weight="800" fill="#0e2a47">BIOLIQUIDADORA</text>
+          <text x="437" y="132" text-anchor="middle" font-size="10" fill="#0e7c75">móvil 2,400L</text>
+          <text x="437" y="148" text-anchor="middle" font-size="9" fill="#5b6b7b">→ fertilizante</text>
+          <!-- arrows -->
+          <path d="M148 45 L190 45" stroke="#15a39a" stroke-width="2" marker-end="url(#a)"/>
+          <path d="M148 125 L190 105" stroke="#f59e0b" stroke-width="2" marker-end="url(#a)"/>
+          <path d="M330 70 L372 45" stroke="#0e2a47" stroke-width="2" marker-end="url(#a)"/>
+          <path d="M330 100 L372 122" stroke="#0e2a47" stroke-width="2" marker-end="url(#a)" stroke-dasharray="6 4"/>
+          <path d="M437 162 L437 180 L83 180 L83 170" stroke="#15a39a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+          <text x="260" y="195" text-anchor="middle" font-size="9" fill="#0e7c75" font-weight="700">fertilizante → parques + ranchos → padrinan vales ↺</text>
+          <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0e2a47"/></marker></defs>
+        </svg>
+      </div>
+      <div style="width:2px;background:var(--line);align-self:stretch;border-radius:999px"></div>
+      <div>
+        <h4 style="margin:0 0 8px" data-es="Por qué San Quintín" data-en="Why San Quintín">Por qué San Quintín</h4>
+        <ul style="margin:0;padding-left:16px;font-size:13px;color:var(--muted)">
+          <li data-es="Sin perrera que reformar — lienzo en blanco desde 2020." data-en="No legacy pound to reform — clean slate since 2020.">Sin perrera que reformar — lienzo en blanco desde 2020.</li>
+          <li data-es="Colectivos ya rescatan desde casas (El Imparcial, jun 2026)." data-en="Collectives already rescue from homes (El Imparcial, Jun 2026).">Colectivos ya rescatan desde casas (El Imparcial, jun 2026).</li>
+          <li data-es="21,085 esterilizaciones estatales en 2024 incl. SQ." data-en="21,085 state sterilizations in 2024 incl. SQ.">21,085 esterilizaciones estatales en 2024 incl. SQ.</li>
+          <li data-es="Valle agrícola: mortalidad → 2,500 L fertilizante/ton." data-en="Farm valley: mortality → 2,500L fertilizer/ton.">Valle agrícola: mortalidad → 2,500 L fertilizante/ton.</li>
+          <li data-es="Población dispersa exige red móvil, no edificio único." data-en="Dispersed population needs mobile network, not one building.">Población dispersa exige red móvil, no edificio único.</li>
+        </ul>
+        <a href="../PROPUESTA_INTEGRAL.md" class="btn btn-light" style="margin-top:12px;width:100%;font-size:12px" data-es="Leer fundamento + marco legal →" data-en="Read rationale + legal frame →">Leer fundamento + marco legal →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voucher generator -->
+<section id="vale" class="section" style="background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="icon" style="background:var(--teal)">🎫</div>
+      <div>
+        <h2 style="margin:0" data-es="Capa 1 — Vales Solidarios" data-en="Layer 1 — Solidarity Vouchers">Capa 1 — Vales Solidarios</h2>
+        <p class="muted" style="margin:2px 0 0" data-es="Gratis para quien califica. Válido en tu veterinaria de confianza. Reembolso 72h. Papel o QR." data-en="Free for those who qualify. Valid at your trusted vet. 72h reimbursement. Paper or QR.">Gratis para quien califica. Válido en tu veterinaria de confianza. Reembolso 72h. Papel o QR.</p>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="panel">
+        <h3 data-es="Generador demo — crea tu vale" data-en="Demo generator — create your voucher">Generador demo — crea tu vale</h3>
+        <p style="font-size:12px;color:var(--muted);margin:0 0 10px" data-es="Demo local (no se guarda). Te muestra cómo se ve el vale real." data-en="Local demo (not stored). Shows what a real voucher looks like.">Demo local (no se guarda). Te muestra cómo se ve el vale real.</p>
+        <div class="form-grid">
+          <div><label data-es="Tutor" data-en="Guardian">Tutor</label><input id="v-tutor" class="input" placeholder="María López"></div>
+          <div><label data-es="Colonia / Ejido" data-en="Neighborhood">Colonia / Ejido</label><input id="v-colonia" class="input" placeholder="Flores Magón"></div>
+          <div><label data-es="Animal" data-en="Animal">Animal</label><select id="v-especie" class="input"><option value="Perro">🐶 Perro</option><option value="Gato">🐱 Gato</option></select></div>
+          <div><label data-es="Peso" data-en="Weight">Peso</label><select id="v-peso" class="input"><option>&lt;15 kg — 1,100 MXN</option><option>15-30 kg — 1,400 MXN</option><option>&gt;30 kg — 1,750 MXN</option><option>Gato — 850 MXN</option></select></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn btn-primary" style="flex:1" onclick="genVoucher()" data-es="Generar vale QR →" data-en="Generate QR voucher →">Generar vale QR →</button>
+          <button class="btn btn-light" onclick="printVoucher()" data-es="Imprimir" data-en="Print">Imprimir</button>
+        </div>
+        <div style="margin-top:10px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px">
+          <b data-es="Quién califica automático:" data-en="Who auto-qualifies:">Quién califica automático:</b>
+          <ul style="margin:6px 0 0 16px;color:var(--muted)">
+            <li data-es="Colonia con rezago / jornalera/o / madre sola / mayor / discapacidad" data-en="High-need colonia / farmworker / single mom / senior / disabled">Colonia con rezago / jornalera/o / madre sola / mayor / discapacidad</li>
+            <li data-es="Animal rescatado / comunitario / feral" data-en="Rescued / community / feral animal">Animal rescatado / comunitario / feral</li>
+            <li data-es="Ya tienes 2+ sin esterilizar" data-en="You have 2+ unsterilized">Ya tienes 2+ sin esterilizar</li>
+          </ul>
+          <span style="color:var(--muted)" data-es="Resto: copago solidario 30% (300-400 MXN) al fondo común." data-en="Others: 30% solidarity co-pay (300-400 MXN) to common fund.">Resto: copago solidario 30% (300-400 MXN) al fondo común.</span>
+        </div>
+      </div>
+
+      <div id="voucher-preview" class="voucher">
+        <div>
+          <div style="font-size:11px;letter-spacing:.8px;text-transform:uppercase;font-weight:800;color:var(--teal-dark)">Red de Vida San Quintín — Vale Solidario</div>
+          <div style="display:flex;gap:8px;align-items:baseline;margin-top:4px">
+            <b id="pv-num" style="font-size:18px;color:var(--navy)">No. 2026-0847</b>
+            <span id="pv-vig" style="font-size:11px;background:#dcfce7;color:#065f46;padding:3px 8px;border-radius:999px;font-weight:800">Vigente 30 días</span>
+          </div>
+          <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px">
+            <div><span style="color:var(--muted);font-size:11px;display:block" data-es="Tutor" data-en="Guardian">Tutor</span><b id="pv-tutor">—</b></div>
+            <div><span style="color:var(--muted);font-size:11px;display:block" data-es="Colonia" data-en="Neighborhood">Colonia</span><b id="pv-colonia">—</b></div>
+            <div><span style="color:var(--muted);font-size:11px;display:block">Animal</span><b id="pv-especie">—</b></div>
+            <div><span style="color:var(--muted);font-size:11px;display:block" data-es="Veterinaria" data-en="Clinic">Veterinaria</span><b data-es="Abierta / asignada" data-en="Open / assigned">Abierta / asignada</b></div>
+          </div>
+          <div style="margin-top:10px;font-size:11px;color:var(--muted);background:white;border:1px solid var(--line);border-radius:10px;padding:8px">
+            <span data-es="Instrucciones: ayuno 8h, lleva cobija. Re-agenda por WhatsApp 616-XXX-XXXX." data-en="Instructions: 8h fast, bring blanket. Reschedule via WhatsApp 616-XXX-XXXX.">Instrucciones: ayuno 8h, lleva cobija. Re-agenda por WhatsApp 616-XXX-XXXX.</span><br>
+            <span data-es="Veterinarias afiliadas: Vet SQ • Vet Guerrero • Vet Camalú • Vet Lázaro" data-en="Affiliated vets: Vet SQ • Vet Guerrero • Vet Camalú • Vet Lázaro">Veterinarias afiliadas: Vet SQ • Vet Guerrero • Vet Camalú • Vet Lázaro</span>
+          </div>
+        </div>
+        <div class="qr">
+          <canvas id="qr-canvas" width="140" height="140"></canvas>
+          <div style="position:absolute;bottom:6px;font-size:9px;font-weight:800;letter-spacing:.6px;color:var(--teal-dark);background:white;padding:2px 6px;border-radius:999px;border:1px solid var(--line)">QR • Red de Vida</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards" style="margin-top:16px">
+      <div class="card"><h3 data-es="WhatsApp en 5 min" data-en="WhatsApp in 5 min">WhatsApp en 5 min</h3><p data-es="Manda foto + colonia al bot. Promotora valida. Recibes PDF con QR." data-en="Send photo + colonia to bot. Promoter validates. You get PDF with QR.">Manda foto + colonia al bot. Promotora valida. Recibes PDF con QR.</p></div>
+      <div class="card"><h3 data-es="Papel sin celular" data-en="Paper, no phone needed">Papel sin celular</h3><p data-es="Talonario en tienda, iglesia, casa de promotora. Con sello y copia carbón." data-en="Booklet at store, church, promoter house. Stamped + carbon copy.">Talonario en tienda, iglesia, casa de promotora. Con sello y copia carbón.</p></div>
+      <div class="card"><h3 data-es="Pago 72h garantizado" data-en="72h guaranteed pay">Pago 72h garantizado</h3><p data-es="Vet escanea QR → sube 2 fotos → SPEI 72h. Cero comisión." data-en="Vet scans QR → uploads 2 photos → SPEI 72h. Zero fee.">Vet escanea QR → sube 2 fotos → SPEI 72h. Cero comisión.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pop-up clinics -->
+<section id="clinicas" class="section">
+  <div class="container">
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="icon" style="background:#f59e0b">⛺</div>
+      <div><h2 style="margin:0" data-es="Capa 2 — Quirófanos de Barrio" data-en="Layer 2 — Neighborhood Clinics">Capa 2 — Quirófanos de Barrio</h2><p class="muted" style="margin:2px 0 0" data-es="Si no puedes llegar, nosotros llegamos. 40-60 cirugías/día con promotoras de tu colonia." data-en="If you can't get there, we come to you. 40-60 surgeries/day with your neighborhood promoters.">Si no puedes llegar, nosotros llegamos. 40-60 cirugías/día con promotoras de tu colonia.</p></div>
+    </div>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="panel">
+        <h3 data-es="Próximas jornadas" data-en="Upcoming clinics">Próximas jornadas</h3>
+        <div id="jornadas" style="display:grid;gap:8px;margin-top:10px"></div>
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <input id="j-colonia" class="input" placeholder="Tu colonia (ej. Flores Magón)">
+          <button class="btn btn-primary" onclick="subscribeJornada()" style="white-space:nowrap" data-es="Avísenme" data-en="Notify me">Avísenme</button>
+        </div>
+        <p id="j-msg" style="font-size:12px;color:var(--teal-dark);margin:6px 0 0"></p>
+      </div>
+      <div class="panel">
+        <h3 data-es="Cómo es el día Q" data-en="How Day Q works">Cómo es el día Q</h3>
+        <ol style="font-size:13px;color:var(--muted);margin:8px 0 0;padding-left:18px">
+          <li><b style="color:var(--navy)" data-es="T-14 días:" data-en="T-14 days:">T-14 días:</b> <span data-es="promotora recorre casas, lista 50-70 animales." data-en="promoter goes door-to-door, lists 50-70 animals.">promotora recorre casas, lista 50-70 animales.</span></li>
+          <li><b style="color:var(--navy)" data-es="T-2 días:" data-en="T-2 days:">T-2 días:</b> <span data-es="confirmación, ayuno, perifoneo." data-en="confirmation, fasting, loudspeaker.">confirmación, ayuno, perifoneo.</span></li>
+          <li><b style="color:var(--navy)" data-es="Día Q 7am:" data-en="Day Q 7am:">Día Q 7am:</b> <span data-es="montaje 45min, primera cirugía 8am, flujo en U." data-en="45min setup, first surgery 8am, U-flow.">montaje 45min, primera cirugía 8am, flujo en U.</span></li>
+          <li><b style="color:var(--navy)" data-es="Entrega:" data-en="Handoff:">Entrega:</b> <span data-es="animal despierto, cobija, carnet, foto con tutor." data-en="awake animal, blanket, card, photo with guardian.">animal despierto, cobija, carnet, foto con tutor.</span></li>
+          <li><b style="color:var(--navy)" data-es="Día 10:" data-en="Day 10:">Día 10:</b> <span data-es="promotora revisa herida, retiro de puntos." data-en="promoter checks wound, suture removal.">promotora revisa herida, retiro de puntos.</span></li>
+        </ol>
+        <div style="margin-top:10px;background:var(--teal-light);border:1px solid #cdeee9;border-radius:12px;padding:10px;font-size:12px">
+          <b data-es="Costo móvil:" data-en="Mobile cost:">Costo móvil:</b> <span data-es="560-650 MXN/animal (más barato que clínica por escala). 2 mesas → 60-80/día." data-en="560-650 MXN/animal (cheaper than clinic via scale). 2 tables → 60-80/day.">560-650 MXN/animal (más barato que clínica por escala). 2 mesas → 60-80/día.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Center + aquamation -->
+<section id="centro" class="section" style="background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="icon" style="background:var(--navy)">🏠</div>
+      <div><h2 style="margin:0" data-es="Capa 3 + 4 — Centro de Vida + Aquamación" data-en="Layer 3 + 4 — Life Center + Aquamation">Capa 3 + 4 — Centro de Vida + Aquamación</h2><p class="muted" style="margin:2px 0 0" data-es="No es perrera. Es Casa de Vida. Foto en <2h, 10 días para reencuentro, adopción con seguimiento. Y honra final con agua, no fuego." data-en="Not a pound. A Life House. Photo in <2h, 10-day reunion, supported adoption. And final honor with water, not flame.">No es perrera. Es Casa de Vida. Foto en &lt;2h, 10 días para reencuentro, adopción con seguimiento. Y honra final con agua, no fuego.</p></div>
+    </div>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="panel">
+        <h3 data-es="En resguardo ahora — demo" data-en="In care now — demo">En resguardo ahora — demo</h3>
+        <div id="adop-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px"></div>
+        <p style="font-size:11px;color:var(--muted);margin:8px 0 0" data-es="Demo: en producción, fotos <2h + publicación auto a FB/WA." data-en="Demo: in prod, photos in <2h + auto-post to FB/WA.">Demo: en producción, fotos &lt;2h + publicación auto a FB/WA.</p>
+      </div>
+      <div class="panel" style="background:linear-gradient(180deg,#f0fdfa,#ffffff)">
+        <h3>💧 Aquamación — <span data-es="agua, no fuego" data-en="water, not flame">agua, no fuego</span></h3>
+        <p style="font-size:13px;color:var(--muted);margin:6px 0 0" data-es="Hidrólisis alcalina: 95% agua + 5% álcali, 93-98°C, 12-20h. 90% menos energía, cero emisiones, 20% más cenizas." data-en="Alkaline hydrolysis: 95% water + 5% alkali, 93-98°C, 12-20h. 90% less energy, zero emissions, 20% more ashes.">Hidrólisis alcalina: 95% agua + 5% álcali, 93-98°C, 12-20h. 90% menos energía, cero emisiones, 20% más cenizas.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+          <div style="background:white;border:1px solid var(--line);border-radius:12px;padding:12px">
+            <b style="font-size:12px" data-es="Comunal solidaria" data-en="Communal">Comunal solidaria</b>
+            <div style="font-size:12px;color:var(--muted)" data-es="Para no reclamados. Cenizas a jardín memorial. Sin costo." data-en="For unclaimed. Ashes to memorial garden. No cost.">Para no reclamados. Cenizas a jardín memorial. Sin costo.</div>
+            <b style="display:block;margin-top:6px;color:var(--teal)">0 MXN</b>
+          </div>
+          <div style="background:white;border:1px solid var(--line);border-radius:12px;padding:12px">
+            <b style="font-size:12px" data-es="Privada con retorno" data-en="Private return">Privada con retorno</b>
+            <div style="font-size:12px;color:var(--muted)" data-es="Urna biodegradable + huella + certificado." data-en="Biodegradable urn + paw print + certificate.">Urna biodegradable + huella + certificado.</div>
+            <b style="display:block;margin-top:6px;color:var(--navy)">800 — 2,200 MXN</b>
+          </div>
+        </div>
+        <div style="margin-top:10px;background:white;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px">
+          <b data-es="Equipo:" data-en="Equipment:">Equipo:</b> Bio-Response PET-400 (180 kg, 2 cestas, 2 ciclos/día → 6-12/día). <span data-es="Sala de despedida 6m² + taller mensual de duelo." data-en="6m² farewell room + monthly grief workshop.">Sala de despedida 6m² + taller mensual de duelo.</span>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <input id="aq-peso" class="input" placeholder="Peso (kg) ej. 18">
+          <button class="btn btn-primary" onclick="calcAqua()" data-es="Calcular" data-en="Estimate">Calcular</button>
+        </div>
+        <p id="aq-msg" style="font-size:12px;color:var(--navy);margin:6px 0 0"></p>
+      </div>
+    </div>
+
+    <div class="cards" style="margin-top:16px">
+      <div class="card"><b style="color:var(--teal-dark)">10 días</b><h3 data-es="Ventana de reencuentro" data-en="Reunion window">Ventana de reencuentro</h3><p data-es="No 72h. Difusión diaria FB/WA/tablero. Tutor paga solo esterilización si faltaba." data-en="Not 72h. Daily repost FB/WA/board. Guardian pays only sterilization if pending.">No 72h. Difusión diaria FB/WA/tablero. Tutor paga solo esterilización si faltaba.</p></div>
+      <div class="card"><b style="color:var(--teal-dark)">0% por cupo</b><h3 data-es="No matar por espacio" data-en="No kill for space">No matar por espacio</h3><p data-es="Eutanasia solo por sufrimiento irreversible, 2 MVZ + acta pública." data-en="Euthanasia only for irremediable suffering, 2 vets + public record.">Eutanasia solo por sufrimiento irreversible, 2 MVZ + acta pública.</p></div>
+      <div class="card"><b style="color:var(--teal-dark)">48 + 24</b><h3 data-es="Capacidad con bienestar" data-en="Capacity with welfare">Capacidad con bienestar</h3><p data-es="48 caniles + 24 felinos + patios. Tope 85% → hogares temporales." data-en="48 kennels + 24 cat condos + yards. 85% cap → foster homes.">48 caniles + 24 felinos + patios. Tope 85% → hogares temporales.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Fertilizer -->
+<section id="fertilizante" class="section">
+  <div class="container">
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="icon" style="background:#16a34a">🌱</div>
+      <div><h2 style="margin:0" data-es="Capa 5 — Bioliquidadora móvil + Fertilizante de Retorno" data-en="Layer 5 — Mobile BioLiquidator + Return Fertilizer">Capa 5 — Bioliquidadora móvil + Fertilizante de Retorno</h2><p class="muted" style="margin:2px 0 0" data-es="Mortalidad → hidrolizado estéril enclosureless. Remolque 2,400L que va al rancho. Efluente → fertirriego para parques y parcelas." data-en="Mortality → sterile hydrolysate. 2,400L trailer that goes to the ranch. Effluent → fertigation for parks and fields.">Mortalidad → hidrolizado estéril. Remolque 2,400L que va al rancho. Efluente → fertirriego para parques y parcelas.</p></div>
+    </div>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="panel">
+        <h3 data-es="Calculadora de fertilizante" data-en="Fertilizer calculator">Calculadora de fertilizante</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+          <div><label data-es="Mortalidad (kg)" data-en="Mortality (kg)">Mortalidad (kg)</label><input id="f-kg" class="input" type="number" value="400" min="10"></div>
+          <div><label data-es="Destino" data-en="Destination">Destino</label><select id="f-dest" class="input"><option value="parque" data-es="Parques (Lote A)" data-en="Parks (Lot A)">Parques (Lote A)</option><option value="rancho">Ranchos (Lote B)</option></select></div>
+        </div>
+        <button class="btn btn-primary" style="width:100%;margin-top:12px" onclick="calcFert()" data-es="Calcular →" data-en="Calculate →">Calcular →</button>
+        <div id="f-out" style="margin-top:12px;background:var(--teal-light);border:1px solid #cdeee9;border-radius:12px;padding:12px;font-size:13px"></div>
+        <p style="font-size:11px;color:var(--muted);margin:8px 0 0" data-es="Base: 1 ton → 2,500 L hidrolizado → 40,000 L diluido (20:1). Validado: +18.2% peso lechuga (Akdeniz 2021)." data-en="Base: 1 ton → 2,500L hydrolysate → 40,000L diluted (20:1). Validated: +18.2% lettuce weight (Akdeniz 2021).">Base: 1 ton → 2,500 L hidrolizado → 40,000 L diluido (20:1). Validado: +18.2% peso lechuga (Akdeniz 2021).</p>
+      </div>
+      <div class="panel">
+        <h3 data-es="Cómo funciona (24h)" data-en="How it works (24h)">Cómo funciona (24h)</h3>
+        <div style="display:grid;grid-template-columns:40px 1fr;gap:10px;font-size:13px;margin-top:10px">
+          <div style="display:grid;gap:8px;justify-items:center"><span style="width:28px;height:28px;border-radius:999px;background:var(--navy);color:white;display:grid;place-items:center;font-weight:800;font-size:12px">1</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:var(--teal);color:white;display:grid;place-items:center;font-weight:800;font-size:12px">2</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:#f59e0b;color:white;display:grid;place-items:center;font-weight:800;font-size:12px">3</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:#16a34a;color:white;display:grid;place-items:center;font-weight:800;font-size:12px">4</span></div>
+          <div style="display:grid;gap:10px">
+            <div><b data-es="Carga en sitio" data-en="Load on-site">Carga en sitio</b><div style="color:var(--muted)" data-es="Animal entero + agua + álcali 5%. Sin traslado de cadáver en descomposición." data-en="Whole animal + water + 5% alkali. No hauling rotting carcass.">Animal entero + agua + álcali 5%. Sin traslado de cadáver en descomposición.</div></div>
+            <div><b data-es="Hidrólisis 16-24h" data-en="Hydrolysis 16-24h">Hidrólisis 16-24h</b><div style="color:var(--muted)" data-es="90-100°C, pH>12.8 por 10 días → esteriliza virus, bacterias, esporas." data-en="90-100°C, pH>12.8 for 10 days → kills viruses, bacteria, spores.">90-100°C, pH&gt;12.8 por 10 días → esteriliza virus, bacterias, esporas.</div></div>
+            <div><b data-es="Neutralización" data-en="Neutralization">Neutralización</b><div style="color:var(--muted)" data-es="Con ensilaje ácido (pH 3.9) hasta pH 6.8 + aireación 10 días." data-en="With acidic silage (pH 3.9) to pH 6.8 + 10-day aeration.">Con ensilaje ácido (pH 3.9) hasta pH 6.8 + aireación 10 días.</div></div>
+            <div><b data-es="Fertirriego + esparcidora" data-en="Fertigation + spreader">Fertirriego + esparcidora</b><div style="color:var(--muted)" data-es="Pipa 10k L en parques + remolque 3,000 L slurry en parcelas." data-en="10k L tanker in parks + 3,000L slurry spreader on fields.">Pipa 10k L en parques + remolque 3,000 L slurry en parcelas.</div></div>
+          </div>
+        </div>
+        <div style="margin-top:12px;background:#fef3c7;border:1px solid #fde68a;border-radius:12px;padding:10px;font-size:12px">
+          <b data-es="Valor año 2 (80 ton):" data-en="Value Year 2 (80 tons):">Valor año 2 (80 ton):</b> <span data-es="~872k MXN (fertilizante + ahorro disposición). Cubre 30-40% de operación." data-en="~872k MXN (fertilizer + avoided disposal). Covers 30-40% of ops.">~872k MXN (fertilizante + ahorro disposición). Cubre 30-40% de operación.</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;background:white;border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center">
+      <div><b data-es="Cada lote con QR" data-en="Every lot with QR">Cada lote con QR</b><div style="font-size:13px;color:var(--muted)" data-es="Escanea y ves: origen, fecha, NPK, análisis patógeno negativo y mapa de aplicación. Trazabilidad completa." data-en="Scan to see: origin, date, NPK, pathogen-negative test and application map. Full traceability.">Escanea y ves: origen, fecha, NPK, análisis patógeno negativo y mapa de aplicación. Trazabilidad completa.</div></div>
+      <div style="background:var(--teal-light);padding:10px 14px;border-radius:12px;border:1px solid #cdeee9;font-size:12px;font-weight:800;color:var(--teal-dark)">QR Lote #2027-014 • 40,000 L • N 0.22% • <span data-es="Apto riego" data-en="Irrigation-ready">Apto riego</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Dashboard -->
+<section id="tablero" class="section" style="background:white;border-top:1px solid var(--line)">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+      <div><h2 style="margin:0" data-es="Tablero público — transparencia radical" data-en="Public dashboard — radical transparency">Tablero público — transparencia radical</h2><p class="muted" style="margin:2px 0 0" data-es="Datos demo. En producción: actualización diaria desde Google Sheets → CSV → este tablero. Sin backend." data-en="Demo data. In prod: daily update from Google Sheets → CSV → this board. No backend.">Datos demo. En producción: actualización diaria desde Google Sheets → CSV → este tablero. Sin backend.</p></div>
+      <button class="btn btn-light" onclick="refreshDashboard()" data-es="Actualizar demo" data-en="Refresh demo">Actualizar demo</button>
+    </div>
+
+    <div class="dashboard">
+      <div class="panel">
+        <h3 data-es="Operación" data-en="Operations">Operación</h3>
+        <div class="stat-row">
+          <div class="stat"><b id="d-vales">1,247</b><span data-es="Vales emitidos" data-en="Vouchers issued">Vales emitidos</span></div>
+          <div class="stat"><b id="d-cir">892</b><span data-es="Cirugías" data-en="Surgeries">Cirugías</span></div>
+          <div class="stat"><b id="d-adop">124</b><span data-es="Adopciones" data-en="Adoptions">Adopciones</span></div>
+          <div class="stat"><b id="d-reenc">41</b><span data-es="Reencuentros" data-en="Reunions">Reencuentros</span></div>
+        </div>
+        <div style="margin-top:12px">
+          <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700"><span data-es="Avance esterilización 2026" data-en="Sterilization progress 2026">Avance esterilización 2026</span><span id="d-pct">36%</span></div>
+          <div class="bar"><i id="d-bar" style="width:36%"></i></div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px"><span id="d-meta">892</span> / 2,200 <span data-es="meta año 1" data-en="Year 1 goal">meta año 1</span></div>
+        </div>
+        <table class="table" style="margin-top:12px">
+          <thead><tr><th data-es="Fecha" data-en="Date">Fecha</th><th data-es="Evento" data-en="Event">Evento</th><th data-es="Colonia" data-en="Neighborhood">Colonia</th><th data-es="Estado" data-en="Status">Estado</th></tr></thead>
+          <tbody id="d-table"></tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <h3 data-es="Fertilizante y finanzas" data-en="Fertilizer & finance">Fertilizante y finanzas</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+          <div class="stat"><b id="d-fert">68,400 L</b><span data-es="Producidos" data-en="Produced">Producidos</span></div>
+          <div class="stat" style="background:#fef3c7;border-color:#fde68a"><b id="d-apli">52,100 L</b><span data-es="Aplicados" data-en="Applied">Aplicados</span></div>
+        </div>
+        <div style="margin-top:12px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px">
+          <b data-es="Destinos recientes" data-en="Recent destinations">Destinos recientes</b>
+          <ul id="d-dest" style="margin:6px 0 0 16px;color:var(--muted)"></ul>
+        </div>
+        <div style="margin-top:12px;background:var(--navy);color:white;border-radius:12px;padding:12px">
+          <div style="font-size:11px;letter-spacing:.7px;text-transform:uppercase;opacity:.7" data-es="Fondo común — estado" data-en="Common fund — status">Fondo común — estado</div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:4px"><b id="d-fondo">$1,842,500 MXN</b><span style="font-size:11px;opacity:.7">35% <span data-es="ejecutado" data-en="spent">ejecutado</span></span></div>
+          <div class="bar" style="background:rgba(255,255,255,.15);margin-top:8px"><i style="width:35%;background:#5eead4"></i></div>
+          <div style="font-size:11px;opacity:.7;margin-top:6px" data-es="Ingresos: municipal 45% • padrinazgos 20% • aquamación 12% • fertilizante 18% • donaciones 5%" data-en="Income: municipal 45% • sponsors 20% • aquamation 12% • fertilizer 18% • donations 5%">Ingresos: municipal 45% • padrinazgos 20% • aquamación 12% • fertilizante 18% • donaciones 5%</div>
+        </div>
+        <p style="font-size:11px;color:var(--muted);margin:8px 0 0" data-es="Todo SPEI, 2 firmas, auditoría semestral. QR de cada lote/vales enlaza aquí." data-en="All SPEI, 2 signatures, semiannual audit. Every lot/voucher QR links here.">Todo SPEI, 2 firmas, auditoría semestral. QR de cada lote/vales enlaza aquí.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="step"><b data-es="Mes 0-2" data-en="Mo 0-2">Mes 0-2</b><h4 data-es="Preparación" data-en="Prep">Preparación</h4><p data-es="Taller co-diseño, AC + convenio, censo 400 hogares, 8 promotoras, 3 vets." data-en="Co-design workshop, nonprofit + agreement, 400-home census, 8 promoters, 3 vets.">Taller co-diseño, AC + convenio, censo 400 hogares, 8 promotoras, 3 vets.</p></div>
+      <div class="step"><b data-es="Mes 3-5" data-en="Mo 3-5">Mes 3-5</b><h4 data-es="Piloto 90 días" data-en="90-day pilot">Piloto 90 días</h4><p data-es="300 vales, 12 jornadas, módulo 12 caniles, demo aquamación/bioliquidadora." data-en="300 vouchers, 12 clinic days, 12-kennel module, aquamation/BioLiquidator demo.">300 vales, 12 jornadas, módulo 12 caniles, demo aquamación/bioliquidadora.</p></div>
+      <div class="step"><b data-es="Mes 6-12" data-en="Mo 6-12">Mes 6-12</b><h4 data-es="Escalar" data-en="Scale">Escalar</h4><p data-es="CEBISQ 48 caniles, bioliquidadora propia, 1,800 vales/semestre, 5 ranchos." data-en="48-kennel CEBISQ, owned BioLiquidator, 1,800 vouchers/semester, 5 ranches.">CEBISQ 48 caniles, bioliquidadora propia, 1,800 vales/semestre, 5 ranchos.</p></div>
+      <div class="step"><b data-es="Mes 12-24" data-en="Mo 12-24">Mes 12-24</b><h4 data-es="Consolidar" data-en="Consolidate">Consolidar</h4><p data-es="3,600/año, >60% adopción, 80 ton/año, reglamento, manual de réplica." data-en="3,600/yr, >60% adoption, 80 tons/yr, regulation, replication manual.">3,600/año, &gt;60% adopción, 80 ton/año, reglamento, manual de réplica.</p></div>
+    </div>
+
+    <div class="cta">
+      <div>
+        <h3 style="margin:0 0 6px" data-es="¿Quieres tejer esta red?" data-en="Want to weave this net?">¿Quieres tejer esta red?</h3>
+        <p style="margin:0;opacity:.9;font-size:14px" data-es="Municipio, veterinaria, colectivo, rancho o vecina — hay un hilo para ti. Primer taller en 30 días." data-en="Municipality, vet, collective, ranch or neighbor — there's a thread for you. First workshop in 30 days.">Municipio, veterinaria, colectivo, rancho o vecina — hay un hilo para ti. Primer taller en 30 días.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="mailto:eugene@serviceofothers.org?subject=QUIERO%20TEJER%20-%20Red%20de%20Vida%20SQ" style="background:white;color:var(--navy)">eugene@serviceofothers.org</a>
+        <a class="btn btn-ghost" href="../PROPUESTA_INTEGRAL.md" data-es="Descargar propuesta" data-en="Download proposal">Descargar propuesta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container" style="display:grid;gap:10px">
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>
+        <b>Red de Vida San Quintín</b> — <span data-es="Tejido de Ayuda Mutua por el Bienestar Animal y la Tierra" data-en="Mutual Aid Fabric for Animal Welfare and the Land">Tejido de Ayuda Mutua por el Bienestar Animal y la Tierra</span><br>
+        <span style="opacity:.7" data-es="San Quintín, BCN, MX — Agosto 2026. Proponente: Eugene L. Buchanan." data-en="San Quintín, BCN, MX — August 2026. Proponent: Eugene L. Buchanan.">San Quintín, BCN, MX — Agosto 2026. Proponente: Eugene L. Buchanan.</span>
+      </div>
+      <div style="text-align:right;font-size:12px;opacity:.8">
+        CC BY-SA 4.0 — <span data-es="Cópialo, mejóralo, compártelo." data-en="Copy it, improve it, share it.">Cópialo, mejóralo, compártelo.</span><br>
+        <a href="../README.md">README</a> • <a href="../PROPUESTA_INTEGRAL.md">Propuesta Integral</a> • <a href="../PROPOSAL_EN.md">Proposal EN</a>
+      </div>
+    </div>
+    <div style="opacity:.6;font-size:11px" data-es="Referencias: El Imparcial 04jun2026 (Huellitas de Amor SQ), Secretaría de Salud BC 21,085 esterilizaciones 2024, BioLiquidator alkaline hydrolysis, Veterinary Sustainability Alliance — Aquamation." data-en="Refs: El Imparcial Jun 4 2026 (Huellitas de Amor SQ), BC Health 21,085 sterilizations 2024, BioLiquidator alkaline hydrolysis, Veterinary Sustainability Alliance — Aquamation.">
+      Referencias: El Imparcial 04jun2026 (Huellitas de Amor SQ), Secretaría de Salud BC 21,085 esterilizaciones 2024, BioLiquidator alkaline hydrolysis, Veterinary Sustainability Alliance — Aquamation.
+    </div>
+  </div>
+</footer>
+
+<script>
+// language
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-es]').forEach(el=>{
+    const txt = l==='en' ? el.getAttribute('data-en') : el.getAttribute('data-es');
+    if(txt) el.textContent = txt;
+  });
+  // placeholders? keep simple
+  document.getElementById('btn-es').classList.toggle('active', l==='es');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  localStorage.setItem('sq-lang', l);
+}
+(function(){ const s=localStorage.getItem('sq-lang'); if(s) setLang(s); })();
+
+// QR canvas - simple patterned QR mock (not real QR but visual)
+function drawQR(text){
+  const c=document.getElementById('qr-canvas');
+  if(!c) return;
+  const ctx=c.getContext('2d');
+  const N=21; const sz=140; const cell=sz/N;
+  ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,sz,sz);
+  // deterministic pseudo-random based on text
+  let h=0; for(let i=0;i<text.length;i++) h=(h*31+text.charCodeAt(i))%999983;
+  function rnd(){ h=(h*9301+49297)%233280; return h/233280; }
+  // finder patterns
+  function finder(x,y){
+    ctx.fillStyle='#0e2a47'; ctx.fillRect(x*cell,y*cell,7*cell,7*cell);
+    ctx.fillStyle='#ffffff'; ctx.fillRect((x+1)*cell,(y+1)*cell,5*cell,5*cell);
+    ctx.fillStyle='#0e2a47'; ctx.fillRect((x+2)*cell,(y+2)*cell,3*cell,3*cell);
+  }
+  finder(0,0); finder(14,0); finder(0,14);
+  for(let y=0;y<N;y++) for(let x=0;x<N;x++){
+    if((x<7&&y<7)||(x>13&&y<7)||(x<7&&y>13)) continue;
+    if(rnd()>0.52){ ctx.fillStyle='#0e2a47'; ctx.fillRect(x*cell,y*cell,cell,cell); }
+  }
+  // center logo
+  ctx.fillStyle='#ffffff'; ctx.fillRect(8*cell,8*cell,5*cell,5*cell);
+  ctx.fillStyle='#15a39a'; ctx.fillRect(9*cell,9*cell,3*cell,3*cell);
+}
+function genVoucher(){
+  const tutor=document.getElementById('v-tutor').value.trim() || 'Tutor demo';
+  const colonia=document.getElementById('v-colonia').value.trim() || '—';
+  const esp=document.getElementById('v-especie').value;
+  const num='No. 2026-'+String(Math.floor(1000+Math.random()*9000));
+  document.getElementById('pv-num').textContent=num;
+  document.getElementById('pv-tutor').textContent=tutor;
+  document.getElementById('pv-colonia').textContent=colonia;
+  document.getElementById('pv-especie').textContent=esp;
+  drawQR(num+'|'+tutor+'|'+colonia);
+  // animate kpi
+  const k=document.getElementById('kpi-vales');
+  k.textContent= String(parseInt(k.textContent)+1);
+}
+function printVoucher(){ window.print(); }
+drawQR('2026-0847|demo|SQ');
+
+// jornadas
+const jornadasData=[
+  {fecha:'14 jun', lugar:'Cancha Emiliano Zapata — Vicente Guerrero', cupo: '52/60', estado:'Pre-registro abierto'},
+  {fecha:'21 jun', lugar:'Ejido El Papalote — Lázaro Cárdenas', cupo:'28/60', estado:'Cupo disponible'},
+  {fecha:'28 jun', lugar:'Cancha Camalú centro', cupo:'40/60', estado:'Últimos lugares'},
+  {fecha:'05 jul', lugar:'Bahía de los Ángeles — 3 días', cupo:'12/80', estado:'Pre-registro'},
+];
+function renderJornadas(){
+  const c=document.getElementById('jornadas');
+  c.innerHTML = jornadasData.map(j=>`
+    <div style="display:grid;grid-template-columns:70px 1fr auto;gap:10px;align-items:center;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px">
+      <div style="background:var(--navy);color:white;border-radius:10px;padding:8px;text-align:center;font-weight:800;line-height:1"><div style="font-size:11px;opacity:.7">JUN</div><div style="font-size:18px">${j.fecha.split(' ')[0]}</div></div>
+      <div><b style="font-size:13px">${j.lugar}</b><div style="font-size:11px;color:var(--muted)">${j.estado} • ${j.cupo}</div></div>
+      <span style="font-size:10px;font-weight:800;letter-spacing:.5px;background:#dcfce7;color:#065f46;padding:6px 8px;border-radius:999px">${j.cupo}</span>
+    </div>
+  `).join('');
+}
+function subscribeJornada(){
+  const v=document.getElementById('j-colonia').value.trim();
+  const m=document.getElementById('j-msg');
+  if(!v){ m.textContent='Escribe tu colonia para avisarte.'; return; }
+  m.textContent='¡Listo! Te avisaremos por WhatsApp cuando el quirófano vaya a '+v+'. (demo local)';
+  document.getElementById('j-colonia').value='';
+}
+renderJornadas();
+
+// adop grid
+const adopData=[
+  {nombre:'Canelo', sexo:'M', edad:'2 años', peso:'18 kg', dias: '4 días', foto:'🐕', color:'#fef3c7'},
+  {nombre:'Micha', sexo:'H', edad:'6 meses', peso:'2.1 kg', dias:'1 día', foto:'🐈', color:'#e0f2fe'},
+  {nombre:'Güero', sexo:'M', edad:'4 años', peso:'22 kg', dias:'9 días', foto:'🐕‍🦺', color:'#dcfce7'},
+  {nombre:'Negra', sexo:'H', edad:'1 año', peso:'14 kg', dias:'2 días', foto:'🐕', color:'#f3e8ff'},
+];
+function renderAdop(){
+  const c=document.getElementById('adop-grid');
+  c.innerHTML = adopData.map(a=>`
+    <div style="background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden">
+      <div style="height:90px;background:${a.color};display:grid;place-items:center;font-size:36px">${a.foto}</div>
+      <div style="padding:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:13px">${a.nombre}</b><span style="font-size:10px;background:var(--teal-light);color:var(--teal-dark);padding:3px 6px;border-radius:999px;font-weight:800">${a.dias}</span></div>
+        <div style="font-size:11px;color:var(--muted)">${a.sexo} • ${a.edad} • ${a.peso}</div>
+        <button class="btn btn-light" style="width:100%;margin-top:8px;padding:6px;font-size:11px" onclick="alert('Demo: en producción abre ficha con fotos, video 15s y botón Adoptar/Reencuentro → WhatsApp')">Ver ficha →</button>
+      </div>
+    </div>
+  `).join('');
+}
+renderAdop();
+
+function calcAqua(){
+  const v=parseFloat(document.getElementById('aq-peso').value);
+  const m=document.getElementById('aq-msg');
+  if(!v||v<=0){ m.textContent='Ingresa peso en kg.'; return; }
+  let costo= v<10?800 : v<25?1400 : 2200;
+  let tiempo= v<10?'~12h' : v<25?'~16h' : '~20h';
+  m.textContent = `Estimado: $${costo} MXN • ${tiempo} • urna biodegradable + huella + cenizas (+20% vs cremación). Subsidiado 70% si calificas.`;
+}
+function calcFert(){
+  const kg=parseFloat(document.getElementById('f-kg').value)||0;
+  const dest=document.getElementById('f-dest').value;
+  const out=document.getElementById('f-out');
+  if(kg<=0){ out.textContent='Ingresa kg.'; return; }
+  const hydro = kg * 2.5; // L bruto
+  const dil = hydro * 16; // ~40x? use 16 for realistic after losses
+  // actually 2.5*16=40 L diluted per kg
+  const diluted = kg * 40;
+  const haParque = diluted / 40000 * 2.5;
+  const haCultivo = diluted / 40000 * 1;
+  const valor = diluted * 0.2;
+  out.innerHTML = `
+    <b>${hydro.toFixed(0)} L</b> hidrolizado bruto → <b>${diluted.toLocaleString()} L</b> diluido (20:1)<br>
+    <span style="color:var(--muted)">→ Rinde: <b>${haParque.toFixed(2)} ha</b> de parque o <b>${haCultivo.toFixed(2)} ha</b> de cultivo por ciclo</span><br>
+    <span style="color:var(--muted)">Valor estimado: <b>$${valor.toFixed(0)} MXN</b> vs fertilizante sintético • Destino: ${dest}</span>
+  `;
+}
+calcFert();
+
+// dashboard table
+const dashRows=[
+  ['2026-08-07','vale canjeado','Flores Magón','Vet Guerrero','canjeado'],
+  ['2026-08-07','cirugía móvil','Zapata','Quirófano','completada'],
+  ['2026-08-06','adopción','CEBISQ','Canelo → Familia R.','adoptado'],
+  ['2026-08-06','aquamación privada','CEBISQ','12 kg → urna','entregado'],
+  ['2026-08-05','bioliquidación','Ejido Papalote','420 kg → 16,800 L','neutralizado'],
+  ['2026-08-05','fertilizante aplicado','Vivero municipal','1,200 L','riego'],
+];
+function renderDash(){
+  const tbody=document.getElementById('d-table');
+  tbody.innerHTML = dashRows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td><span style="background:#dcfce7;color:#065f46;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:700">${r[4]}</span></td></tr>`).join('');
+  document.getElementById('d-dest').innerHTML = `
+    <li>Vivero municipal — 1,200 L (Lote A)</li>
+    <li>Camellón Lázaro Cárdenas — 2,400 L</li>
+    <li>Rancho Los Pinos — 4,000 L (Lote B, parcela alfalfa)</li>
+  `;
+}
+function refreshDashboard(){
+  // wiggle numbers
+  const v=document.getElementById('d-vales'); v.textContent = String(1247+Math.floor(Math.random()*6));
+  const c=document.getElementById('d-cir'); c.textContent = String(892+Math.floor(Math.random()*4));
+  const f=document.getElementById('d-fert'); f.textContent = (68400+Math.floor(Math.random()*800))+' L';
+  renderDash();
+}
+renderDash();
+</script>
+</body>
+</html>
