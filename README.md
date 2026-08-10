@@ -1,4 +1,4 @@
-> 🌱 **Nuevo / New:** [**Red de Vida San Quintín — Propuesta Integral**](san-quintin-red-de-vida/README.md) — Tejido de 5 capas para bienestar animal y economía circular: vales solidarios, quirófanos de barrio, centro de adopción, aquamación y bioliquidadora móvil con fertilizante. [Sitio interactivo con generador de vales y tablero →](san-quintin-red-de-vida/site/index.html) | [PDF propuesta 2026 →](san-quintin-red-de-vida/Red-de-Vida-San-Quintin-Propuesta-Integral-2026.pdf)
+> 🌱 **Nuevo / New:** [**Red de Vida San Quintín — Propuesta Integral + Presupuesto por Programa**](san-quintin-red-de-vida/README.md) — 5 capas + Red de Guardianes: vales, quirófanos de barrio, Centro de Vida, aquamación, bioliquidadora con fertilizante y apoyo a rescatistas. [Sitio interactivo →](san-quintin-red-de-vida/site/index.html) | [Presupuesto imprimible (PDF 5 pág) →](san-quintin-red-de-vida/Plan-Presupuesto-Red-de-Vida-2026-2028.pdf) | [Detalle por programa →](san-quintin-red-de-vida/PLAN-Y-PRESUPUESTO-DETALLADO.md)
 
 # Eugene Buchanan
 

@@ -46,6 +46,9 @@ san-quintin-red-de-vida/
 ├── README.md                 ← estás aquí
 ├── PROPUESTA_INTEGRAL.md     ← Documento maestro (ES, 30 páginas)
 ├── PROPOSAL_EN.md            ← Executive Proposal (EN)
+├── PLAN-Y-PRESUPUESTO-DETALLADO.md  ← Presupuesto imprimible por programa (CAPEX/OPEX 3 años)
+├── Plan-Presupuesto-Red-de-Vida-2026-2028.pdf  ← PDF listo para Tesorería (5 pág)
+├── presupuesto/csv/          ← 6 CSV para Excel (CAPEX, OPEX, 3-años, flujo 90d, etc.)
 ├── docs/
 │   ├── 00-carta-presentacion.md
 │   ├── 01-sistema-vales.md
@@ -91,10 +94,11 @@ san-quintin-red-de-vida/
 
 ## Cómo leer la propuesta
 
-1. **Si eres gobierno municipal:** empieza por `PROPUESTA_INTEGRAL.md` §6 Gobernanza y §7 Presupuesto (5.2 MDP arranque, autosustentable año 2).
+1. **Si eres gobierno / Tesorería / Cabildo:** empieza por `PLAN-Y-PRESUPUESTO-DETALLADO.md` y el PDF `Plan-Presupuesto-Red-de-Vida-2026-2028.pdf` (5 pág, tablas por programa con partida FAIS y QR tablero). Luego `PROPUESTA_INTEGRAL.md` §6-§7 (5.5 MDP CAPEX, 4.77 MDP OPEX neto → 31 MXN/hab, 40% autosustentable).
 2. **Si eres veterinaria/o:** ve directo a `docs/01-sistema-vales.md` (cómo afiliarte, reembolso 72h, paquete estandarizado).
-3. **Si eres rescatista/colectiva:** `docs/02` y `docs/03` son tu operación diaria.
-4. **Si eres productor/rancho:** `docs/04` y `docs/05` explican cómo conviertes mortalidad en 1,800-3,000 L de fertilizante por tonelada, con créditos para tu ciclo agrícola.
+3. **Si eres rescatista / guardián:** `docs/08-red-guardianes.md` (registro 10 min, 5 apoyos mensuales, vitrina + padrinazgo, protección ante denuncia) + `docs/02` y `03` operación diaria.
+4. **Si eres productor/rancho:** `docs/04` y `05` (bioliquidadora 2,400L, 1 ton →40,000L diluido, créditos 2,000L/semestre por padrinar).
+5. **Si eres donante/padrino:** `docs/08` §6 y `PLAN` §6 (1 padrino =1 guardián/mes, $1,100, recibo deducible + fertilizante).
 
 ---
 

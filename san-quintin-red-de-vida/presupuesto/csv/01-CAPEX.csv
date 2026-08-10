@@ -1,0 +1,11 @@
+#,Programa,Concepto principal,Monto MXN,Vida útil
+1,—,"Fondo inicial Vales (1,000 vales)",1000000,rotativo
+2,Móviles,Remolque 2 mesas reacond. + equipamiento,550000,10a
+3,CEBISQ,"Adecuación 800m² + 2,000m² patios + 5kW solar",1200000,10a
+4,Aquamación,PET-400 reacond. + instalación + sala 6m²,1100000,15a
+5,Bioliquidadora,"Reactor 2,400L móvil 20' + tanques",1350000,15a
+6,Guardianes,Kits sombra/agua/cuarentena 20 hogares,65000,3a
+7,Transversal,"Tecnología, mobiliario, señalética",45000,3a
+,,Subtotal CAPEX,5310000,
+,,Imprevistos 4%,190000,
+,,TOTAL CAPEX,5500000,

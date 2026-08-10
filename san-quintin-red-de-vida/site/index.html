@@ -30,6 +30,7 @@
       <a href="#centro" data-es="Centro" data-en="Center">Centro</a>
       <a href="#guardianes" data-es="Guardianes" data-en="Guardians">Guardianes</a>
       <a href="#fertilizante" data-es="Fertilizante" data-en="Fertilizer">Fertilizante</a>
+      <a href="#presupuesto" data-es="Presupuesto" data-en="Budget">Presupuesto</a>
       <a href="#tablero" data-es="Tablero" data-en="Dashboard">Tablero</a>
       <div class="lang-toggle" role="group" aria-label="Idioma">
         <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
@@ -569,6 +570,38 @@
         <a class="btn btn-ghost" href="../PROPUESTA_INTEGRAL.md" data-es="Descargar propuesta" data-en="Download proposal">Descargar propuesta</a>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- Presupuesto descargable -->
+<section id="presupuesto" class="section" style="background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <div style="width:40px;height:40px;background:var(--wine);color:white;border-radius:10px;display:grid;place-items:center;font-size:18px">📊</div>
+      <div style="flex:1;min-width:220px">
+        <h2 style="margin:0;color:var(--wine-dark)" data-es="Presupuesto imprimible por programa" data-en="Printable budget per program">Presupuesto imprimible por programa</h2>
+        <p style="font-size:12px;color:var(--muted);margin:2px 0 0" data-es="Para Tesorería y Cabildo — CAPEX, OPEX mensual/anual, flujo 90 días y fuentes. Listo para firmar." data-en="For Treasury and Council — CAPEX, monthly/annual OPEX, 90-day flow and sources. Ready to sign.">Para Tesorería y Cabildo — CAPEX, OPEX mensual/anual, flujo 90 días y fuentes. Listo para firmar.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="../Plan-Presupuesto-Red-de-Vida-2026-2028.pdf" download>📄 PDF 2026-2028 (5 pág)</a>
+        <a class="btn btn-light" href="../PLAN-Y-PRESUPUESTO-DETALLADO.md">📘 MD detallado</a>
+      </div>
+    </div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:11px">
+      <div style="background:var(--wine-light);border:1px solid #f0d6dc;border-radius:10px;padding:10px;text-align:center"><b style="font-size:14px;color:var(--wine-dark)">5.5 MDP</b><br><span style="color:var(--muted)">CAPEX total</span></div>
+      <div style="background:var(--gold-light);border:1px solid var(--gold);border-radius:10px;padding:10px;text-align:center"><b style="font-size:14px;color:var(--wine-dark)">4.77 MDP</b><br><span style="color:var(--muted)">OPEX neto/año</span></div>
+      <div style="background:var(--teal-light);border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center"><b style="font-size:14px;color:var(--wine-dark)">31 MXN</b><br><span style="color:var(--muted)">/hab/año</span></div>
+      <div style="background:white;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center"><b style="font-size:14px;color:var(--wine-dark)">40%</b><br><span style="color:var(--muted)">autosustentable</span></div>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;font-size:11px">
+      <a href="../presupuesto/csv/01-CAPEX.csv" style="background:white;border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--wine)" download>⬇ CAPEX.csv</a>
+      <a href="../presupuesto/csv/02-OPEX-resumen.csv" style="background:white;border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--wine)" download>⬇ OPEX.csv</a>
+      <a href="../presupuesto/csv/07-3anios.csv" style="background:white;border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--wine)" download>⬇ 3-años.csv</a>
+      <a href="../presupuesto/csv/08-flujo-90d.csv" style="background:white;border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--wine)" download>⬇ 90-días.csv</a>
+      <span style="color:var(--muted);align-self:center">+ 2 CSV más en /presupuesto/csv/</span>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin:8px 0 0">Tablas con código partida FAIS, cuenta AC 2 firmas, responsable y QR tablero — listas para Excel / firma Tesorería.</p>
   </div>
 </section>
 
