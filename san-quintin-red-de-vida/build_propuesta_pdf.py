@@ -15,16 +15,22 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.graphics.shapes import Drawing, String, Rect, Line
 
 # Colors
-NAVY = colors.HexColor("#0e2a47")
-NAVY2 = colors.HexColor("#16395f")
-TEAL = colors.HexColor("#15a39a")
-TEAL_D = colors.HexColor("#0e7c75")
-TEAL_L = colors.HexColor("#e7f4f2")
-SAND = colors.HexColor("#fdf8ef")
-ACCENT = colors.HexColor("#f59e0b")
+WINE = colors.HexColor("#7A1931")
+WINE_D = colors.HexColor("#5A1220")
+WINE_L = colors.HexColor("#fdf0f3")
+GOLD = colors.HexColor("#C5A880")
+GOLD_D = colors.HexColor("#8c6a2e")
+NAVY = WINE
+NAVY2 = WINE_D
+# NAVY2 alias already
+TEAL = colors.HexColor("#13807a")
+TEAL_D = colors.HexColor("#0e5e59")
+TEAL_L = colors.HexColor("#e6f4f3")
+SAND = colors.HexColor("#fdfbf3")
+ACCENT = colors.HexColor("#D4A857")
 MUTED = colors.HexColor("#5b6b7b")
-LINE = colors.HexColor("#e3e9ef")
-LIGHT_BG = colors.HexColor("#f8fafc")
+LINE = colors.HexColor("#ede6d6")
+LIGHT_BG = colors.HexColor("#fdfbf3")
 
 FONT_DIR = "/usr/share/fonts/truetype/dejavu"
 try:
@@ -58,8 +64,10 @@ s_kpi_label = ParagraphStyle('KPIL', parent=styles['Normal'], fontName=FONTB, fo
 def header_footer(canvas, doc):
     canvas.saveState()
     # top bar
-    canvas.setFillColor(NAVY)
+    canvas.setFillColor(WINE)
     canvas.rect(0, doc.pagesize[1]-38, doc.pagesize[0], 38, stroke=0, fill=1)
+    canvas.setFillColor(GOLD)
+    canvas.rect(0, doc.pagesize[1]-38, doc.pagesize[0], 3, stroke=0, fill=1)
     canvas.setFillColor(colors.white)
     canvas.setFont(FONTB, 7)
     canvas.drawString(36, doc.pagesize[1]-16, "RED DE VIDA  SAN QUINTÍN")

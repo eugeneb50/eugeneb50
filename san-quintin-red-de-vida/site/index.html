@@ -8,13 +8,19 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="gob-bar">
+  <div class="container">
+    <span>🇲🇽 <b>Gobierno de México</b> • Primer Ayuntamiento de San Quintín <span style="opacity:.65">| Desde 2020 • Municipio más joven de Baja California</span></span>
+    <span style="display:flex;gap:12px;align-items:center"><a href="https://www.sanquintin.gob.mx/" target="_blank" rel="noopener">sanquintin.gob.mx ↗</a><span style="opacity:.35">|</span><a href="https://www.gob.mx/" target="_blank" rel="noopener">gob.mx</a></span>
+  </div>
+</div>
 <header class="topbar">
   <div class="container">
     <div class="brand">
-      <div class="logo">◉</div>
+      <div class="logo">SQ<br><span style="font-size:7px;letter-spacing:.8px">2024—2027</span></div>
       <div>
-        Red de Vida San Quintín
-        <small>San Quintín Life Network • BCN • 2026</small>
+        <b>Primer Ayuntamiento</b> <span style="font-weight:800;color:var(--wine)">San Quintín</span><br>
+        <small>Red de Vida • Tejido de Ayuda Mutua • <span style="color:var(--teal)">Propuesta 2026</span></small>
       </div>
     </div>
     <nav class="nav">
@@ -36,7 +42,7 @@
 <section class="hero">
   <div class="container">
     <div>
-      <div class="eyebrow"><span data-es="Municipio de San Quintín • 2026" data-en="Municipality of San Quintín • 2026">Municipio de San Quintín • 2026</span> <span style="background:#f59e0b;color:#0e2a47;border-color:transparent" data-es="Propuesta lista para piloto 90 días" data-en="Ready for 90-day pilot">Propuesta lista para piloto 90 días</span></div>
+      <div class="eyebrow"><span data-es="Municipio de San Quintín • 2026" data-en="Municipality of San Quintín • 2026">Municipio de San Quintín • 2026</span> <span class="gold" data-es="Propuesta lista para piloto 90 días" data-en="Ready for 90-day pilot">● Propuesta lista para piloto 90 días</span></div>
       <h1>
         <span data-es="El municipio más joven de BC puede crear" data-en="BC's youngest municipality can set">El municipio más joven de BC puede crear</span><br>
         <em data-es="el estándar nacional de bienestar animal." data-en="Mexico's national standard for animal welfare.">el estándar nacional de bienestar animal.</em>
@@ -59,7 +65,7 @@
 
     <div class="hero-card">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-        <b style="font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--teal-dark)" data-es="Tablero — piloto 90 días" data-en="Dashboard — 90-day pilot">Tablero — piloto 90 días</b>
+        <b style="font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--wine)" data-es="Tablero — piloto 90 días" data-en="Dashboard — 90-day pilot">Tablero — piloto 90 días</b>
         <span style="font-size:11px;background:#dcfce7;color:#065f46;padding:4px 8px;border-radius:999px;font-weight:800">● <span data-es="En vivo" data-en="Live">En vivo</span></span>
       </div>
       <div class="kpi-grid">
@@ -68,10 +74,10 @@
         <div class="kpi"><b id="kpi-adop">38</b><span data-es="Adopciones" data-en="Adoptions">Adopciones</span></div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
-        <div class="kpi" style="background:white"><b style="color:var(--navy)">2,140 L</b><span data-es="Fertilizante aplicado" data-en="Fertilizer applied">Fertilizante aplicado</span></div>
-        <div class="kpi" style="background:white"><b style="color:var(--navy)">0%</b><span data-es="Sacrificio por cupo" data-en="Kill for space">Sacrificio por cupo</span></div>
+        <div class="kpi" style="background:white"><b style="color:var(--wine-dark)">2,140 L</b><span data-es="Fertilizante aplicado" data-en="Fertilizer applied">Fertilizante aplicado</span></div>
+        <div class="kpi" style="background:white"><b style="color:var(--wine-dark)">0%</b><span data-es="Sacrificio por cupo" data-en="Kill for space">Sacrificio por cupo</span></div>
       </div>
-      <div style="margin-top:12px;background:var(--navy);color:white;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center">
+      <div style="margin-top:12px;background:var(--wine-dark);color:white;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center">
         <div><div style="font-size:11px;letter-spacing:.7px;text-transform:uppercase;opacity:.7" data-es="Fondo común" data-en="Common fund">Fondo común</div><b id="fondo-txt">1,842,500 MXN</b> <span style="font-size:11px;opacity:.7">/ 5.2M</span></div>
         <div style="text-align:right"><b style="color:#5eead4">+12</b><div style="font-size:11px;opacity:.7" data-es="vales hoy" data-en="vouchers today">vales hoy</div></div>
       </div>
@@ -100,36 +106,36 @@
         <p style="font-size:13px;color:var(--muted);margin:0" data-es="Cada flecha es dinero, materia o confianza que vuelve." data-en="Every arrow is money, matter or trust returning.">Cada flecha es dinero, materia o confianza que vuelve.</p>
         <svg viewBox="0 0 520 220" role="img" aria-label="diagrama ciclo">
           <!-- Vales -->
-          <rect x="18" y="18" width="130" height="54" rx="12" fill="#e7f4f2" stroke="#15a39a"/>
-          <text x="83" y="38" text-anchor="middle" font-size="11" font-weight="800" fill="#0e2a47">VALES</text>
-          <text x="83" y="52" text-anchor="middle" font-size="10" fill="#0e7c75">Voucher</text>
-          <text x="83" y="64" text-anchor="middle" font-size="9" fill="#5b6b7b">financia demanda</text>
+          <rect x="18" y="18" width="130" height="54" rx="12" fill="#fdf0f3" stroke="#C5A880"/>
+          <text x="83" y="38" text-anchor="middle" font-size="11" font-weight="800" fill="#5A1220">VALES</text>
+          <text x="83" y="52" text-anchor="middle" font-size="10" fill="#7A1931">Voucher</text>
+          <text x="83" y="64" text-anchor="middle" font-size="9" fill="#6b6f73">financia demanda</text>
           <!-- Clinicas -->
-          <rect x="18" y="98" width="130" height="54" rx="12" fill="#fff7ed" stroke="#f59e0b"/>
-          <text x="83" y="118" text-anchor="middle" font-size="11" font-weight="800" fill="#0e2a47">QUIRÓFANOS</text>
-          <text x="83" y="132" text-anchor="middle" font-size="10" fill="#b45309">Clínicas</text>
-          <text x="83" y="144" text-anchor="middle" font-size="9" fill="#5b6b7b">ejecuta territorio</text>
+          <rect x="18" y="98" width="130" height="54" rx="12" fill="#fffaf0" stroke="#D4A857"/>
+          <text x="83" y="118" text-anchor="middle" font-size="11" font-weight="800" fill="#5A1220">QUIRÓFANOS</text>
+          <text x="83" y="132" text-anchor="middle" font-size="10" fill="#8c6a2e">Clínicas</text>
+          <text x="83" y="144" text-anchor="middle" font-size="9" fill="#6b6f73">ejecuta territorio</text>
           <!-- Centro -->
-          <rect x="190" y="58" width="140" height="64" rx="14" fill="#0e2a47" />
+          <rect x="190" y="58" width="140" height="64" rx="14" fill="#7A1931" />
           <text x="260" y="84" text-anchor="middle" font-size="12" font-weight="800" fill="white">CENTRO DE VIDA</text>
-          <text x="260" y="98" text-anchor="middle" font-size="9" fill="#bfe9e4">acoge • cura • conecta</text>
+          <text x="260" y="98" text-anchor="middle" font-size="9" fill="#C5A880">acoge • cura • conecta</text>
           <!-- Aquamacion -->
-          <rect x="372" y="18" width="130" height="54" rx="12" fill="#e0f2fe" stroke="#0ea5e9"/>
-          <text x="437" y="38" text-anchor="middle" font-size="11" font-weight="800" fill="#0e2a47">AQUAMACIÓN</text>
-          <text x="437" y="52" text-anchor="middle" font-size="10" fill="#0284c7">agua, no fuego</text>
+          <rect x="372" y="18" width="130" height="54" rx="12" fill="#e6f4f3" stroke="#13807a"/>
+          <text x="437" y="38" text-anchor="middle" font-size="11" font-weight="800" fill="#5A1220">AQUAMACIÓN</text>
+          <text x="437" y="52" text-anchor="middle" font-size="10" fill="#13807a">agua, no fuego</text>
           <!-- Bio -->
-          <rect x="372" y="98" width="130" height="64" rx="12" fill="#ecfdf5" stroke="#15a39a"/>
-          <text x="437" y="118" text-anchor="middle" font-size="11" font-weight="800" fill="#0e2a47">BIOLIQUIDADORA</text>
-          <text x="437" y="132" text-anchor="middle" font-size="10" fill="#0e7c75">móvil 2,400L</text>
-          <text x="437" y="148" text-anchor="middle" font-size="9" fill="#5b6b7b">→ fertilizante</text>
+          <rect x="372" y="98" width="130" height="64" rx="12" fill="#f0f9f8" stroke="#13807a"/>
+          <text x="437" y="118" text-anchor="middle" font-size="11" font-weight="800" fill="#5A1220">BIOLIQUIDADORA</text>
+          <text x="437" y="132" text-anchor="middle" font-size="10" fill="#0e5e59">móvil 2,400L</text>
+          <text x="437" y="148" text-anchor="middle" font-size="9" fill="#6b6f73">→ fertilizante</text>
           <!-- arrows -->
-          <path d="M148 45 L190 45" stroke="#15a39a" stroke-width="2" marker-end="url(#a)"/>
-          <path d="M148 125 L190 105" stroke="#f59e0b" stroke-width="2" marker-end="url(#a)"/>
-          <path d="M330 70 L372 45" stroke="#0e2a47" stroke-width="2" marker-end="url(#a)"/>
-          <path d="M330 100 L372 122" stroke="#0e2a47" stroke-width="2" marker-end="url(#a)" stroke-dasharray="6 4"/>
-          <path d="M437 162 L437 180 L83 180 L83 170" stroke="#15a39a" stroke-width="2" fill="none" marker-end="url(#a)"/>
-          <text x="260" y="195" text-anchor="middle" font-size="9" fill="#0e7c75" font-weight="700">fertilizante → parques + ranchos → padrinan vales ↺</text>
-          <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0e2a47"/></marker></defs>
+          <path d="M148 45 L190 45" stroke="#C5A880" stroke-width="2" marker-end="url(#a)"/>
+          <path d="M148 125 L190 105" stroke="#D4A857" stroke-width="2" marker-end="url(#a)"/>
+          <path d="M330 70 L372 45" stroke="#7A1931" stroke-width="2" marker-end="url(#a)"/>
+          <path d="M330 100 L372 122" stroke="#7A1931" stroke-width="2" marker-end="url(#a)" stroke-dasharray="6 4"/>
+          <path d="M437 162 L437 180 L83 180 L83 170" stroke="#13807a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+          <text x="260" y="195" text-anchor="middle" font-size="9" fill="#7A1931" font-weight="700">fertilizante → parques + ranchos → padrinan vales ↺</text>
+          <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A1931"/></marker></defs>
         </svg>
       </div>
       <div style="width:2px;background:var(--line);align-self:stretch;border-radius:999px"></div>
@@ -152,7 +158,7 @@
 <section id="vale" class="section" style="background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="container">
     <div style="display:flex;gap:10px;align-items:center">
-      <div class="icon" style="background:var(--teal)">🎫</div>
+      <div class="icon" style="background:var(--wine)">🎫</div>
       <div>
         <h2 style="margin:0" data-es="Capa 1 — Vales Solidarios" data-en="Layer 1 — Solidarity Vouchers">Capa 1 — Vales Solidarios</h2>
         <p class="muted" style="margin:2px 0 0" data-es="Gratis para quien califica. Válido en tu veterinaria de confianza. Reembolso 72h. Papel o QR." data-en="Free for those who qualify. Valid at your trusted vet. 72h reimbursement. Paper or QR.">Gratis para quien califica. Válido en tu veterinaria de confianza. Reembolso 72h. Papel o QR.</p>
@@ -186,9 +192,9 @@
 
       <div id="voucher-preview" class="voucher">
         <div>
-          <div style="font-size:11px;letter-spacing:.8px;text-transform:uppercase;font-weight:800;color:var(--teal-dark)">Red de Vida San Quintín — Vale Solidario</div>
+          <div style="font-size:11px;letter-spacing:.8px;text-transform:uppercase;font-weight:800;color:var(--wine)">Red de Vida San Quintín — Vale Solidario</div>
           <div style="display:flex;gap:8px;align-items:baseline;margin-top:4px">
-            <b id="pv-num" style="font-size:18px;color:var(--navy)">No. 2026-0847</b>
+            <b id="pv-num" style="font-size:18px;color:var(--wine-dark)">No. 2026-0847</b>
             <span id="pv-vig" style="font-size:11px;background:#dcfce7;color:#065f46;padding:3px 8px;border-radius:999px;font-weight:800">Vigente 30 días</span>
           </div>
           <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px">
@@ -204,7 +210,7 @@
         </div>
         <div class="qr">
           <canvas id="qr-canvas" width="140" height="140"></canvas>
-          <div style="position:absolute;bottom:6px;font-size:9px;font-weight:800;letter-spacing:.6px;color:var(--teal-dark);background:white;padding:2px 6px;border-radius:999px;border:1px solid var(--line)">QR • Red de Vida</div>
+          <div style="position:absolute;bottom:6px;font-size:9px;font-weight:800;letter-spacing:.6px;color:var(--wine);background:white;padding:2px 6px;border-radius:999px;border:1px solid var(--line)">QR • Red de Vida</div>
         </div>
       </div>
     </div>
@@ -221,7 +227,7 @@
 <section id="clinicas" class="section">
   <div class="container">
     <div style="display:flex;gap:10px;align-items:center">
-      <div class="icon" style="background:#f59e0b">⛺</div>
+      <div class="icon" style="background:var(--gold-2)">⛺</div>
       <div><h2 style="margin:0" data-es="Capa 2 — Quirófanos de Barrio" data-en="Layer 2 — Neighborhood Clinics">Capa 2 — Quirófanos de Barrio</h2><p class="muted" style="margin:2px 0 0" data-es="Si no puedes llegar, nosotros llegamos. 40-60 cirugías/día con promotoras de tu colonia." data-en="If you can't get there, we come to you. 40-60 surgeries/day with your neighborhood promoters.">Si no puedes llegar, nosotros llegamos. 40-60 cirugías/día con promotoras de tu colonia.</p></div>
     </div>
 
@@ -233,18 +239,18 @@
           <input id="j-colonia" class="input" placeholder="Tu colonia (ej. Flores Magón)">
           <button class="btn btn-primary" onclick="subscribeJornada()" style="white-space:nowrap" data-es="Avísenme" data-en="Notify me">Avísenme</button>
         </div>
-        <p id="j-msg" style="font-size:12px;color:var(--teal-dark);margin:6px 0 0"></p>
+        <p id="j-msg" style="font-size:12px;color:var(--wine);margin:6px 0 0"></p>
       </div>
       <div class="panel">
         <h3 data-es="Cómo es el día Q" data-en="How Day Q works">Cómo es el día Q</h3>
         <ol style="font-size:13px;color:var(--muted);margin:8px 0 0;padding-left:18px">
-          <li><b style="color:var(--navy)" data-es="T-14 días:" data-en="T-14 days:">T-14 días:</b> <span data-es="promotora recorre casas, lista 50-70 animales." data-en="promoter goes door-to-door, lists 50-70 animals.">promotora recorre casas, lista 50-70 animales.</span></li>
-          <li><b style="color:var(--navy)" data-es="T-2 días:" data-en="T-2 days:">T-2 días:</b> <span data-es="confirmación, ayuno, perifoneo." data-en="confirmation, fasting, loudspeaker.">confirmación, ayuno, perifoneo.</span></li>
-          <li><b style="color:var(--navy)" data-es="Día Q 7am:" data-en="Day Q 7am:">Día Q 7am:</b> <span data-es="montaje 45min, primera cirugía 8am, flujo en U." data-en="45min setup, first surgery 8am, U-flow.">montaje 45min, primera cirugía 8am, flujo en U.</span></li>
-          <li><b style="color:var(--navy)" data-es="Entrega:" data-en="Handoff:">Entrega:</b> <span data-es="animal despierto, cobija, carnet, foto con tutor." data-en="awake animal, blanket, card, photo with guardian.">animal despierto, cobija, carnet, foto con tutor.</span></li>
-          <li><b style="color:var(--navy)" data-es="Día 10:" data-en="Day 10:">Día 10:</b> <span data-es="promotora revisa herida, retiro de puntos." data-en="promoter checks wound, suture removal.">promotora revisa herida, retiro de puntos.</span></li>
+          <li><b style="color:var(--wine-dark)" data-es="T-14 días:" data-en="T-14 days:">T-14 días:</b> <span data-es="promotora recorre casas, lista 50-70 animales." data-en="promoter goes door-to-door, lists 50-70 animals.">promotora recorre casas, lista 50-70 animales.</span></li>
+          <li><b style="color:var(--wine-dark)" data-es="T-2 días:" data-en="T-2 days:">T-2 días:</b> <span data-es="confirmación, ayuno, perifoneo." data-en="confirmation, fasting, loudspeaker.">confirmación, ayuno, perifoneo.</span></li>
+          <li><b style="color:var(--wine-dark)" data-es="Día Q 7am:" data-en="Day Q 7am:">Día Q 7am:</b> <span data-es="montaje 45min, primera cirugía 8am, flujo en U." data-en="45min setup, first surgery 8am, U-flow.">montaje 45min, primera cirugía 8am, flujo en U.</span></li>
+          <li><b style="color:var(--wine-dark)" data-es="Entrega:" data-en="Handoff:">Entrega:</b> <span data-es="animal despierto, cobija, carnet, foto con tutor." data-en="awake animal, blanket, card, photo with guardian.">animal despierto, cobija, carnet, foto con tutor.</span></li>
+          <li><b style="color:var(--wine-dark)" data-es="Día 10:" data-en="Day 10:">Día 10:</b> <span data-es="promotora revisa herida, retiro de puntos." data-en="promoter checks wound, suture removal.">promotora revisa herida, retiro de puntos.</span></li>
         </ol>
-        <div style="margin-top:10px;background:var(--teal-light);border:1px solid #cdeee9;border-radius:12px;padding:10px;font-size:12px">
+        <div style="margin-top:10px;background:var(--wine-light);border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px">
           <b data-es="Costo móvil:" data-en="Mobile cost:">Costo móvil:</b> <span data-es="560-650 MXN/animal (más barato que clínica por escala). 2 mesas → 60-80/día." data-en="560-650 MXN/animal (cheaper than clinic via scale). 2 tables → 60-80/day.">560-650 MXN/animal (más barato que clínica por escala). 2 mesas → 60-80/día.</span>
         </div>
       </div>
@@ -256,7 +262,7 @@
 <section id="centro" class="section" style="background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="container">
     <div style="display:flex;gap:10px;align-items:center">
-      <div class="icon" style="background:var(--navy)">🏠</div>
+      <div class="icon" style="background:var(--wine-dark)">🏠</div>
       <div><h2 style="margin:0" data-es="Capa 3 + 4 — Centro de Vida + Aquamación" data-en="Layer 3 + 4 — Life Center + Aquamation">Capa 3 + 4 — Centro de Vida + Aquamación</h2><p class="muted" style="margin:2px 0 0" data-es="No es perrera. Es Casa de Vida. Foto en <2h, 10 días para reencuentro, adopción con seguimiento. Y honra final con agua, no fuego." data-en="Not a pound. A Life House. Photo in <2h, 10-day reunion, supported adoption. And final honor with water, not flame.">No es perrera. Es Casa de Vida. Foto en &lt;2h, 10 días para reencuentro, adopción con seguimiento. Y honra final con agua, no fuego.</p></div>
     </div>
 
@@ -266,19 +272,19 @@
         <div id="adop-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px"></div>
         <p style="font-size:11px;color:var(--muted);margin:8px 0 0" data-es="Demo: en producción, fotos <2h + publicación auto a FB/WA." data-en="Demo: in prod, photos in <2h + auto-post to FB/WA.">Demo: en producción, fotos &lt;2h + publicación auto a FB/WA.</p>
       </div>
-      <div class="panel" style="background:linear-gradient(180deg,#f0fdfa,#ffffff)">
+      <div class="panel" style="background:linear-gradient(180deg, var(--wine-light), #ffffff)">
         <h3>💧 Aquamación — <span data-es="agua, no fuego" data-en="water, not flame">agua, no fuego</span></h3>
         <p style="font-size:13px;color:var(--muted);margin:6px 0 0" data-es="Hidrólisis alcalina: 95% agua + 5% álcali, 93-98°C, 12-20h. 90% menos energía, cero emisiones, 20% más cenizas." data-en="Alkaline hydrolysis: 95% water + 5% alkali, 93-98°C, 12-20h. 90% less energy, zero emissions, 20% more ashes.">Hidrólisis alcalina: 95% agua + 5% álcali, 93-98°C, 12-20h. 90% menos energía, cero emisiones, 20% más cenizas.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
           <div style="background:white;border:1px solid var(--line);border-radius:12px;padding:12px">
             <b style="font-size:12px" data-es="Comunal solidaria" data-en="Communal">Comunal solidaria</b>
             <div style="font-size:12px;color:var(--muted)" data-es="Para no reclamados. Cenizas a jardín memorial. Sin costo." data-en="For unclaimed. Ashes to memorial garden. No cost.">Para no reclamados. Cenizas a jardín memorial. Sin costo.</div>
-            <b style="display:block;margin-top:6px;color:var(--teal)">0 MXN</b>
+            <b style="display:block;margin-top:6px;color:var(--wine)">0 MXN</b>
           </div>
           <div style="background:white;border:1px solid var(--line);border-radius:12px;padding:12px">
             <b style="font-size:12px" data-es="Privada con retorno" data-en="Private return">Privada con retorno</b>
             <div style="font-size:12px;color:var(--muted)" data-es="Urna biodegradable + huella + certificado." data-en="Biodegradable urn + paw print + certificate.">Urna biodegradable + huella + certificado.</div>
-            <b style="display:block;margin-top:6px;color:var(--navy)">800 — 2,200 MXN</b>
+            <b style="display:block;margin-top:6px;color:var(--wine-dark)">800 — 2,200 MXN</b>
           </div>
         </div>
         <div style="margin-top:10px;background:white;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px">
@@ -288,14 +294,14 @@
           <input id="aq-peso" class="input" placeholder="Peso (kg) ej. 18">
           <button class="btn btn-primary" onclick="calcAqua()" data-es="Calcular" data-en="Estimate">Calcular</button>
         </div>
-        <p id="aq-msg" style="font-size:12px;color:var(--navy);margin:6px 0 0"></p>
+        <p id="aq-msg" style="font-size:12px;color:var(--wine);margin:6px 0 0"></p>
       </div>
     </div>
 
     <div class="cards" style="margin-top:16px">
-      <div class="card"><b style="color:var(--teal-dark)">10 días</b><h3 data-es="Ventana de reencuentro" data-en="Reunion window">Ventana de reencuentro</h3><p data-es="No 72h. Difusión diaria FB/WA/tablero. Tutor paga solo esterilización si faltaba." data-en="Not 72h. Daily repost FB/WA/board. Guardian pays only sterilization if pending.">No 72h. Difusión diaria FB/WA/tablero. Tutor paga solo esterilización si faltaba.</p></div>
-      <div class="card"><b style="color:var(--teal-dark)">0% por cupo</b><h3 data-es="No matar por espacio" data-en="No kill for space">No matar por espacio</h3><p data-es="Eutanasia solo por sufrimiento irreversible, 2 MVZ + acta pública." data-en="Euthanasia only for irremediable suffering, 2 vets + public record.">Eutanasia solo por sufrimiento irreversible, 2 MVZ + acta pública.</p></div>
-      <div class="card"><b style="color:var(--teal-dark)">48 + 24</b><h3 data-es="Capacidad con bienestar" data-en="Capacity with welfare">Capacidad con bienestar</h3><p data-es="48 caniles + 24 felinos + patios. Tope 85% → hogares temporales." data-en="48 kennels + 24 cat condos + yards. 85% cap → foster homes.">48 caniles + 24 felinos + patios. Tope 85% → hogares temporales.</p></div>
+      <div class="card"><b style="color:var(--wine)">10 días</b><h3 data-es="Ventana de reencuentro" data-en="Reunion window">Ventana de reencuentro</h3><p data-es="No 72h. Difusión diaria FB/WA/tablero. Tutor paga solo esterilización si faltaba." data-en="Not 72h. Daily repost FB/WA/board. Guardian pays only sterilization if pending.">No 72h. Difusión diaria FB/WA/tablero. Tutor paga solo esterilización si faltaba.</p></div>
+      <div class="card"><b style="color:var(--wine)">0% por cupo</b><h3 data-es="No matar por espacio" data-en="No kill for space">No matar por espacio</h3><p data-es="Eutanasia solo por sufrimiento irreversible, 2 MVZ + acta pública." data-en="Euthanasia only for irremediable suffering, 2 vets + public record.">Eutanasia solo por sufrimiento irreversible, 2 MVZ + acta pública.</p></div>
+      <div class="card"><b style="color:var(--wine)">48 + 24</b><h3 data-es="Capacidad con bienestar" data-en="Capacity with welfare">Capacidad con bienestar</h3><p data-es="48 caniles + 24 felinos + patios. Tope 85% → hogares temporales." data-en="48 kennels + 24 cat condos + yards. 85% cap → foster homes.">48 caniles + 24 felinos + patios. Tope 85% → hogares temporales.</p></div>
     </div>
   </div>
 </section>
@@ -316,13 +322,13 @@
           <div><label data-es="Destino" data-en="Destination">Destino</label><select id="f-dest" class="input"><option value="parque" data-es="Parques (Lote A)" data-en="Parks (Lot A)">Parques (Lote A)</option><option value="rancho">Ranchos (Lote B)</option></select></div>
         </div>
         <button class="btn btn-primary" style="width:100%;margin-top:12px" onclick="calcFert()" data-es="Calcular →" data-en="Calculate →">Calcular →</button>
-        <div id="f-out" style="margin-top:12px;background:var(--teal-light);border:1px solid #cdeee9;border-radius:12px;padding:12px;font-size:13px"></div>
+        <div id="f-out" style="margin-top:12px;background:var(--wine-light);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px"></div>
         <p style="font-size:11px;color:var(--muted);margin:8px 0 0" data-es="Base: 1 ton → 2,500 L hidrolizado → 40,000 L diluido (20:1). Validado: +18.2% peso lechuga (Akdeniz 2021)." data-en="Base: 1 ton → 2,500L hydrolysate → 40,000L diluted (20:1). Validated: +18.2% lettuce weight (Akdeniz 2021).">Base: 1 ton → 2,500 L hidrolizado → 40,000 L diluido (20:1). Validado: +18.2% peso lechuga (Akdeniz 2021).</p>
       </div>
       <div class="panel">
         <h3 data-es="Cómo funciona (24h)" data-en="How it works (24h)">Cómo funciona (24h)</h3>
         <div style="display:grid;grid-template-columns:40px 1fr;gap:10px;font-size:13px;margin-top:10px">
-          <div style="display:grid;gap:8px;justify-items:center"><span style="width:28px;height:28px;border-radius:999px;background:var(--navy);color:white;display:grid;place-items:center;font-weight:800;font-size:12px">1</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:var(--teal);color:white;display:grid;place-items:center;font-weight:800;font-size:12px">2</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:#f59e0b;color:white;display:grid;place-items:center;font-weight:800;font-size:12px">3</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:#16a34a;color:white;display:grid;place-items:center;font-weight:800;font-size:12px">4</span></div>
+          <div style="display:grid;gap:8px;justify-items:center"><span style="width:28px;height:28px;border-radius:999px;background:var(--wine-dark);color:white;display:grid;place-items:center;font-weight:800;font-size:12px">1</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:var(--teal);color:white;display:grid;place-items:center;font-weight:800;font-size:12px">2</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:#f59e0b;color:white;display:grid;place-items:center;font-weight:800;font-size:12px">3</span><span style="width:2px;height:18px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:999px;background:#16a34a;color:white;display:grid;place-items:center;font-weight:800;font-size:12px">4</span></div>
           <div style="display:grid;gap:10px">
             <div><b data-es="Carga en sitio" data-en="Load on-site">Carga en sitio</b><div style="color:var(--muted)" data-es="Animal entero + agua + álcali 5%. Sin traslado de cadáver en descomposición." data-en="Whole animal + water + 5% alkali. No hauling rotting carcass.">Animal entero + agua + álcali 5%. Sin traslado de cadáver en descomposición.</div></div>
             <div><b data-es="Hidrólisis 16-24h" data-en="Hydrolysis 16-24h">Hidrólisis 16-24h</b><div style="color:var(--muted)" data-es="90-100°C, pH>12.8 por 10 días → esteriliza virus, bacterias, esporas." data-en="90-100°C, pH>12.8 for 10 days → kills viruses, bacteria, spores.">90-100°C, pH&gt;12.8 por 10 días → esteriliza virus, bacterias, esporas.</div></div>
@@ -338,7 +344,7 @@
 
     <div style="margin-top:16px;background:white;border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center">
       <div><b data-es="Cada lote con QR" data-en="Every lot with QR">Cada lote con QR</b><div style="font-size:13px;color:var(--muted)" data-es="Escanea y ves: origen, fecha, NPK, análisis patógeno negativo y mapa de aplicación. Trazabilidad completa." data-en="Scan to see: origin, date, NPK, pathogen-negative test and application map. Full traceability.">Escanea y ves: origen, fecha, NPK, análisis patógeno negativo y mapa de aplicación. Trazabilidad completa.</div></div>
-      <div style="background:var(--teal-light);padding:10px 14px;border-radius:12px;border:1px solid #cdeee9;font-size:12px;font-weight:800;color:var(--teal-dark)">QR Lote #2027-014 • 40,000 L • N 0.22% • <span data-es="Apto riego" data-en="Irrigation-ready">Apto riego</span></div>
+      <div style="background:var(--wine-light);padding:10px 14px;border-radius:12px;border:1px solid var(--line);font-size:12px;font-weight:800;color:var(--wine)">QR Lote #2027-014 • 40,000 L • N 0.22% • <span data-es="Apto riego" data-en="Irrigation-ready">Apto riego</span></div>
     </div>
   </div>
 </section>
@@ -374,16 +380,16 @@
         <h3 data-es="Fertilizante y finanzas" data-en="Fertilizer & finance">Fertilizante y finanzas</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
           <div class="stat"><b id="d-fert">68,400 L</b><span data-es="Producidos" data-en="Produced">Producidos</span></div>
-          <div class="stat" style="background:#fef3c7;border-color:#fde68a"><b id="d-apli">52,100 L</b><span data-es="Aplicados" data-en="Applied">Aplicados</span></div>
+          <div class="stat" style="background:var(--gold-light);border-color:var(--gold)"><b id="d-apli">52,100 L</b><span data-es="Aplicados" data-en="Applied">Aplicados</span></div>
         </div>
         <div style="margin-top:12px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px">
           <b data-es="Destinos recientes" data-en="Recent destinations">Destinos recientes</b>
           <ul id="d-dest" style="margin:6px 0 0 16px;color:var(--muted)"></ul>
         </div>
-        <div style="margin-top:12px;background:var(--navy);color:white;border-radius:12px;padding:12px">
+        <div style="margin-top:12px;background:var(--wine-dark);color:white;border-radius:12px;padding:12px">
           <div style="font-size:11px;letter-spacing:.7px;text-transform:uppercase;opacity:.7" data-es="Fondo común — estado" data-en="Common fund — status">Fondo común — estado</div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:4px"><b id="d-fondo">$1,842,500 MXN</b><span style="font-size:11px;opacity:.7">35% <span data-es="ejecutado" data-en="spent">ejecutado</span></span></div>
-          <div class="bar" style="background:rgba(255,255,255,.15);margin-top:8px"><i style="width:35%;background:#5eead4"></i></div>
+          <div class="bar" style="background:rgba(255,255,255,.15);margin-top:8px"><i style="width:35%;background:var(--gold)"></i></div>
           <div style="font-size:11px;opacity:.7;margin-top:6px" data-es="Ingresos: municipal 45% • padrinazgos 20% • aquamación 12% • fertilizante 18% • donaciones 5%" data-en="Income: municipal 45% • sponsors 20% • aquamation 12% • fertilizer 18% • donations 5%">Ingresos: municipal 45% • padrinazgos 20% • aquamación 12% • fertilizante 18% • donaciones 5%</div>
         </div>
         <p style="font-size:11px;color:var(--muted);margin:8px 0 0" data-es="Todo SPEI, 2 firmas, auditoría semestral. QR de cada lote/vales enlaza aquí." data-en="All SPEI, 2 signatures, semiannual audit. Every lot/voucher QR links here.">Todo SPEI, 2 firmas, auditoría semestral. QR de cada lote/vales enlaza aquí.</p>
@@ -403,7 +409,7 @@
         <p style="margin:0;opacity:.9;font-size:14px" data-es="Municipio, veterinaria, colectivo, rancho o vecina — hay un hilo para ti. Primer taller en 30 días." data-en="Municipality, vet, collective, ranch or neighbor — there's a thread for you. First workshop in 30 days.">Municipio, veterinaria, colectivo, rancho o vecina — hay un hilo para ti. Primer taller en 30 días.</p>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn btn-primary" href="mailto:eugene@serviceofothers.org?subject=QUIERO%20TEJER%20-%20Red%20de%20Vida%20SQ" style="background:white;color:var(--navy)">eugene@serviceofothers.org</a>
+        <a class="btn btn-primary" href="mailto:eugene@serviceofothers.org?subject=QUIERO%20TEJER%20-%20Red%20de%20Vida%20SQ" style="background:white;color:var(--wine-dark)">eugene@serviceofothers.org</a>
         <a class="btn btn-ghost" href="../PROPUESTA_INTEGRAL.md" data-es="Descargar propuesta" data-en="Download proposal">Descargar propuesta</a>
       </div>
     </div>
@@ -455,18 +461,18 @@ function drawQR(text){
   function rnd(){ h=(h*9301+49297)%233280; return h/233280; }
   // finder patterns
   function finder(x,y){
-    ctx.fillStyle='#0e2a47'; ctx.fillRect(x*cell,y*cell,7*cell,7*cell);
+    ctx.fillStyle='#7A1931'; ctx.fillRect(x*cell,y*cell,7*cell,7*cell);
     ctx.fillStyle='#ffffff'; ctx.fillRect((x+1)*cell,(y+1)*cell,5*cell,5*cell);
-    ctx.fillStyle='#0e2a47'; ctx.fillRect((x+2)*cell,(y+2)*cell,3*cell,3*cell);
+    ctx.fillStyle='#7A1931'; ctx.fillRect((x+2)*cell,(y+2)*cell,3*cell,3*cell);
   }
   finder(0,0); finder(14,0); finder(0,14);
   for(let y=0;y<N;y++) for(let x=0;x<N;x++){
     if((x<7&&y<7)||(x>13&&y<7)||(x<7&&y>13)) continue;
-    if(rnd()>0.52){ ctx.fillStyle='#0e2a47'; ctx.fillRect(x*cell,y*cell,cell,cell); }
+    if(rnd()>0.52){ ctx.fillStyle='#7A1931'; ctx.fillRect(x*cell,y*cell,cell,cell); }
   }
   // center logo
   ctx.fillStyle='#ffffff'; ctx.fillRect(8*cell,8*cell,5*cell,5*cell);
-  ctx.fillStyle='#15a39a'; ctx.fillRect(9*cell,9*cell,3*cell,3*cell);
+  ctx.fillStyle='#C5A880'; ctx.fillRect(9*cell,9*cell,3*cell,3*cell);
 }
 function genVoucher(){
   const tutor=document.getElementById('v-tutor').value.trim() || 'Tutor demo';
@@ -496,7 +502,7 @@ function renderJornadas(){
   const c=document.getElementById('jornadas');
   c.innerHTML = jornadasData.map(j=>`
     <div style="display:grid;grid-template-columns:70px 1fr auto;gap:10px;align-items:center;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px">
-      <div style="background:var(--navy);color:white;border-radius:10px;padding:8px;text-align:center;font-weight:800;line-height:1"><div style="font-size:11px;opacity:.7">JUN</div><div style="font-size:18px">${j.fecha.split(' ')[0]}</div></div>
+      <div style="background:var(--wine-dark);color:white;border-radius:10px;padding:8px;text-align:center;font-weight:800;line-height:1"><div style="font-size:11px;opacity:.7">JUN</div><div style="font-size:18px">${j.fecha.split(' ')[0]}</div></div>
       <div><b style="font-size:13px">${j.lugar}</b><div style="font-size:11px;color:var(--muted)">${j.estado} • ${j.cupo}</div></div>
       <span style="font-size:10px;font-weight:800;letter-spacing:.5px;background:#dcfce7;color:#065f46;padding:6px 8px;border-radius:999px">${j.cupo}</span>
     </div>
@@ -524,7 +530,7 @@ function renderAdop(){
     <div style="background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden">
       <div style="height:90px;background:${a.color};display:grid;place-items:center;font-size:36px">${a.foto}</div>
       <div style="padding:10px">
-        <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:13px">${a.nombre}</b><span style="font-size:10px;background:var(--teal-light);color:var(--teal-dark);padding:3px 6px;border-radius:999px;font-weight:800">${a.dias}</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:13px">${a.nombre}</b><span style="font-size:10px;background:var(--wine-light);color:var(--wine);padding:3px 6px;border-radius:999px;font-weight:800">${a.dias}</span></div>
         <div style="font-size:11px;color:var(--muted)">${a.sexo} • ${a.edad} • ${a.peso}</div>
         <button class="btn btn-light" style="width:100%;margin-top:8px;padding:6px;font-size:11px" onclick="alert('Demo: en producción abre ficha con fotos, video 15s y botón Adoptar/Reencuentro → WhatsApp')">Ver ficha →</button>
       </div>
