@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+test_*.pdf
+test_*.py
+.pytest_cache/
+.mypy_cache/
