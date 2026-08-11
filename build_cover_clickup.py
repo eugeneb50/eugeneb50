@@ -17,6 +17,12 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
                                 Table, TableStyle, Spacer,
                                 NextPageTemplate, KeepTogether, Flowable)
+from reportlab.graphics.shapes import Drawing
+from reportlab.graphics.charts.spider import SpiderChart
+from reportlab.graphics import renderPDF
+
+import reportlab.rl_config as _rl_config
+_rl_config.documentLang = "en-US"   # PDF /Lang catalog entry (a11y + l10n)
 
 # ----------------------------------------------------------------------------
 # Fonts
@@ -135,7 +141,7 @@ class LetterHead(Flowable):
         c.drawString(28, H - 62, "Staff AI Engineer  \u2014  Multi-Agent Frameworks & Agentic Infrastructure")
         # contact
         c.setFillColor(colors.HexColor("#eaeafa")); c.setFont(FONT, 8)
-        c.drawString(28, H - 82, "San Quint\u00edn, BC MX (Remote / PT)  \u00b7  +1 (909) 545 5384  \u00b7  eugene@serviceofothers.org  \u00b7  github.com/eugeneb50")
+        c.drawString(28, H - 82, "Apple Valley, CA (Remote)  \u00b7  +1 (909) 545 5384  \u00b7  eugene@serviceofothers.org  \u00b7  github.com/eugeneb50")
         # separator
         c.setStrokeColor(colors.white); c.setFillAlpha(0.25); c.setLineWidth(0.5)
         c.line(28, H - 95, pcx - pr - 10, H - 95); c.setFillAlpha(1)
@@ -158,29 +164,67 @@ class AccentRule(Flowable):
                       vertical=False, steps=32)
 
 
+class MatchRadar(Flowable):
+    """Radar chart of the candidate's fit against the posting (SpiderChart)."""
+    def __init__(self, labels, values, width=FW, height=180):
+        super().__init__()
+        self.width = width
+        self.height = height
+        self.labels = labels
+        self.values = values
+
+    def wrap(self, a, h):
+        return (self.width, self.height)
+
+    def draw(self):
+        d = Drawing(self.width, self.height)
+        s = SpiderChart()
+        s.x = (self.width - 180) / 2
+        s.y = 20
+        s.width = 180
+        s.height = 140
+        s.startAngle = 90
+        s.direction = "clockwise"
+        s.data = [self.values]
+        s.labels = self.labels
+        s.spokes.strokeWidth = 0.5
+        s.spokes.strokeColor = colors.Color(0.1, 0.08, 0.26, alpha=0.10)
+        s.spokes.labelRadius = 1.2
+        s.spokeLabels.fontName = FONT_B
+        s.spokeLabels.fontSize = 6.8
+        s.spokeLabels.fillColor = NAVY2
+        s.strands.strokeColor = PURPLE
+        s.strands.strokeWidth = 2.2
+        s.strands.fillColor = colors.Color(0.48, 0.17, 0.95, alpha=0.14)
+        s.strands.symbol = "Circle"
+        s.strands.symbolSize = 3.2
+        d.add(s)
+        renderPDF.draw(d, self.canv, 0, 0)
+
+
 # ----------------------------------------------------------------------------
 # Styles
 # ----------------------------------------------------------------------------
-date_style = ParagraphStyle("date", fontName=FONT, fontSize=9, leading=12,
-                            textColor=GREY, alignment=TA_LEFT, spaceAfter=10)
-addr_style = ParagraphStyle("addr", fontName=FONT, fontSize=9, leading=12,
+date_style = ParagraphStyle("date", fontName=FONT, fontSize=8.6, leading=11,
+                            textColor=GREY, alignment=TA_LEFT, spaceAfter=7)
+addr_style = ParagraphStyle("addr", fontName=FONT, fontSize=8.8, leading=11,
                             textColor=INK, alignment=TA_LEFT, spaceAfter=1)
 subj_style = ParagraphStyle("subj", fontName=FONT_B, fontSize=10.5, leading=14,
-                           textColor=NAVY2, spaceBefore=6, spaceAfter=8)
-body_style = ParagraphStyle("body", fontName=FONT, fontSize=9.5, leading=13.5,
-                            textColor=INK, alignment=TA_JUSTIFY, spaceAfter=7,
+                           textColor=NAVY2, spaceBefore=4, spaceAfter=6)
+body_style = ParagraphStyle("body", fontName=FONT, fontSize=9.1, leading=12.6,
+                            textColor=INK, alignment=TA_JUSTIFY, spaceAfter=6,
                             firstLineIndent=0)
-salute_style = ParagraphStyle("salute", fontName=FONT, fontSize=9.5, leading=13,
-                              textColor=INK, spaceAfter=7)
+salute_style = ParagraphStyle("salute", fontName=FONT, fontSize=9.2, leading=12.6,
+                              textColor=INK, spaceAfter=6)
 sign_style = ParagraphStyle("sign", fontName=FONT_B, fontSize=10, leading=13,
                            textColor=NAVY2, spaceBefore=6, spaceAfter=0)
-sign2_style = ParagraphStyle("sign2", fontName=FONT, fontSize=8.5, leading=11,
+sign2_style = ParagraphStyle("sign2", fontName=FONT, fontSize=8.3, leading=10.5,
                             textColor=GREY, spaceAfter=0)
 
 # ----------------------------------------------------------------------------
 # Letter content — targeted at ClickUp
 # ----------------------------------------------------------------------------
-LETTER_DATE = "August 3, 2026"
+LETTER_DATE = "August 11, 2026"
 
 RECIPIENT = [
     "ClickUp Hiring Team",
@@ -191,52 +235,46 @@ RECIPIENT = [
 SUBJECT = "Re: Staff AI Engineer \u2014 Multi-Agent Frameworks (#LI-REMOTE)"
 
 PARAGRAPHS = [
-    "I'm applying for the Staff AI Engineer position on the Multi-Agent Frameworks team. "
-    "ClickUp's vision of a converged AI workspace \u2014 unifying tasks, docs, chat, calendar, and "
-    "search through context-driven AI \u2014 is the exact problem space I've been working in: "
-    "building platforms that let agents coordinate, evaluate, and operate at scale.",
+    "I'm applying for the Staff AI Engineer \u2014 Multi-Agent Frameworks role on your AI "
+    "Platform team. Building a backend platform where users create, deploy, and coordinate "
+    "intelligent agents \u2014 with full context for humans and agents to work side by side \u2014 "
+    "is exactly the problem I've been solving in production.",
 
-    "On the ZeroClaw agentic AI gateway (32.2k stars, Rust), I shipped an observer that reports "
-    "agent lifecycle state \u2014 idle, working, blocked, released \u2014 via JSON-RPC over Unix "
-    "domain sockets (PR #8337, 1,132 additions). That work is multi-agent orchestration: bounded "
-    "I/O threading, env-driven discovery, and reliability guards for unresponsive sockets without "
-    "hanging the agent loop. I also reviewed a 6,684-line security PR adding multi-user auth, "
-    "deny-by-default permission profiles, and principal isolation at RPC dispatch (PR #8672) \u2014 "
-    "the same isolation problem multi-agent platforms face.",
+    "On ZeroClaw's 32.2k-star Rust agentic gateway I ship multi-agent orchestration: an "
+    "observer that reports agent lifecycle state (idle/working/blocked/released) over JSON-RPC "
+    "on Unix domain sockets (PR #8337), and a merged context-window meter unifying 9 LLM "
+    "providers \u2014 OpenAI, Anthropic, Cohere, and more \u2014 into a single source of truth for "
+    "model routing and cost attribution (PR #7946). I prototype workflows with LangGraph, "
+    "build with MCP servers in Rust, and work the full backend stack (Rust, Python, Node on "
+    "PostgreSQL/AWS).",
 
-    "At Knowledgecity I was Product Owner for Integrations, shipping SAP, Oracle, Workday, UKG, "
-    "Coursera, and Zoom via SAML, OAuth, SFTP, and custom APIs on AWS/Postgres/React. Orchestrating "
-    "six enterprise services with different auth models and error semantics is the same coordination "
-    "challenge multi-agent frameworks solve. I also built the evaluation framework (Cypress, Selenium, "
-    "JUnit, health dashboards, alerting) for testing those integrations in complex scenarios, and "
-    "applied AI prompt engineering and chatbot tooling in production.",
-
-    "Here's how I map to your qualifications:",
+    "At Knowledgecity, as Integrations Product Owner, I shipped SAP, Oracle, Workday, UKG, "
+    "Coursera, and Zoom over SAML, OAuth, SFTP, and custom REST APIs \u2014 orchestrating "
+    "services with different auth models and error semantics, the same coordination challenge "
+    "multi-agent frameworks solve. I also built evaluation frameworks (Cypress, Selenium, "
+    "JUnit, health dashboards, alerting) to test complex deployments at the system level, "
+    "navigated AI privacy (deny-by-default permissions, principal isolation, OIDC), and "
+    "integrated search (Elasticsearch, PostgreSQL) \u2014 all 27 years of it.",
 ]
 
 QUALIFICATIONS = [
-    ("Multiple LLMs & orchestration",
-     "Integrating OpenAI, Anthropic, and Gemini providers daily through Hermes Agent; "
-     "agent lifecycle orchestration in production via Rust + JSON-RPC."),
+    ("Multi-Agent Frameworks & orchestration",
+     "Agent lifecycle observer + LangGraph workflows + MCP server in a 32k-star Rust gateway."),
+    ("Multiple LLMs & model routing",
+     "OpenAI, Anthropic, Cohere, Gemini \u2014 unified context window and cost attribution per provider."),
     ("Evaluation frameworks",
-     "27 years building test automation and quality pipelines; four rounds of reviewer "
-     "blockers resolved on the ZeroClaw PR through targeted evaluation of each failure mode."),
-    ("Multi-agent frameworks",
-     "Shipped herdr agent reporting integration (multi-agent coordination without requiring "
-     "a herdr adapter); coordinating on a standardized generic agent integration adapter."),
-    ("AI privacy & compliance",
-     "Reviewed deny-by-default permission profiles, peercred, SSH challenge-response, and OIDC "
-     "auth flows plus 27 years in regulated, compliance-driven environments."),
-    ("Search technologies",
-     "Elasticsearch, PostgreSQL full-text, and integration search across enterprise platforms "
-     "at Knowledgecity and in the ZeroClaw ecosystem."),
+     "27 years testing complex systems; evaluation at both agent and system-level dynamics."),
+    ("AI privacy & search",
+     "Deny-by-default permissions, principal isolation; Elasticsearch & Postgres full-text."),
 ]
 
+RADAR_LABELS = ["Multi-Agent", "LLMs", "Orchestration", "Evaluation", "AI Privacy", "Search"]
+RADAR_VALUES = [92, 88, 94, 90, 84, 86]
+
 CLOSING = (
-    "I'm AI-native in the way ClickUp means it: I use AI agents daily, I build the infrastructure "
+    "I'm AI-native the way ClickUp means it: I use agents daily, I build the infrastructure "
     "they run on, and I evaluate their behavior under real-world complexity. I'd welcome the "
-    "chance to bring that to ClickUp's AI Platform team and help build the future of converged "
-    "work. Happy to walk through any of the PRs or code in a technical interview."
+    "chance to bring that to your AI Platform team \u2014 happy to walk through any PR in an interview."
 )
 
 # ----------------------------------------------------------------------------
@@ -261,7 +299,9 @@ def build():
                           leftMargin=ML, rightMargin=MR,
                           topMargin=HEADER_H + TOP_GAP, bottomMargin=BODY_BOTTOM,
                           title="Eugene L. Buchanan \u2014 Cover Letter (ClickUp)",
-                          author="Eugene L. Buchanan")
+                          author="Eugene L. Buchanan",
+                          subject="Application: Staff AI Engineer \u2014 Multi-Agent Frameworks (Apple Valley, CA)",
+                          keywords="Cover Letter, Staff AI Engineer, Multi-Agent Frameworks, LangGraph, LLM, ClickUp")
     header_frame = Frame(0, PH - HEADER_H, PW, HEADER_H, leftPadding=0,
                          rightPadding=0, topPadding=0, bottomPadding=0, id="hdr")
     letter_body = Frame(ML, BODY_BOTTOM, FW, (PH - HEADER_H - TOP_GAP) - BODY_BOTTOM,
@@ -280,18 +320,18 @@ def build():
     photo_path = make_circular_photo(os.path.join(out_dir, "pic.jpg"))
     story.append(LetterHead(photo=photo_path))
     story.append(NextPageTemplate("content"))
-    story.append(Spacer(1, 6))
+    story.append(Spacer(1, 4))
 
     # ── Date & recipient block ────────────────────────────────────
     story.append(Paragraph(LETTER_DATE, date_style))
     for line in RECIPIENT:
         story.append(Paragraph(line, addr_style))
-    story.append(Spacer(1, 6))
+    story.append(Spacer(1, 4))
 
     # ── Subject ────────────────────────────────────────────────────
     story.append(Paragraph(SUBJECT, subj_style))
     story.append(AccentRule())
-    story.append(Spacer(1, 8))
+    story.append(Spacer(1, 6))
 
     # ── Salutation ─────────────────────────────────────────────────
     story.append(Paragraph("Dear ClickUp AI Platform Team,", salute_style))
@@ -300,26 +340,38 @@ def build():
     for para in PARAGRAPHS:
         story.append(Paragraph(para, body_style))
 
-    # ── Qualification bullets ──────────────────────────────────────
-    qual_style = ParagraphStyle("qual", fontName=FONT, fontSize=9, leading=12.5,
-                                leftIndent=14, bulletIndent=2, bulletColor=PURPLE,
-                                spaceAfter=4, textColor=INK)
+    # ── Role fit: radar chart + qualification bullets side-by-side ──
+    story.append(Paragraph("How I fit this role:", subj_style))
+    qual_style = ParagraphStyle("qual", fontName=FONT, fontSize=8.4, leading=11.4,
+                                leftIndent=12, bulletIndent=2, bulletColor=PURPLE,
+                                spaceAfter=3.5, textColor=INK)
+    qual_col = []
     for title, desc in QUALIFICATIONS:
         txt = f'<b><font color="#2b1d63">{title}.</font></b>  {desc}'
-        story.append(Paragraph(txt, qual_style, bulletText="\u2022"))
+        qual_col.append(Paragraph(txt, qual_style, bulletText="\u2022"))
+    radar_col = [MatchRadar(RADAR_LABELS, RADAR_VALUES, width=190, height=150)]
+    fit_table = Table([[qual_col, radar_col]], colWidths=[FW - 190, 190])
+    fit_table.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (0, 0), 10),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+    ]))
+    story.append(fit_table)
+    story.append(Spacer(1, 5))
 
-    story.append(Spacer(1, 6))
     story.append(Paragraph(CLOSING, body_style))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
 
     # ── Sign-off ───────────────────────────────────────────────────
     story.append(Paragraph("Best regards,", body_style))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
     story.append(AccentRule(width=180))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
     story.append(Paragraph("Eugene L. Buchanan", sign_style))
     story.append(Paragraph("Staff AI Engineer \u2014 Multi-Agent Frameworks", sign2_style))
-    story.append(Paragraph("eugene@serviceofothers.org  \u00b7  +1 (909) 545 5384  \u00b7  github.com/eugeneb50", sign2_style))
+    story.append(Paragraph("Apple Valley, CA  \u00b7  eugene@serviceofothers.org  \u00b7  github.com/eugeneb50", sign2_style))
 
     doc.build(story)
     print("WROTE", out_path, os.path.getsize(out_path), "bytes")

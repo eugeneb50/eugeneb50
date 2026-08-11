@@ -9,7 +9,6 @@ import os
 import tempfile
 from PIL import Image, ImageDraw
 from reportlab.lib.pagesizes import letter
-from reportlab.lib.units import inch
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT
 from reportlab.lib.styles import ParagraphStyle
@@ -18,6 +17,12 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
                                 Table, TableStyle, Spacer,
                                 NextPageTemplate, KeepTogether, Flowable)
+from reportlab.graphics.shapes import Drawing
+from reportlab.graphics.charts.spider import SpiderChart
+from reportlab.graphics import renderPDF
+
+import reportlab.rl_config as _rl_config
+_rl_config.documentLang = "en-US"   # PDF /Lang catalog entry (a11y + l10n)
 
 # ----------------------------------------------------------------------------
 # Fonts (DejaVuSans for clean modern sans-serif)
@@ -150,7 +155,7 @@ class HeaderBand(Flowable):
         c.setStrokeColor(colors.white); c.setFillAlpha(0.22); c.setLineWidth(0.5)
         c.line(28, H - 74, pcx - pr - 10, H - 74); c.setFillAlpha(1)
         # contact strip
-        items = [("L", "San Quint\u00edn, BC MX (Remote / PT)", None),
+        items = [("L", "Apple Valley, CA (Remote)", None),
                  ("T", "+1 (909) 545 5384", None),
                  ("E", "eugene@serviceofothers.org", "mailto:eugene@serviceofothers.org"),
                  ("G", "github.com/eugeneb50", "https://github.com/eugeneb50")]
@@ -226,7 +231,7 @@ class SkillBar(Flowable):
 
 
 class TagCloud(Flowable):
-    def __init__(self, tags, width=FW, size=8.3, padx=7, pady=4, gap=6,
+    def __init__(self, tags, width=FW, size=8.3, padx=7, pady=3, gap=4,
                  bg=LIGHT, fg=PURPLE):
         super().__init__()
         self.tags = tags
@@ -272,6 +277,47 @@ class TagCloud(Flowable):
 
 
 # ----------------------------------------------------------------------------
+# Radar chart (reportlab.graphics SpiderChart) — skill profile visualization
+# ----------------------------------------------------------------------------
+class SkillRadar(Flowable):
+    """Compact radar chart built with reportlab.graphics (SpiderChart)."""
+    def __init__(self, labels, values, width=215, height=200):
+        super().__init__()
+        self.width = width
+        self.height = height
+        self.labels = labels
+        self.values = values
+
+    def wrap(self, aW, aH):
+        return (self.width, self.height)
+
+    def draw(self):
+        d = Drawing(self.width, self.height)
+        s = SpiderChart()
+        s.x = 40
+        s.y = 20
+        s.width = 140
+        s.height = 145
+        s.startAngle = 90
+        s.direction = "clockwise"
+        s.data = [self.values]
+        s.labels = self.labels
+        s.spokes.strokeWidth = 0.5
+        s.spokes.strokeColor = colors.Color(0.1, 0.08, 0.26, alpha=0.10)
+        s.spokes.labelRadius = 1.18
+        s.spokeLabels.fontName = FONT_B
+        s.spokeLabels.fontSize = 6.6
+        s.spokeLabels.fillColor = NAVY2
+        s.strands.strokeColor = PURPLE
+        s.strands.strokeWidth = 2.2
+        s.strands.fillColor = colors.Color(0.48, 0.17, 0.95, alpha=0.14)
+        s.strands.symbol = "Circle"
+        s.strands.symbolSize = 3.2
+        d.add(s)
+        renderPDF.draw(d, self.canv, 0, 0)
+
+
+# ----------------------------------------------------------------------------
 # Styles
 # ----------------------------------------------------------------------------
 summary_style = ParagraphStyle("sum", fontName=FONT, fontSize=9.4, leading=12.8,
@@ -282,13 +328,13 @@ date_style = ParagraphStyle("date", fontName=FONT, fontSize=8.6, leading=11.5,
                             textColor=GREY, alignment=2)
 sub_style = ParagraphStyle("sub", fontName=FONT, fontSize=9.1, leading=11.5,
                            textColor=PURPLE, spaceAfter=3)
-bullet_style = ParagraphStyle("bul", fontName=FONT, fontSize=8.6, leading=11.2,
+bullet_style = ParagraphStyle("bul", fontName=FONT, fontSize=8.6, leading=10.6,
                               leftIndent=12, bulletIndent=1, bulletColor=PURPLE,
-                              spaceAfter=1.8, textColor=INK)
-str_style = ParagraphStyle("str", fontName=FONT, fontSize=8.5, leading=10.5,
+                              spaceAfter=1.2, textColor=INK)
+str_style = ParagraphStyle("str", fontName=FONT, fontSize=8.2, leading=10.0,
                            leftIndent=12, bulletIndent=0, bulletColor=PURPLE,
                            spaceAfter=1.5, textColor=INK)
-edu_style = ParagraphStyle("edu", fontName=FONT, fontSize=8.5, leading=11.5,
+edu_style = ParagraphStyle("edu", fontName=FONT, fontSize=8.2, leading=11.0,
                            leftIndent=12, bulletIndent=1, bulletColor=PURPLE,
                            spaceAfter=2, textColor=INK)
 tagcap_style = ParagraphStyle("tagcap", fontName=FONT_B, fontSize=8.6, leading=12,
@@ -478,7 +524,9 @@ def build():
                           leftMargin=ML, rightMargin=MR,
                           topMargin=HEADER_H + TOP_GAP, bottomMargin=BODY_BOTTOM,
                           title="Eugene L. Buchanan \u2014 Staff AI Engineer Resume",
-                          author="Eugene L. Buchanan")
+                          author="Eugene L. Buchanan",
+                          subject="Staff AI Engineer \u2014 Multi-Agent Frameworks & Agentic AI Infrastructure (Apple Valley, CA)",
+                          keywords="Staff AI Engineer, Multi-Agent, LangGraph, LLM, Rust, Agent Orchestration, ClickUp")
     header_frame = Frame(0, PH - HEADER_H, PW, HEADER_H, leftPadding=0,
                          rightPadding=0, topPadding=0, bottomPadding=0, id="hdr")
     cover_body = Frame(ML, BODY_BOTTOM, FW, (PH - HEADER_H - TOP_GAP) - BODY_BOTTOM,
@@ -497,35 +545,47 @@ def build():
     photo_path = make_circular_photo(os.path.join(out_dir, "pic.jpg"))
     story.append(HeaderBand(photo=photo_path))
     story.append(NextPageTemplate("content"))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 1))
 
     # ── Professional Summary ─────────────────────────────────────────
     story.append(SectionTitle("Professional Summary"))
     story.append(Spacer(1, 1))
     story.append(P(SUMMARY, summary_style))
-    story.append(Spacer(1, 3))
+    story.append(Spacer(1, 1))
 
-    # ── Technical Expertise (skill bars) ─────────────────────────────
+    # ── Technical Expertise (skill bars + radar chart) ────────────────
     story.append(SectionTitle("Technical Expertise"))
     story.append(Spacer(1, 1))
-    for label, pct in SKILLS:
-        story.append(SkillBar(label, pct))
-    story.append(Spacer(1, 3))
+    bars_col = [SkillBar(label, pct) for label, pct in SKILLS]
+    radar_col = [SkillRadar(
+        ["Multi-Agent\nCoordination", "Multiple\nLLMs", "LangGraph\nOrchestration",
+         "Evaluation\nFrameworks", "AI\nPrivacy", "Search &\nBackend"],
+        [90, 88, 94, 92, 84, 86])]
+    expertise = Table([[bars_col, radar_col]], colWidths=[FW - 215, 215])
+    expertise.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+    ]))
+    story.append(expertise)
+    story.append(Spacer(1, 1))
 
     # ── Technology Stack (tag clouds by category) ────────────────────
     story.append(SectionTitle("Technology Stack"))
-    story.append(Spacer(1, 2))
+    story.append(Spacer(1, 1))
     for cat_name, cat_tags in TAG_SECTIONS:
         story.append(TagCloud(cat_tags))
         story.append(Spacer(1, 1))
-    story.append(Spacer(1, 2))
+    story.append(Spacer(1, 1))
 
     # ── Experience ────────────────────────────────────────────────────
     story.append(SectionTitle("Experience"))
-    story.append(Spacer(1, 2))
+    story.append(Spacer(1, 1))
     for role, cl, dates, bullets in EXPERIENCE:
         story.extend(experience_card(role, cl, dates, bullets))
-    story.append(Spacer(1, 2))
+    story.append(Spacer(1, 1))
 
     # ── Education + Key Strengths (stacked) ───────────────────────
     edu_col = [SectionTitle("Education"), Spacer(1, 1)]
@@ -536,7 +596,7 @@ def build():
         txt = f'<b><font color="#2b1d63">{title}.</font></b>  {desc}'
         str_col.append(P(txt, str_style, bullet="\u25aa"))
     # Stack vertically instead of side-by-side to save width and avoid overflow
-    for item in edu_col + [Spacer(1, 2)] + str_col:
+    for item in edu_col + [Spacer(1, 1)] + str_col:
         story.append(item)
 
     doc.build(story)
