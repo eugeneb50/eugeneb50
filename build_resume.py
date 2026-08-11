@@ -19,7 +19,7 @@ from reportlab.pdfgen import canvas as canvas_mod
 # ----------------------------------------------------------------------------
 # Fonts (DejaVuSans for clean modern sans-serif)
 # ----------------------------------------------------------------------------
-FONT_DIR = "/usr/share/fonts/truetype/dejavu"
+FONT_DIR = "/usr/share/fonts/TTF"
 pdfmetrics.registerFont(TTFont("DJ", os.path.join(FONT_DIR, "DejaVuSans.ttf")))
 pdfmetrics.registerFont(TTFont("DJ-B", os.path.join(FONT_DIR, "DejaVuSans-Bold.ttf")))
 pdfmetrics.registerFontFamily("DJ", normal="DJ", bold="DJ-B", italic="DJ", boldItalic="DJ-B")
