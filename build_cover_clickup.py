@@ -18,7 +18,7 @@ from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
                                 Table, TableStyle, Spacer,
                                 NextPageTemplate, KeepTogether, Flowable)
 from reportlab.graphics.shapes import Drawing
-from reportlab.graphics.charts.spider import SpiderChart
+from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics import renderPDF
 
 import reportlab.rl_config as _rl_config
@@ -164,12 +164,13 @@ class AccentRule(Flowable):
                       vertical=False, steps=32)
 
 
-class MatchRadar(Flowable):
-    """Radar chart of the candidate's fit against the posting (SpiderChart)."""
-    def __init__(self, labels, values, width=FW, height=180):
+class ProfitChart(Flowable):
+    """Parabolic value bar chart: 'ClickUp's Value Hiring Eugene' (VerticalBarChart)."""
+    def __init__(self, title, labels, values, width=FW, height=190):
         super().__init__()
         self.width = width
         self.height = height
+        self.title = title
         self.labels = labels
         self.values = values
 
@@ -177,28 +178,47 @@ class MatchRadar(Flowable):
         return (self.width, self.height)
 
     def draw(self):
+        from reportlab.graphics.shapes import String, Group, PolyLine
+
         d = Drawing(self.width, self.height)
-        s = SpiderChart()
-        s.x = (self.width - 180) / 2
-        s.y = 20
-        s.width = 180
-        s.height = 140
-        s.startAngle = 90
-        s.direction = "clockwise"
-        s.data = [self.values]
-        s.labels = self.labels
-        s.spokes.strokeWidth = 0.5
-        s.spokes.strokeColor = colors.Color(0.1, 0.08, 0.26, alpha=0.10)
-        s.spokes.labelRadius = 1.2
-        s.spokeLabels.fontName = FONT_B
-        s.spokeLabels.fontSize = 6.8
-        s.spokeLabels.fillColor = NAVY2
-        s.strands.strokeColor = PURPLE
-        s.strands.strokeWidth = 2.2
-        s.strands.fillColor = colors.Color(0.48, 0.17, 0.95, alpha=0.14)
-        s.strands.symbol = "Circle"
-        s.strands.symbolSize = 3.2
-        d.add(s)
+        # title first (paragraph-free, rendered as a graphic text)
+        d.add(String(self.width / 2, self.height - 14, self.title,
+                     fontName=FONT_B, fontSize=9.5, fillColor=NAVY2,
+                     textAnchor="middle"))
+
+        bc = VerticalBarChart()
+        bc.x = 24
+        bc.y = 30
+        bc.width = self.width - 48
+        bc.height = self.height - 56
+        bc.data = [self.values]
+        bc.categoryAxis.categoryNames = self.labels
+        bc.categoryAxis.labels.fontName = FONT_B
+        bc.categoryAxis.labels.fontSize = 6.4
+        bc.categoryAxis.labels.fillColor = NAVY2
+        bc.valueAxis.valueMin = 0
+        bc.valueAxis.valueMax = max(self.values) * 1.12
+        bc.valueAxis.valueStep = 50
+        bc.valueAxis.labelTextFormat = "%.0f"
+        bc.valueAxis.labels.fontName = FONT
+        bc.valueAxis.labels.fontSize = 6.0
+        bc.valueAxis.labels.fillColor = GREY
+        for i, v in enumerate(self.values):
+            bc.bars[i].fillColor = PURPLE
+            bc.bars[i].strokeColor = PINK
+            bc.bars[i].strokeWidth = 0.6
+        # parabolic curve over the bars
+        pts = []
+        n = len(self.values)
+        for i, v in enumerate(self.values):
+            xx = bc.x + bc.width * (i + 0.5) / n
+            yy = bc.y + (v / (max(self.values) * 1.12)) * bc.height
+            pts.append((xx, yy))
+        pc = Group()
+        pc.add(PolyLine(pts, strokeColor=PINK, strokeWidth=1.4,
+                        strokeDashArray=[2, 1.5]))
+        d.add(bc)
+        d.add(pc)
         renderPDF.draw(d, self.canv, 0, 0)
 
 
@@ -236,40 +256,39 @@ SUBJECT = "Re: Staff AI Engineer \u2014 Multi-Agent Frameworks (#LI-REMOTE)"
 
 PARAGRAPHS = [
     "I'm applying for the Staff AI Engineer \u2014 Multi-Agent Frameworks role on your AI "
-    "Platform team. Building a backend platform where users create, deploy, and coordinate "
-    "intelligent agents \u2014 with full context for humans and agents to work side by side \u2014 "
-    "is exactly the problem I've been solving in production.",
+    "Platform team. I build backend platforms where users create, deploy, and coordinate "
+    "intelligent agents. That work needs full context for humans and agents to act side by "
+    "side \u2014 exactly the problem I've been solving in production.",
 
-    "On ZeroClaw's 32.2k-star Rust agentic gateway I ship multi-agent orchestration: an "
-    "observer that reports agent lifecycle state (idle/working/blocked/released) over JSON-RPC "
-    "on Unix domain sockets (PR #8337), and a merged context-window meter unifying 9 LLM "
-    "providers \u2014 OpenAI, Anthropic, Cohere, and more \u2014 into a single source of truth for "
+    "On ZeroClaw's 32.2k-star Rust gateway, I ship multi-agent orchestration. An observer "
+    "reports agent lifecycle state \u2014 idle, working, blocked, released \u2014 through JSON-RPC "
+    "over Unix domain sockets (PR #8337). A merged context-window meter unifies 9 LLM "
+    "providers \u2014 OpenAI, Anthropic, Cohere, and more \u2014 into one source of truth. That drives "
     "model routing and cost attribution (PR #7946). I prototype workflows with LangGraph, "
-    "build with MCP servers in Rust, and work the full backend stack (Rust, Python, Node on "
+    "build MCP servers in Rust, and cover the backend stack (Rust, Python, Node on "
     "PostgreSQL/AWS).",
 
-    "At Knowledgecity, as Integrations Product Owner, I shipped SAP, Oracle, Workday, UKG, "
-    "Coursera, and Zoom over SAML, OAuth, SFTP, and custom REST APIs \u2014 orchestrating "
-    "services with different auth models and error semantics, the same coordination challenge "
-    "multi-agent frameworks solve. I also built evaluation frameworks (Cypress, Selenium, "
-    "JUnit, health dashboards, alerting) to test complex deployments at the system level, "
-    "navigated AI privacy (deny-by-default permissions, principal isolation, OIDC), and "
-    "integrated search (Elasticsearch, PostgreSQL) \u2014 all 27 years of it.",
+    "At Knowledgecity, I owned integrations as Product Owner. I shipped SAP, Oracle, Workday, "
+    "UKG, Coursera, and Zoom over SAML, OAuth, SFTP, and REST APIs. Each service uses "
+    "different auth and error semantics \u2014 the same coordination puzzle that multi-agent "
+    "frameworks solve. I also built evaluation tooling (Cypress, Selenium, JUnit, health "
+    "dashboards, alerting) to test complex deployments at the system level. I handled AI "
+    "privacy (deny-by-default permissions, principal isolation, OIDC) and tied in search "
+    "(Elasticsearch, PostgreSQL) \u2014 27 years of it.",
 ]
 
 QUALIFICATIONS = [
     ("Multi-Agent Frameworks & orchestration",
-     "Agent lifecycle observer + LangGraph workflows + MCP server in a 32k-star Rust gateway."),
+     "Agent lifecycle observer, LangGraph workflows, and an MCP server in a 32k-star Rust gateway."),
     ("Multiple LLMs & model routing",
-     "OpenAI, Anthropic, Cohere, Gemini \u2014 unified context window and cost attribution per provider."),
+     "OpenAI, Anthropic, Cohere, Gemini \u2014 one context window and per-provider cost attribution."),
     ("Evaluation frameworks",
      "27 years testing complex systems; evaluation at both agent and system-level dynamics."),
     ("AI privacy & search",
-     "Deny-by-default permissions, principal isolation; Elasticsearch & Postgres full-text."),
+     "Deny-by-default permissions, principal isolation; Elasticsearch and Postgres full-text."),
 ]
 
-RADAR_LABELS = ["Multi-Agent", "LLMs", "Orchestration", "Evaluation", "AI Privacy", "Search"]
-RADAR_VALUES = [92, 88, 94, 90, 84, 86]
+CHART_TITLE = "ClickUp's Value Hiring Eugene"
 
 CLOSING = (
     "I'm AI-native the way ClickUp means it: I use agents daily, I build the infrastructure "
@@ -340,7 +359,7 @@ def build():
     for para in PARAGRAPHS:
         story.append(Paragraph(para, body_style))
 
-    # ── Role fit: radar chart + qualification bullets side-by-side ──
+    # ── Role fit: parabolic value chart + qualification bullets side-by-side ──
     story.append(Paragraph("How I fit this role:", subj_style))
     qual_style = ParagraphStyle("qual", fontName=FONT, fontSize=8.4, leading=11.4,
                                 leftIndent=12, bulletIndent=2, bulletColor=PURPLE,
@@ -349,8 +368,12 @@ def build():
     for title, desc in QUALIFICATIONS:
         txt = f'<b><font color="#2b1d63">{title}.</font></b>  {desc}'
         qual_col.append(Paragraph(txt, qual_style, bulletText="\u2022"))
-    radar_col = [MatchRadar(RADAR_LABELS, RADAR_VALUES, width=190, height=150)]
-    fit_table = Table([[qual_col, radar_col]], colWidths=[FW - 190, 190])
+    chart_col = [ProfitChart(
+        CHART_TITLE,
+        ["Yr 1", "Yr 2", "Yr 3", "Yr 4", "Yr 5", "Yr 6"],
+        [10, 42, 96, 172, 270, 390],
+        width=190, height=150)]
+    fit_table = Table([[qual_col, chart_col]], colWidths=[FW - 190, 190])
     fit_table.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 0),

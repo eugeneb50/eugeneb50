@@ -31,6 +31,8 @@ Outputs: `Eugene_Buchanan_Resume.pdf`, `ClickUp_Eugene_Buchanan_Resume.pdf`, `Cl
 - `SkillBar` — label + percentage + gradient progress bar
 - `TagCloud` — wrapping pill tags
 - `experience_card()` — role/date table + company + bullet list with left rule
+- `SkillRadar` (resume) — spider/radar chart of skill strengths (spider `symbol` names are capitalized, e.g. `"Circle"`)
+- `ProfitChart` (cover) — `VerticalBarChart` of parabolic value growth; `CategoryAxis` is abstract — configure the auto-created `bc.categoryAxis`/`bc.valueAxis` instead
 - `draw_gradient()` — stepwise rectangle gradient helper
 - `make_circular_photo()` — PIL crop + alpha mask → temp PNG
 

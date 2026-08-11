@@ -378,27 +378,27 @@ def experience_card(role, company_loc, dates, bullets):
 # ----------------------------------------------------------------------------
 # Content — targeted at ClickUp Staff AI Engineer, Multi-Agent Frameworks
 # ----------------------------------------------------------------------------
-SUMMARY = ("Staff AI engineer with 27 years software/systems experience focused on agentic AI "
-           "infrastructure and multi-agent orchestration. Three production PRs to ZeroClaw (32.2k★ "
-           "Rust gateway): merged context-window meter for 9 LLM providers, open PR for live "
-           "provider identity on usage events (cost attribution), agent lifecycle observer via "
-           "JSON-RPC. Built test automation, integration platforms, CI/CD pipelines on "
-           "AWS/Postgres/React. Passionate about automatic model routing and platforms for "
-           "deploying intelligent agents at scale.")
+SUMMARY = ("Staff AI engineer with 27 years in software and systems, focused on agentic AI "
+           "infrastructure and multi-agent orchestration. I've shipped three production PRs to "
+           "ZeroClaw (32.2k\u2605 Rust gateway): a merged context-window meter for 9 LLM providers, "
+           "a live provider-identity PR for usage events (cost attribution), and an agent "
+           "lifecycle observer over JSON-RPC. I've built test automation, integration platforms, "
+           "and CI/CD pipelines on AWS/Postgres/React. I focus on automatic model routing and "
+           "platforms that deploy intelligent agents at scale.")
 
 EXPERIENCE = [
     ("Staff AI Engineer / Agentic Infrastructure Contributor (Open-Source)",
      "ZeroClaw Labs (github.com/zeroclaw-labs/zeroclaw)  \u00b7  Rust  \u00b7  32.2k stars",
      "2026 \u2013 Present", [
-        "PR #7946 (MERGED) \u2014 feat(runtime): model context window ctx bar across TUI/gateway/CLI "
-        "(+1,109 / -22, 25 files). context_window as single source of truth for 9 providers; auto-populated "
-        "config, doctor command, gateway API, live ContextBar. Eliminated drift between surfaces \u2014 "
+        "PR #7946 (MERGED) \u2014 context-window meter bar across TUI/gateway/CLI "
+        "(+1,109 / -22, 25 files). One context_window source of truth for 9 providers; auto-populated "
+        "config, doctor command, gateway API, live ContextBar. Removed drift between surfaces \u2014 "
         "directly relevant to Brain2's automatic model routing.",
-        "PR #8966 (OPEN) \u2014 feat(agent): carry live provider identity on usage events (+2,742 / -141, 20 files). "
+        "PR #8966 (OPEN) \u2014 carry live provider identity on usage events (+2,742 / -141, 20 files). "
         "Fixed frozen 32k meter on 1M-token models; separated trim budget from model capacity; "
         "unconditional Usage events with serving-provider identity; per-provider usage breakdown on done frame \u2014 "
         "cost-attribution infra for multi-LLM orchestration.",
-        "PR #8337 (OPEN) \u2014 feat(observability): herdr agent reporting integration (+1,712 / -17, 13 files). "
+        "PR #8337 (OPEN) \u2014 herdr agent reporting integration (+1,712 / -17, 13 files). "
         "Observer reports agent lifecycle (idle/working/blocked/released) via JSON-RPC over UDS. "
         "Zero-config env detection, approval-gate blocked state, crash recovery via pane.release_agent. "
         "Multi-agent coordination infrastructure; maps to Super Agents' human-agent collaboration.",
@@ -408,29 +408,29 @@ EXPERIENCE = [
      "Dec 2020 \u2013 Aug 2025", [
         "Product Owner, Integrations: shipped SAP, Oracle, Workday, Coursera, UKG, and Zoom integrations "
         "via SAML, OAuth, SFTP, and custom REST APIs \u2014 orchestrating multiple services with different "
-        "auth models, data formats, and error semantics, the same coordination challenge as multi-agent systems.",
+        "auth models, data formats, and error semantics. Same coordination challenge as multi-agent systems.",
         "Built and maintained CI/CD quality pipelines with Cypress, Selenium, Postman, JUnit, Elastic, S3 \u2014 "
         "an evaluation framework for testing complex deployment scenarios across integration, backend, API, "
         "database, and frontend surfaces.",
-        "Applied AI prompt engineering and chatbot support in production, integrating LLM-powered tooling "
-        "into customer-facing assistance and internal automation workflows.",
-        "Designed and implemented evaluation frameworks for regression suites, health dashboards, and alerting "
-        "that measured system-level dynamics across multi-environment deployments.",
-        "Mentored and trained test automation team; conducted code reviews and elevated engineering standards.",
+        "Applied AI prompt engineering and shipped LLM-powered chatbot tooling in production, "
+        "integrating it into customer-facing assistance and internal automation workflows.",
+        "Designed evaluation frameworks, regression suites, health dashboards, and alerting "
+        "to measure system-level dynamics across multi-environment deployments.",
+        "Mentored and trained the test automation team; ran code reviews; raised engineering standards.",
      ]),
     ("Senior Software Engineer II / Presales Engineering",
      "RealNetworks  \u00b7  Seattle, WA  \u00b7  Streaming Media Platform",
      "1999 \u2013 2001", [
-        "QA on advanced research team focused on consumer appliances, mobile platforms, stream servers, "
-        "and cellular networks \u2014 evaluating distributed system behavior in complex, multi-component scenarios.",
-        "Global presales engineering: translating product capabilities into customer solutions across diverse "
-        "technical environments. New-hire training and cross-functional collaboration.",
+        "QA on an advanced research team evaluating distributed system behavior across consumer "
+        "appliances, mobile platforms, stream servers, and cellular networks \u2014 complex, multi-component scenarios.",
+        "Global presales engineering: turned product capabilities into customer solutions "
+        "across diverse technical environments. Trained new hires; led cross-functional collaboration.",
      ]),
     ("Senior Software Test Engineer IV",
      "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows Media Server",
      "1997 \u2013 1999", [
-        "White-box testing/automation for Windows Media Server, Windows 98/NT \u2014 evaluation frameworks for complex system testing.",
-        "Deep debugging across server infrastructure, network protocols, media codecs.",
+        "White-box testing and automation for Windows Media Server, Windows 98/NT \u2014 evaluation frameworks for complex system testing.",
+        "Deep debugging across server infrastructure, network protocols, and media codecs.",
      ]),
     # (IBM 1998 omitted \u2014 single bullet, same reliability mindset covered in Microsoft role)
 ]
@@ -460,15 +460,15 @@ TAGS = [
 
 STRENGTHS = [
     ("Multi-agent orchestration",
-     "Shipped agent lifecycle observer (PR #8337) + MCP server in 32k-star Rust gateway — not a demo."),
+     "Agent lifecycle observer (PR #8337) + MCP server in 32k-star Rust gateway \u2014 shipped, not demoed."),
     ("Multi-model routing & cost",
-     "Merged context-window meter for 9 LLMs (PR #7946); open PR for live provider identity on usage events (PR #8966)."),
+     "Merged context-window meter for 9 LLMs (PR #7946); open PR adds live provider identity on usage events (PR #8966)."),
     ("Evaluation frameworks",
      "27 years test automation, regression suites, quality pipelines for complex distributed systems."),
     ("LLM integration",
-     "Prompt engineering + chatbot tooling in production; multi-provider orchestration daily."),
+     "Prompt engineering + chatbot tooling in production; orchestrates multiple providers daily."),
     ("Cross-functional collaboration",
-     "Product Owner, QA Lead, presales engineer — comfortable with PMs, designers, engineers."),
+     "Product Owner, QA Lead, presales engineer \u2014 works with PMs, designers, and engineers."),
 ]
 
 EDUCATION = [
