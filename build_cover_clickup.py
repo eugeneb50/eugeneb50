@@ -274,7 +274,7 @@ PARAGRAPHS = [
     "frameworks solve. I also built evaluation tooling (Cypress, Selenium, JUnit, health "
     "dashboards, alerting) to test complex deployments at the system level. I handled AI "
     "privacy (deny-by-default permissions, principal isolation, OIDC) and tied in search "
-    "(Elasticsearch, PostgreSQL) \u2014 27 years of it.",
+    "(Elasticsearch, PostgreSQL).",
 ]
 
 QUALIFICATIONS = [
@@ -283,7 +283,7 @@ QUALIFICATIONS = [
     ("Multiple LLMs & model routing",
      "OpenAI, Anthropic, Cohere, Gemini \u2014 one context window and per-provider cost attribution."),
     ("Evaluation frameworks",
-     "27 years testing complex systems; evaluation at both agent and system-level dynamics."),
+     "Deep system-level testing; evaluation at both agent and system-level dynamics."),
     ("AI privacy & search",
      "Deny-by-default permissions, principal isolation; Elasticsearch and Postgres full-text."),
 ]
