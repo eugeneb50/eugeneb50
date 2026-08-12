@@ -1,18 +1,17 @@
 # AGENTS.md — eugeneb50 Resume Generator
 
 ## Project Overview
-Personal portfolio project: three Python scripts generate polished PDF resumes/cover letters using **reportlab** + **Pillow**. Targeted at Staff AI Engineer roles (ClickUp-specific versions exist).
+Personal portfolio project: two Python scripts generate a polished PDF resume and cover letter using **reportlab** + **Pillow**. Targeted at Staff AI Engineer roles.
 
 ## Quick Commands
 
 | Task | Command |
 |------|---------|
 | Build general resume | `./.venv/bin/python build_resume.py` |
-| Build ClickUp resume | `./.venv/bin/python build_resume_clickup.py` |
-| Build ClickUp cover letter | `./.venv/bin/python build_cover_clickup.py` |
-| Build all | `./.venv/bin/python build_resume.py && ./.venv/bin/python build_resume_clickup.py && ./.venv/bin/python build_cover_clickup.py` |
+| Build cover letter | `./.venv/bin/python build_cover.py` |
+| Build all | `./.venv/bin/python build_resume.py && ./.venv/bin/python build_cover.py` |
 
-Outputs: `Eugene_Buchanan_Resume.pdf`, `ClickUp_Eugene_Buchanan_Resume.pdf`, `ClickUp_Eugene_Buchanan_Cover_Letter.pdf`
+Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Cover_Letter.pdf`
 
 ## Environment
 - **Python**: 3.14 (via `.venv`)
@@ -22,7 +21,6 @@ Outputs: `Eugene_Buchanan_Resume.pdf`, `ClickUp_Eugene_Buchanan_Resume.pdf`, `Cl
 
 ## Architecture Notes
 - **No shared module** — each script duplicates the design system (colors, flowables, helpers). Changes to visual style must be applied in all three files.
-- **Scripts are self-contained** — no imports between them, no config files.
 - **Two-page layout**: cover page (header band + photo) + content page(s) with footer.
 
 ## Key Design System Components (duplicated across scripts)
@@ -32,13 +30,14 @@ Outputs: `Eugene_Buchanan_Resume.pdf`, `ClickUp_Eugene_Buchanan_Resume.pdf`, `Cl
 - `TagCloud` — wrapping pill tags
 - `experience_card()` — role/date table + company + bullet list with left rule
 - `SkillRadar` (resume) — spider/radar chart of skill strengths (spider `symbol` names are capitalized, e.g. `"Circle"`)
-- `L10nPanel` (resume ClickUp) — interactive Key Strengths localization: PDF form radio buttons (`l10n_lang` group) whose `/AA` JavaScript actions toggle the visibility of 7 read-only multiline text fields (`l10n_dd_<code>`, one per language; EN visible by default, `/F 4`, others hidden `/F 6`). Each field carries a **pre-rendered `/AP /N` appearance Form XObject** (`l10n_ap_<code>`) drawn via `canv.beginForm`/`endForm` (white fill + navy border + wrapped lines), so every viewer renders the full multi-line block without relying on Acrobat regenerating the appearance. Field `V`/`DV` = `PDFString("\n".join(lines))`; `maxlen=0` (no `/MaxLen`, which previously truncated browser display at 100 chars). `/DR` fonts registered via `_build_form_dr` (DejaVu subset for Latin, Noto Arabic subset for RTL, CID `STSong-Light`/`HeiseiKakuGo-W5` for zh/ja). Arabic is reshaped via `arabic_reshaper` + `python-bidi` and drawn right-aligned. `Canvas._addAnnotation` is monkey-patched to inject `/AA` into the radio widgets.
-- `qr_block()` (resume ClickUp) — right-aligned GitHub QR (`segno.make_qr` → themed PNG → `RLImage` + caption) appended after the Education section, bottom-right of page 2; encodes `https://github.com/eugeneb50/eugeneb50/`
-- `ProfitChart` (cover) — `VerticalBarChart` of parabolic value growth; `CategoryAxis` is abstract — configure the auto-created `bc.categoryAxis`/`bc.valueAxis` instead
+- `L10nPanel` (resume) — interactive Key Strengths localization: PDF form radio buttons (`l10n_lang` group) whose `/AA` JavaScript actions toggle the visibility of 7 read-only multiline text fields (`l10n_dd_<code>`, one per language; EN visible by default, `/F 4`, others hidden `/F 6`). Each field carries a **pre-rendered `/AP /N` appearance Form XObject** (`l10n_ap_<code>`) drawn via `canv.beginForm`/`endForm` (white fill + navy border + wrapped lines), so every viewer renders the full multi-line block without relying on Acrobat regenerating the appearance. Field `V`/`DV` = `PDFString("\n".join(lines))`; `maxlen=0` (no `/MaxLen`, which previously truncated browser display at 100 chars). `/DR` fonts registered via `_build_form_dr` (DejaVu subset for Latin, Noto Arabic subset for RTL, CID `STSong-Light`/`HeiseiKakuGo-W5` for zh/ja). Arabic is reshaped via `arabic_reshaper` + `python-bidi` and drawn right-aligned. `Canvas._addAnnotation` is monkey-patched to inject `/AA` into the radio widgets.
+- `qr_block()` (resume) — right-aligned GitHub QR (`segno.make_qr` → themed PNG → `RLImage` + caption) in the boxed area under Education at the bottom of page 2; encodes `https://github.com/eugeneb50/eugeneb50/`
+- `interests_block()` (resume) — boxed "Other Interests" panel (Renewable Energy, Permaculture, Real Estate, Tango Dancing) beside the QR
+- `ProfitChart` (cover) — `VerticalBarChart` of parabolic value growth; `CategoryAxis` is abstract — configure the auto-created `bc.categoryAxis`/`bc.valueAxis` instead. Cover letter content (`RECIPIENT`, `SUBJECT`, `PARAGRAPHS`, `CLOSING`, `CHART_TITLE`) is a generic template to edit per application.
 - `draw_gradient()` — stepwise rectangle gradient helper
 - `make_circular_photo()` — PIL crop + alpha mask → temp PNG
 
-## Colors (ClickUp versions use purple/pink/navy palette; general uses teal/navy)
+## Colors (resume uses purple/pink/navy palette; cover letter uses the same design system)
 - `NAVY`/`NAVY2`, `PURPLE`, `PINK`, `TEAL`/`TEAL_D`, `LIGHT`, `GREY`, `DARK`, `INK`, `MUTE`, `RULE`, `TRACK`
 
 ## Common Gotchas
@@ -49,6 +48,6 @@ Outputs: `Eugene_Buchanan_Resume.pdf`, `ClickUp_Eugene_Buchanan_Resume.pdf`, `Cl
 5. **Temp files** — `make_circular_photo` creates temp PNGs in `/tmp/` (cleaned on reboot)
 
 ## Making Changes
-- Visual tweaks: edit all three `.py` files (no shared library)
+- Visual tweaks: edit all `.py` files (no shared library)
 - Content updates: modify `EXPERIENCE`, `SKILLS`, `TAGS`, `STRENGTHS`, `EDUCATION`, `SUMMARY` constants in each script
 - Adding sections: follow existing `story.append()` pattern in `build()` function

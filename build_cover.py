@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Generate a visually dynamic cover-letter PDF for Eugene L. Buchanan
-   targeted at ClickUp — Staff AI Engineer, Multi-Agent Frameworks.
-   Uses the same design system as build_resume_clickup.py (gradient header,
-   accent bars, tag strip) but laid out as a letter.
+"""Generate a visually dynamic cover-letter PDF for Eugene L. Buchanan.
+   Generic template: edit the content constants below (RECIPIENT, SUBJECT,
+   PARAGRAPHS, CLOSING, CHART_TITLE) for each application.
+   Uses the same design system as build_resume.py but laid out as a letter.
 """
 
 import os
@@ -165,7 +165,7 @@ class AccentRule(Flowable):
 
 
 class ProfitChart(Flowable):
-    """Parabolic value bar chart: 'ClickUp's Value Hiring Eugene' (VerticalBarChart)."""
+    """Parabolic value bar chart: 'The Value of Hiring Eugene' (VerticalBarChart)."""
     def __init__(self, title, labels, values, width=FW, height=190):
         super().__init__()
         self.width = width
@@ -242,23 +242,23 @@ sign2_style = ParagraphStyle("sign2", fontName=FONT, fontSize=8.3, leading=10.5,
                             textColor=GREY, spaceAfter=0)
 
 # ----------------------------------------------------------------------------
-# Letter content — targeted at ClickUp
+# Letter content — EDIT THESE for each application
 # ----------------------------------------------------------------------------
 LETTER_DATE = "August 11, 2026"
 
 RECIPIENT = [
-    "ClickUp Hiring Team",
-    "AI Platform \u2014 Staff AI Engineer, Multi-Agent Frameworks",
-    "Via: clickup.com/careers",
+    "Hiring Team",
+    "Company Name \u2014 Role Title",
+    "Via: company.com/careers",
 ]
 
-SUBJECT = "Re: Staff AI Engineer \u2014 Multi-Agent Frameworks (#LI-REMOTE)"
+SUBJECT = "Re: Staff AI Engineer \u2014 Multi-Agent Frameworks"
 
 PARAGRAPHS = [
-    "I'm applying for the Staff AI Engineer \u2014 Multi-Agent Frameworks role on your AI "
-    "Platform team. I build backend platforms where users create, deploy, and coordinate "
-    "intelligent agents. That work needs full context for humans and agents to act side by "
-    "side \u2014 exactly the problem I've been solving in production.",
+    "I'm applying for the Staff AI Engineer \u2014 Multi-Agent Frameworks role. I build backend "
+    "platforms where users create, deploy, and coordinate intelligent agents. That work needs "
+    "full context for humans and agents to act side by side \u2014 exactly the problem I've been "
+    "solving in production.",
 
     "On ZeroClaw's 32.2k-star Rust gateway, I ship multi-agent orchestration. An observer "
     "reports agent lifecycle state \u2014 idle, working, blocked, released \u2014 through JSON-RPC "
@@ -288,12 +288,12 @@ QUALIFICATIONS = [
      "Deny-by-default permissions, principal isolation; Elasticsearch and Postgres full-text."),
 ]
 
-CHART_TITLE = "ClickUp's Value Hiring Eugene"
+CHART_TITLE = "The Value of Hiring Eugene"
 
 CLOSING = (
-    "I'm AI-native the way ClickUp means it: I use agents daily, I build the infrastructure "
-    "they run on, and I evaluate their behavior under real-world complexity. I'd welcome the "
-    "chance to bring that to your AI Platform team \u2014 happy to walk through any PR in an interview."
+    "I'm AI-native at the core: I use agents daily, I build the infrastructure they run on, "
+    "and I evaluate their behavior under real-world complexity. I'd welcome the chance to "
+    "bring that to your team \u2014 happy to walk through any PR in an interview."
 )
 
 # ----------------------------------------------------------------------------
@@ -312,15 +312,15 @@ def footer(canvas, doc):
 
 def build():
     out_dir = os.path.dirname(os.path.abspath(__file__))
-    out_path = os.path.join(out_dir, "ClickUp_Eugene_Buchanan_Cover_Letter.pdf")
+    out_path = os.path.join(out_dir, "Eugene_Buchanan_Cover_Letter.pdf")
 
     doc = BaseDocTemplate(out_path, pagesize=letter,
                           leftMargin=ML, rightMargin=MR,
                           topMargin=HEADER_H + TOP_GAP, bottomMargin=BODY_BOTTOM,
-                          title="Eugene L. Buchanan \u2014 Cover Letter (ClickUp)",
+                          title="Eugene L. Buchanan \u2014 Cover Letter",
                           author="Eugene L. Buchanan",
                           subject="Application: Staff AI Engineer \u2014 Multi-Agent Frameworks (Apple Valley, CA)",
-                          keywords="Cover Letter, Staff AI Engineer, Multi-Agent Frameworks, LangGraph, LLM, ClickUp")
+                          keywords="Cover Letter, Staff AI Engineer, Multi-Agent Frameworks, LangGraph, LLM")
     header_frame = Frame(0, PH - HEADER_H, PW, HEADER_H, leftPadding=0,
                          rightPadding=0, topPadding=0, bottomPadding=0, id="hdr")
     letter_body = Frame(ML, BODY_BOTTOM, FW, (PH - HEADER_H - TOP_GAP) - BODY_BOTTOM,
@@ -353,7 +353,7 @@ def build():
     story.append(Spacer(1, 6))
 
     # ── Salutation ─────────────────────────────────────────────────
-    story.append(Paragraph("Dear ClickUp AI Platform Team,", salute_style))
+    story.append(Paragraph("Dear Hiring Team,", salute_style))
 
     # ── Body paragraphs ────────────────────────────────────────────
     for para in PARAGRAPHS:
