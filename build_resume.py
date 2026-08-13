@@ -806,27 +806,15 @@ EXPERIENCE = [
 ]
 
 SKILLS = [
-    ("Rust", 94),
+    ("Frontend - HTML, XML, Javascript, CSS", 94),
     ("Multi-Agent Frameworks & Orchestration", 88),
     ("LLM Integration & Multi-Model Routing", 90),
     ("Agent Lifecycle & Observability", 92),
     ("Evaluation Frameworks & Testing", 92),
-    ("Backend Engineering (Python, Node)", 90),
+    ("Backend Engineering (Rust, Python, Node)", 90),
     ("Context Window & Cost Attribution", 87),
     ("Search Integration (Elastic, Postgres)", 85),
     ("AI Privacy, Auth & Data Protection", 82),
-]
-
-TAGS = [
-    "Rust", "Python", "TypeScript", "Node.js", "React", "LangGraph",
-    "Multi-Agent Systems", "Agent Orchestration", "LLM Integration",
-    "JSON-RPC", "Unix Domain Sockets", "MCP (Model Context Protocol)",
-    "Context Window Routing", "Multi-Model Cost Attribution",
-    "OpenAI / Anthropic / Cohere / Gemini",
-    "PostgreSQL", "AWS (ECS, S3)", "Elasticsearch", "GraphQL", "REST APIs",
-    "SAML", "OAuth", "OIDC", "SFTP", "CI/CD", "Cypress", "Selenium",
-    "JUnit", "Postman", "Evaluation Frameworks", "Code Review",
-    "Mentoring", "Git", "Docker",
 ]
 
 STRENGTHS = [
@@ -992,13 +980,6 @@ def build():
     ]))
     story.append(bottom_row)
 
-    # --- Skill tag table (restored at bottom of page 2) ---
-    story.append(Spacer(1, 14))
-    story.append(KeepTogether([
-        SectionTitle("Core Skills & Tools", width=FW),
-        Spacer(1, 6),
-        TagCloud(TAGS, width=FW),
-    ]))
 
     doc.build(story)
     print("WROTE", out_path, os.path.getsize(out_path), "bytes")
