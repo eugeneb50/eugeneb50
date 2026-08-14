@@ -1,17 +1,22 @@
 # AGENTS.md — eugeneb50 Resume Generator
 
 ## Project Overview
-Personal portfolio project: two Python scripts generate a polished PDF resume and cover letter using **reportlab** + **Pillow**. Targeted at Staff AI Engineer roles.
+Personal portfolio project: Python scripts generate a polished PDF resume, an ATS-friendly resume, and a cover letter using **reportlab** + **Pillow**. Targeted at Staff AI Engineer roles.
 
 ## Quick Commands
 
 | Task | Command |
 |------|---------|
 | Build general resume | `./.venv/bin/python build_resume.py` |
+| Build ATS-friendly resume | `./.venv/bin/python build_resume_ats.py` |
 | Build cover letter | `./.venv/bin/python build_cover.py` |
 | Build all | `./.venv/bin/python build_resume.py && ./.venv/bin/python build_cover.py` |
 
-Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Cover_Letter.pdf`
+Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Resume_ATS.pdf`, `Eugene_Buchanan_Cover_Letter.pdf`
+
+## ATS-Friendly Resume (`build_resume_ats.py`)
+- Deliberately graphics-free: single column, no images/charts/tables, standard section headings, one font family (Helvetica base-14), "Month YYYY" dates, acronyms spelled out on first use, plain-English copy rewritten with the deslop skill.
+- Content source: `/home/producer32/obsidian/resume/ressoft26.txt` (general-employment full resume).
 
 ## Environment
 - **Python**: 3.14 (via `.venv`)
@@ -20,7 +25,7 @@ Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Cover_Letter.pdf`
 - **Profile photo**: `pic.jpg` in repo root (auto-cropped to circle)
 
 ## Architecture Notes
-- **No shared module** — each script duplicates the design system (colors, flowables, helpers). Changes to visual style must be applied in all three files.
+- **No shared module** — each script duplicates the design system (colors, flowables, helpers). Changes to visual style must be applied in all files.
 - **Two-page layout**: cover page (header band + photo) + content page(s) with footer.
 
 ## Key Design System Components (duplicated across scripts)
