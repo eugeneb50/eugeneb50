@@ -1,4 +1,4 @@
-![Profile Views](https://komarev.com/ghpvc/?username=eugeneb50&label=Profile+Views&color=7b2cf2&style=flat)
+
 ![Open to Work](https://img.shields.io/badge/Open%20to%20Work-Staff%20AI%20Engineer-15a39a?style=flat&logo=readme&logoColor=white)
 
 # Eugene L. Buchanan
@@ -72,6 +72,8 @@ I use probabilistic systems to build deterministic solutions reliably — the co
 - **Other Interests** — Renewable energy, permaculture, real estate, Argentine tango.
 
 ---
+
+![Profile Views](https://komarev.com/ghpvc/?username=eugeneb50&label=Profile+Views&color=7b2cf2&style=flat)
 
 > ✉️ **Let's build something reliable.** Looking for meaningful work in Staff AI systems engineering, agentic infrastructure integrations, and multi-agent orchestration. Reach out at eugene@serviceofothers.org.
 
