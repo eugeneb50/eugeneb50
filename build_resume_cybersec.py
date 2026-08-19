@@ -24,7 +24,7 @@ from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
 FONT_DIR = "/usr/share/fonts/TTF"
 pdfmetrics.registerFont(TTFont("DJ", os.path.join(FONT_DIR, "DejaVuSans.ttf")))
 pdfmetrics.registerFont(TTFont("DJ-B", os.path.join(FONT_DIR, "DejaVuSans-Bold.ttf")))
-pdfmetrics.registerFontFont("DJ", normal="DJ", bold="DJ-B", italic="DJ", boldItalic="DJ-B")
+pdfmetrics.registerFontFamily("DJ", normal="DJ", bold="DJ-B", italic="DJ", boldItalic="DJ-B")
 
 # ── Palette (dark + crimson security) ──────────────────────────────────────
 DARK_BG = colors.HexColor("#0d0d1a")
