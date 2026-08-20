@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 96" role="img" aria-label="PhaseSave">
+  <g transform="translate(48 48)">
+    <circle cx="0" cy="0" r="13" fill="#c25e3a"/>
+    <g stroke="#c25e3a" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M0 -26 V -14 M0 14 V 26 M-26 0 H -14 M14 0 H 26"/>
+      <path d="M-18.4 -18.4 L -9.9 -9.9 M18.4 18.4 L 9.9 9.9"/>
+      <path d="M18.4 -18.4 L 9.9 -9.9 M-18.4 18.4 L -9.9 9.9"/>
+    </g>
+  </g>
+  <text x="96" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="700" fill="#241c14">Phase<tspan fill="#c25e3a">Save</tspan></text>
+</svg>
