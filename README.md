@@ -5,7 +5,7 @@
 
 **Staff AI Engineer · Agentic AI Infrastructure · Rust Developer**
 
-> Designing and scaling high-performance agentic frameworks, developer tools, and enterprise SaaS integrations. Core contributor to the [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) autonomous agent runtime and [herdr](https://github.com/ogulcancelik/herdr) multi-agent multiplexer in Rust.
+> Designing and scaling high-performance agentic frameworks, developer tools, and enterprise SaaS integrations. Current contributor to the [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) autonomous agent runtime and [herdr](https://github.com/ogulcancelik/herdr) multi-agent multiplexer in Rust.
 
 [![Location](https://img.shields.io/badge/Apple%20Valley%2C%20CA%20%2F%20San%20Quint%C3%ADn%2C%20MX-1a1342?style=flat&logo=googlemaps&logoColor=white)](https://www.google.com/maps/place/Apple+Valley,+CA)
 [![Email](https://img.shields.io/badge/eugene@serviceofothers.org-fb2e8e?style=flat&logo=gmail&logoColor=white)](mailto:eugene@serviceofothers.org)
@@ -17,17 +17,19 @@
 
 ## 👋 About Me
 
-Now using probabilistic systems to build deterministic solutions, reliably. Enjoy the process of discovery and creation using imagination to find soothing paths to pain points. Cost conscious multi-agent orchestration that provides the satisfaction of solving difficult problem faster.  multi-model routing, evaluation frameworks, and the privacy and search foundations that make AI-native platforms real. I turn ambiguous model behavior into predictable, observable, bounded systems teams can trust in production.
+Now using probabilistic systems to build deterministic solutions, reliably. Enjoy the process of discovery and creation, using my imagination and skills to find soothing paths to pain points. Applying cost conscious multi-agent orchestration that provides the satisfaction of solving difficult problems efficiently. Mastering rapidly evolving spaces using multi-model routing, privacy, compression and evaluation frameworks that guide self improving agentic loops into audit ready reliable outcomes. 
 
-- 🤝 Open to **Senior / Staff AI Infrastructure** and **Systems Engineering** roles (remote or hybrid).
+I turn ambiguous model behavior into predictable, observable, bounded systems teams that you can trust in production.
+
+- 🤝 Open to **Senior / Staff AI Infrastructure** and **Software Engineering** roles (remote or hybrid).
 - 🔧 I bridge the gap between complex models and dependable, observable products.
 - 🌎 Bilingual-friendly, cross-functional leader (Product Owner, QA Lead, Presales).
 
 ## 🔭 Currently Working On
 
-- 🦀 **[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw)** — autonomous agent runtime in Rust (context-window metering, multi-provider usage identity, agent lifecycle).
-- 🤖 **[herdr](https://github.com/ogulcancelik/herdr)** — multi-agent terminal multiplexer with JSON-RPC agent reporting.
-- 🔌 **[herdr-mcp](https://github.com/eugeneb50/herdr-mcp)** — Rust MCP server exposing the herdr CLI to AI agents.
+- 🦀 **[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw)** — Infastructure grade Autonomous agent runtimes in Rust (context-window metering, multi-provider usage identity, agent lifecycle).
+- 🤖 **[herdr](https://github.com/ogulcancelik/herdr)** — multi-agent terminal multiplexer with JSON-RPC agent2agent A2A reporting.
+- 🔌 **[herdr-mcp](https://github.com/eugeneb50/herdr-mcp)** — Rust MCP server exposing the herdr CLI to AI agents and a postman like playground.
 - 📄 **Resume generator** — this repo: reportlab + Pillow PDF builder with an interactive 7-language localization panel.
 
 ## ⭐ Featured Projects
@@ -35,7 +37,7 @@ Now using probabilistic systems to build deterministic solutions, reliably. Enjo
 | Project | Description | Language |
 |---------|-------------|----------|
 | [herdr-mcp](https://github.com/eugeneb50/herdr-mcp) | Rust MCP (Model Context Protocol) server exposing the herdr CLI to AI agents | Rust |
-| [zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) | Autonomous agent runtime — core contributor (32.2k★) | Rust |
+| [zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) | Autonomous agent runtime — contributor (32.2k★) | Rust |
 | [herdr](https://github.com/ogulcancelik/herdr) | Multi-agent terminal multiplexer with lifecycle reporting | Rust |
 | [Tierrachain](https://www.tierrachain.com) | AI + blockchain SaaS for real-estate exchange in coastal exclusion zones | TypeScript |
 | [PhaseSave](https://phasesave.com) | Alternative-energy consulting — solar/wind/cogen & cold-chain logistics | — |
@@ -60,7 +62,7 @@ Now using probabilistic systems to build deterministic solutions, reliably. Enjo
 | 2025–Present | Staff AI Systems Engineer (Open Source Contributor & Core Developer) | Tierrachain.com, herdr-mcp |
 | 2020–2025 | QA Automation Lead & Product Owner Integrations | Knowledgecity LLC |
 | 2011–2020 | Software Consultant | Foremost Senior Care, AMP Computer Freelance Consulting |
-| Prior | IT Specialist ( Lucerne Valley School District | District wide support State Submissions |
+| Prior | IT Specialist ( Lucerne Valley School District | District wide support / State Submissions |
 | Prior | Senior Software Test Engineer (Windows Kernel & Media Server) | Microsoft |
 | Prior | Senior Systems Engineer (Platform QA & Global Presales) | RealNetworks |
 | Prior | Senior HA Systems Engineer (High Availability Server Cluster Validation) | IBM |
