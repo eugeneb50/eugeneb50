@@ -17,7 +17,7 @@
 
 ## 👋 About Me
 
-I use probabilistic systems to build deterministic solutions reliably — the core of agentic AI infrastructure. I design and ship multi-agent orchestration, multi-model routing, evaluation frameworks, and the privacy and search foundations that make AI-native platforms real. I turn ambiguous model behavior into predictable, observable, bounded systems teams can trust in production.
+Now using probabilistic systems to build deterministic solutions, reliably. Enjoy the process of discovery and creation using imagination to find soothing paths to pain points. Cost conscious multi-agent orchestration that provides the satisfaction of solving difficult problem faster.  multi-model routing, evaluation frameworks, and the privacy and search foundations that make AI-native platforms real. I turn ambiguous model behavior into predictable, observable, bounded systems teams can trust in production.
 
 - 🤝 Open to **Senior / Staff AI Infrastructure** and **Systems Engineering** roles (remote or hybrid).
 - 🔧 I bridge the gap between complex models and dependable, observable products.
@@ -57,9 +57,10 @@ I use probabilistic systems to build deterministic solutions reliably — the co
 
 | Years | Role | Where |
 |---|---|---|
-| 2024–Present | Staff AI Systems Engineer (Open Source Contributor & Core Developer) | ZeroClaw Labs & herdr-mcp |
-| 2020–2025 | Principal Software Engineer, QA & Integrations Lead | Knowledgecity LLC |
-| 2011–2020 | Lead Systems Architect & Founder | Tierrachain & Freelance Consulting |
+| 2025–Present | Staff AI Systems Engineer (Open Source Contributor & Core Developer) | Tierrachain.com, herdr-mcp |
+| 2020–2025 | QA Automation Lead & Product Owner Integrations | Knowledgecity LLC |
+| 2011–2020 | Software Consultant | Foremost Senior Care, AMP Computer Freelance Consulting |
+| Prior | IT Specialist ( Lucerne Valley School District | District wide support State Submissions |
 | Prior | Senior Software Test Engineer (Windows Kernel & Media Server) | Microsoft |
 | Prior | Senior Systems Engineer (Platform QA & Global Presales) | RealNetworks |
 | Prior | Senior HA Systems Engineer (High Availability Server Cluster Validation) | IBM |
