@@ -1,0 +1,32 @@
+# ============================================================
+# PhaseSave — static site (Apache / cPanel)
+# ============================================================
+
+# Disable directory listings
+Options -Indexes
+
+# --- Redirect legacy WordPress URLs (301, preserves SEO equity) ---
+Redirect 301 /about/                          /index.html#about
+Redirect 301 /contact/                        /index.html#contact
+Redirect 301 /service/                        /index.html#services
+Redirect 301 /service/solar/                  /index.html#services
+Redirect 301 /service/air-conditioning/       /index.html#services
+Redirect 301 /service/phase-change-materials/ /index.html#phasestore
+
+# --- Error pages ---
+ErrorDocument 404 /404.html
+
+# --- Caching for static assets ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

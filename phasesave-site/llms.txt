@@ -1,0 +1,53 @@
+# PhaseSave
+
+> Clean energy, born of the desert.
+
+PhaseSave is an alternative-energy consultancy based in Palm Springs, California, founded in 2004, offering consulting, sales, engineering, and development for solar, phase-change material thermal storage, zero-water cooling, and resilient microgrids.
+
+## Key facts
+
+- Founded: 2004
+- Founder / director: Eugene Buchanan (alternative-energy consultant)
+- Parent organization: Trinity Concepts Inc., a Federal 501(c)(3) Community Development Financial Institution
+- Location: 195 S Civic Dr Suite, Palm Springs, CA 92262 (Coachella Valley, Riverside County)
+- Phone: +1 (760) 265-4209
+- Email: Eugene@phasesave.com
+- Track record: 20+ years advising, $42M+ in projects advised, 15+ countries served, 0 gallons of water used in cooling
+
+## Services
+
+- Energy Consulting & Feasibility — free initial consultation and site-specific modeling
+- Solar — grid-tied, off-grid, demand response, and solar heating & cooling
+- Thermal Storage & PCM — PhaseStore 10°C graphite phase-change material for peak shaving and load shifting
+- Zero-Water Cooling — SkyCool radiative panels, pre-cooling mist, and passive envelopes
+- Resilient Microgrids — solar-shaded aquaculture, pumped hydro, and low-head vortex turbines
+- Cold Chain Logistics — PCM cold chain for health clinics and agriculture
+
+## Flagship product — PhaseStore
+
+Modular thermal energy storage for enterprise cooling. Capacity: 2 MWh per unit. Blackout autonomy: 72+ hours. Water use: 0 gallons. Typical payback: under 2 years. Charges 10°C graphite PCM off-peak and discharges at peak, supplemented by SkyCool radiative panels.
+
+## Frequently asked questions
+
+- What does PhaseSave do? — PhaseSave is an alternative-energy consultancy in Palm Springs, California, providing consulting, sales, engineering, and development for solar, thermal storage, zero-water cooling, and resilient microgrids.
+- Where is PhaseSave located? — 195 S Civic Dr Suite, Palm Springs, CA 92262, serving the Coachella Valley, Southern California, and 15+ countries.
+- What is PhaseStore thermal storage? — Modular storage that charges 10°C graphite PCM off-peak and discharges at peak, with SkyCool radiative cooling; ROI under 2 years.
+- How much can thermal storage save on cooling? — Shifting a 2,000 kW load, 6 peak hours, from $0.34/kWh on-peak to $0.08/kWh off-peak can save roughly $770,000 per year before incentives.
+- Does PhaseSave work on off-grid projects? — Yes: off-grid self-install solar kits, battery-less off-grid systems for AC motors, solar wells, mining, and refrigeration.
+- Is the first consultation free? — Yes.
+
+## Journal
+
+- [The Desert Doesn't Have Water to Spare. Our Data Centers Shouldn't Need It.](https://phasesave.com/blog/zero-water-data-centers-coachella-valley/) — Why the Coachella Valley should host the digital economy without evaporative cooling water, via PhaseSave's three-layer approach: radiative sky cooling, phase-change thermal storage, and passive rack-side heat buffering. Argues for a "third way" between banning data centers and business as usual.
+
+## Links
+
+- [Home](https://phasesave.com/)
+- [Services](https://phasesave.com/#services)
+- [PhaseStore](https://phasesave.com/#phasestore)
+- [Why Us](https://phasesave.com/#why)
+- [Process](https://phasesave.com/#process)
+- [FAQ](https://phasesave.com/#faq)
+- [About](https://phasesave.com/#about)
+- [Journal](https://phasesave.com/blog/zero-water-data-centers-coachella-valley/)
+- [Contact](https://phasesave.com/#contact)
