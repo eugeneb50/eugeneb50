@@ -62,7 +62,7 @@ I turn ambiguous model behavior into predictable, observable, bounded systems te
 | 2025–Present | Staff AI Systems Engineer (Open Source Contributor & Core Developer) | Tierrachain.com, herdr-mcp |
 | 2020–2025 | QA Automation Lead & Product Owner Integrations | Knowledgecity LLC |
 | 2011–2020 | Software Consultant | Foremost Senior Care, AMP Computer Freelance Consulting |
-| Prior | IT Specialist ( Lucerne Valley School District | District wide support / State Submissions |
+| Prior | IT Specialist ( Lucerne Valley School District) | District wide support / State Submissions |
 | Prior | Senior Software Test Engineer (Windows Kernel & Media Server) | Microsoft |
 | Prior | Senior Systems Engineer (Platform QA & Global Presales) | RealNetworks |
 | Prior | Senior HA Systems Engineer (High Availability Server Cluster Validation) | IBM |
