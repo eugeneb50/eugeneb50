@@ -11,4 +11,14 @@
       <image:title>PhaseSave — clean energy, born of the desert</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://phasesave.com/blog/zero-water-data-centers-coachella-valley/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://phasesave.com/assets/blog-hero.jpg</image:loc>
+      <image:title>The desert doesn't have water to spare — PhaseSave Journal</image:title>
+    </image:image>
+  </url>
 </urlset>

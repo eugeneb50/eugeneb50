@@ -1,0 +1,7 @@
+# Netlify / Cloudflare Pages redirects (legacy WordPress URLs → new anchors)
+/about/                          /index.html#about                         301
+/contact/                        /index.html#contact                       301
+/service/                        /index.html#services                      301
+/service/solar/                  /index.html#services                      301
+/service/air-conditioning/       /index.html#services                      301
+/service/phase-change-materials/ /index.html#phasestore                    301

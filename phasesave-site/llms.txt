@@ -36,6 +36,10 @@ Modular thermal energy storage for enterprise cooling. Capacity: 2 MWh per unit.
 - Does PhaseSave work on off-grid projects? — Yes: off-grid self-install solar kits, battery-less off-grid systems for AC motors, solar wells, mining, and refrigeration.
 - Is the first consultation free? — Yes.
 
+## Journal
+
+- [The Desert Doesn't Have Water to Spare. Our Data Centers Shouldn't Need It.](https://phasesave.com/blog/zero-water-data-centers-coachella-valley/) — Why the Coachella Valley should host the digital economy without evaporative cooling water, via PhaseSave's three-layer approach: radiative sky cooling, phase-change thermal storage, and passive rack-side heat buffering. Argues for a "third way" between banning data centers and business as usual.
+
 ## Links
 
 - [Home](https://phasesave.com/)
@@ -45,4 +49,5 @@ Modular thermal energy storage for enterprise cooling. Capacity: 2 MWh per unit.
 - [Process](https://phasesave.com/#process)
 - [FAQ](https://phasesave.com/#faq)
 - [About](https://phasesave.com/#about)
+- [Journal](https://phasesave.com/blog/zero-water-data-centers-coachella-valley/)
 - [Contact](https://phasesave.com/#contact)
