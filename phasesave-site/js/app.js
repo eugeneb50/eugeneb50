@@ -178,35 +178,88 @@
   /* ---------- Savings estimator ---------- */
   const loadInput = document.getElementById("load");
   const hoursInput = document.getElementById("hours");
-  const rateInput = document.getElementById("rate");
+  const onPeakInput = document.getElementById("onPeak");
+  const offPeakInput = document.getElementById("offPeak");
+  const effInput = document.getElementById("eff");
+  const daysInput = document.getElementById("days");
+
   const loadVal = document.getElementById("loadVal");
   const hoursVal = document.getElementById("hoursVal");
-  const rateVal = document.getElementById("rateVal");
-  const savings = document.getElementById("savings");
-  const shifted = document.getElementById("shifted");
+  const onPeakVal = document.getElementById("onPeakVal");
+  const offPeakVal = document.getElementById("offPeakVal");
+  const effVal = document.getElementById("effVal");
+  const daysVal = document.getElementById("daysVal");
 
-  const OFF_PEAK = 0.08; // $/kWh
-  const SHIFT = 0.7; // fraction of load that shifts off-peak
+  const savings = document.getElementById("savings");
+  const shiftedEnergyEl = document.getElementById("shiftedEnergy");
+  const avoidedDemandEl = document.getElementById("avoidedDemand");
+  const chargeEnergyEl = document.getElementById("chargeEnergy");
+  const estimatorNote = document.getElementById("estimatorNote");
+
+  // Fraction of peak-period cooling served by PhaseStore storage.
+  const SHIFT = 0.7;
   const fmtUSD = (n) => "$" + Math.round(n).toLocaleString("en-US");
 
   const recalc = () => {
-    const load = parseFloat(loadInput.value);
-    const hours = parseFloat(hoursInput.value);
-    const rate = parseFloat(rateInput.value);
+    const load = parseFloat(loadInput.value);        // kW of peak cooling load
+    const hours = parseFloat(hoursInput.value);      // peak-window hours per day
+    const onPeak = parseFloat(onPeakInput.value);    // $/kWh on-peak
+    const offPeak = parseFloat(offPeakInput.value);  // $/kWh off-peak
+    const eff = parseFloat(effInput.value) / 100;    // round-trip efficiency (0.7–1.0)
+    const days = parseFloat(daysInput.value);        // operating days per year
 
     loadVal.textContent = load.toLocaleString("en-US") + " kW";
     hoursVal.textContent = hours + " h";
-    rateVal.textContent = "$" + rate.toFixed(2) + " / kWh";
+    onPeakVal.textContent = "$" + onPeak.toFixed(2) + " / kWh";
+    offPeakVal.textContent = "$" + offPeak.toFixed(2) + " / kWh";
+    effVal.textContent = Math.round(eff * 100) + "%";
+    daysVal.textContent = days;
 
-    const annual = load * hours * (rate - OFF_PEAK) * 365 * SHIFT;
-    savings.textContent = fmtUSD(annual) + " /yr";
-    shifted.textContent = Math.round(load * SHIFT).toLocaleString("en-US");
+    // --- Energy model (per day) ---
+    // Energy delivered during the peak window, before storage:
+    const peakEnergy = load * hours;              // kWh/day
+    // Portion of that energy now served from storage instead of the grid:
+    const shiftedEnergy = peakEnergy * SHIFT;     // kWh/day
+    // Energy drawn off-peak to recharge (accounts for storage losses):
+    const chargeEnergy = shiftedEnergy / eff;     // kWh/day
+    // On-peak grid demand removed (what the utility no longer sees):
+    const avoidedDemand = load * SHIFT;           // kW
+
+    // --- Cost model (per day) ---
+    // Cost of the shifted energy if it ran on the grid during peak:
+    const baselineCost = shiftedEnergy * onPeak;  // $/day
+    // Cost of recharging that energy from storage off-peak:
+    const storageCost = chargeEnergy * offPeak;   // $/day
+    const dailySavings = baselineCost - storageCost; // $/day
+
+    shiftedEnergyEl.textContent = Math.round(shiftedEnergy).toLocaleString("en-US");
+    avoidedDemandEl.textContent = Math.round(avoidedDemand).toLocaleString("en-US");
+    chargeEnergyEl.textContent = Math.round(chargeEnergy).toLocaleString("en-US");
+
+    const assumptions =
+      "Assumes " + Math.round(SHIFT * 100) + "% of peak-period cooling served by storage, " +
+      Math.round(eff * 100) + "% round-trip efficiency, " + days + " operating days/yr.";
+
+    if (dailySavings <= 0) {
+      // Off-peak rate ÷ efficiency exceeds the on-peak rate → no arbitrage.
+      savings.textContent = "$0 /yr";
+      estimatorNote.textContent =
+        "Not economical at these rates: off-peak $" + offPeak.toFixed(2) +
+        " ÷ " + Math.round(eff * 100) + "% efficiency (≈ $" + (offPeak / eff).toFixed(3) +
+        "/kWh delivered) meets or exceeds on-peak $" + onPeak.toFixed(2) + ". " + assumptions;
+      estimatorNote.classList.add("is-warn");
+    } else {
+      const annualSavings = dailySavings * days;
+      savings.textContent = fmtUSD(annualSavings) + " /yr";
+      estimatorNote.textContent = assumptions;
+      estimatorNote.classList.remove("is-warn");
+    }
   };
 
-  if (loadInput && hoursInput && rateInput) {
-    [loadInput, hoursInput, rateInput].forEach((el) =>
-      el.addEventListener("input", recalc)
-    );
+  const estInputs = [loadInput, hoursInput, onPeakInput, offPeakInput, effInput, daysInput]
+    .filter(Boolean);
+  if (estInputs.length) {
+    estInputs.forEach((el) => el.addEventListener("input", recalc));
     recalc();
   }
 

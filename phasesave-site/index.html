@@ -278,27 +278,44 @@
         <div class="estimator reveal">
           <div class="estimator__intro">
             <h3>Estimate your annual savings</h3>
-            <p>Adjust the sliders — then book a consultation for a precise, site-specific model.</p>
+            <p>Model your tariff and load — then book a consultation for a precise, site-specific study.</p>
           </div>
           <div class="estimator__body">
             <div class="estimator__controls">
               <label class="range">
                 <span class="range__label"><span>Peak cooling load</span><strong id="loadVal">2,000 kW</strong></span>
-                <input type="range" id="load" min="100" max="10000" step="50" value="2000" />
+                <input type="range" id="load" min="100" max="10000" step="50" value="2000" aria-label="Peak cooling load in kilowatts" />
               </label>
               <label class="range">
                 <span class="range__label"><span>Peak hours / day</span><strong id="hoursVal">6 h</strong></span>
-                <input type="range" id="hours" min="2" max="10" step="1" value="6" />
+                <input type="range" id="hours" min="2" max="12" step="1" value="6" aria-label="Peak hours per day" />
               </label>
               <label class="range">
-                <span class="range__label"><span>Peak rate</span><strong id="rateVal">$0.34 / kWh</strong></span>
-                <input type="range" id="rate" min="0.15" max="0.60" step="0.01" value="0.34" />
+                <span class="range__label"><span>On-peak rate</span><strong id="onPeakVal">$0.34 / kWh</strong></span>
+                <input type="range" id="onPeak" min="0.10" max="0.70" step="0.01" value="0.34" aria-label="On-peak electricity rate in dollars per kilowatt-hour" />
+              </label>
+              <label class="range">
+                <span class="range__label"><span>Off-peak rate</span><strong id="offPeakVal">$0.08 / kWh</strong></span>
+                <input type="range" id="offPeak" min="0.02" max="0.40" step="0.01" value="0.08" aria-label="Off-peak electricity rate in dollars per kilowatt-hour" />
+              </label>
+              <label class="range">
+                <span class="range__label"><span>Storage efficiency</span><strong id="effVal">90%</strong></span>
+                <input type="range" id="eff" min="70" max="100" step="1" value="90" aria-label="Round-trip storage efficiency as a percentage" />
+              </label>
+              <label class="range">
+                <span class="range__label"><span>Operating days / year</span><strong id="daysVal">365</strong></span>
+                <input type="range" id="days" min="150" max="365" step="5" value="365" aria-label="Operating days per year" />
               </label>
             </div>
             <div class="estimator__result">
               <span class="estimator__result-label">Estimated annual savings</span>
-              <strong class="estimator__result-num" id="savings">$0 /yr</strong>
-              <span class="estimator__result-sub">≈ <span id="shifted">0</span> kW shifted off-peak · off-peak rate assumed $0.08/kWh</span>
+              <strong class="estimator__result-num" id="savings" aria-live="polite">$0 /yr</strong>
+              <div class="estimator__result-lines">
+                <span class="estimator__result-sub">≈ <strong id="shiftedEnergy">0</strong> kWh/day shifted off-peak</span>
+                <span class="estimator__result-sub">≈ <strong id="avoidedDemand">0</strong> kW on-peak demand avoided</span>
+                <span class="estimator__result-sub">≈ <strong id="chargeEnergy">0</strong> kWh/day charged off-peak</span>
+              </div>
+              <p class="estimator__note" id="estimatorNote"></p>
               <a class="btn btn--primary" href="#contact">Get a precise model</a>
             </div>
           </div>
