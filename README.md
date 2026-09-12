@@ -12,6 +12,8 @@
 [![GitHub](https://img.shields.io/badge/github.com%2Feugeneb50-181717?style=flat&logo=github&logoColor=white)](https://github.com/eugeneb50)
 [![Resume](https://img.shields.io/badge/PDF%20Resume-Download-7b2cf2?style=flat&logo=adobeacrobatreader&logoColor=white)](Eugene_Buchanan_Resume.pdf)
 [![ATS Resume](https://img.shields.io/badge/ATS%20Resume-Download-15a39a?style=flat&logo=adobeacrobatreader&logoColor=white)](Eugene_Buchanan_Resume_ATS.pdf)
+[![Ops Resume](https://img.shields.io/badge/Ops%20Resume%20(IT%20Support)-Download-2b1d63?style=flat&logo=adobeacrobatreader&logoColor=white)](Eugene_Buchanan_Resume_Ops.pdf)
+[![Ops ATS Resume](https://img.shields.io/badge/Ops%20ATS%20Resume-Download-0e7c75?style=flat&logo=adobeacrobatreader&logoColor=white)](Eugene_Buchanan_Resume_Ops_ATS.pdf)
 
 ---
 
@@ -61,7 +63,7 @@ I turn ambiguous model behavior into predictable, observable, bounded systems te
 |---|---|---|
 | 2025–Present | Staff AI Systems Engineer (Open Source Contributor & Core Developer) | Tierrachain.com, herdr-mcp |
 | 2020–2025 | QA Automation Lead & Product Owner Integrations | Knowledgecity LLC |
-| 2011–2020 | Software Consultant | Foremost Senior Care, AMP Computer Freelance Consulting |
+| 2011–2020 | Software Consultant — Healthcare Data & IT Operations (HIPAA-aware medical record migration, IAM/access provisioning, ticket/document/user lifecycle) | Foremost Senior Care, AMP Computer Freelance Consulting |
 | Prior | IT Specialist ( Lucerne Valley School District) | District wide support / State Submissions |
 | Prior | Senior Software Test Engineer (Windows Kernel & Media Server) | Microsoft |
 | Prior | Senior Systems Engineer (Platform QA & Global Presales) | RealNetworks |

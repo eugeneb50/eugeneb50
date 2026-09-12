@@ -9,10 +9,12 @@ Personal portfolio project: Python scripts generate a polished PDF resume, an AT
 |------|---------|
 | Build general resume | `./.venv/bin/python build_resume.py` |
 | Build ATS-friendly resume | `./.venv/bin/python build_resume_ats.py` |
+| Build ops (IT Support) resume | `./.venv/bin/python build_resume_ops.py` |
+| Build ops ATS resume | `./.venv/bin/python build_resume_ops_ats.py` |
 | Build cover letter | `./.venv/bin/python build_cover.py` |
 | Build all | `./.venv/bin/python build_resume.py && ./.venv/bin/python build_cover.py` |
 
-Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Resume_ATS.pdf`, `Eugene_Buchanan_Cover_Letter.pdf`
+Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Resume_ATS.pdf`, `Eugene_Buchanan_Resume_Ops.pdf`, `Eugene_Buchanan_Resume_Ops_ATS.pdf`, `Eugene_Buchanan_Cover_Letter.pdf`
 
 ## ATS-Friendly Resume (`build_resume_ats.py`)
 - Deliberately graphics-free: single column, no images/charts/tables, standard section headings, one font family (Helvetica base-14), "Month YYYY" dates, acronyms spelled out on first use, plain-English copy rewritten with the deslop skill.
@@ -26,7 +28,9 @@ Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Resume_ATS.pdf`, `Eugene
 
 ## Architecture Notes
 - **No shared module** — each script duplicates the design system (colors, flowables, helpers). Changes to visual style must be applied in all files.
-- **Two-page layout**: cover page (header band + photo) + content page(s) with footer.
+- **Three-page visual layout**: page 1 (header band + summary + skills + tags + Key Strengths panel) + page 2 lead (`IT Operations & Compliance`: `SKILLS_OPS` bars + `TAGS_OPS` cloud, then Experience incl. Foremost Senior Care card) + page 3 (rest of Experience, Education, interests + QR footer). Keep page-1 additions minimal — `L10nPanel` cannot split, so ~10pt overflow pushes the whole panel to page 2.
+- **ATS builder exists** (`build_resume_ats.py`): longer graphics-free resume (3 pages) with full IAM/HIPAA/lifecycle keyword coverage; rebuild it alongside the visual resumes.
+- **Ops resumes** (`build_resume_ops.py` → 2-page visual; `build_resume_ops_ats.py` → graphics-free ATS twin): IT Support Specialist positioning around Ticket/User/Document Life Cycle Management. Deliberately **HIPAA-free** — no HIPAA/PII/medical-migration content anywhere. Uses a static boxed `strengths_block()` instead of `L10nPanel` (no form fields, no `arabic_reshaper`/`python-bidi`/CID-font deps); ZeroClaw kept to one short card framed as support-tooling value.
 
 ## Key Design System Components (duplicated across scripts)
 - `HeaderBand` / `LetterHead` — gradient header with circular photo/monogram
