@@ -757,52 +757,56 @@ SUMMARY = ("Uso sistemas probabilísticos para crear soluciones deterministas co
            "b\u00fasqueda que hacen reales las plataformas nativas de IA.")
 
 EXPERIENCE = [
-    ("Ingeniero de IA Senior / Contribuidor de Infraestructura Ag\u00e9ntica (C\u00f3digo Abierto)",
-     "ZeroClaw Labs (github.com/zeroclaw-labs/zeroclaw)  \u00b7  Rust  \u00b7  32.2k stars",
+    ("Ingeniero de IA Senior / Infraestructura Ag\u00e9ntica",
+     "ZeroClaw Labs (github.com/zeroclaw-labs/zeroclaw)  \u00b7  Rust  \u00b7  C\u00f3digo abierto  \u00b7  32.8k stars",
      "2026 \u2013 Presente", [
-        "PR #7946 (FUSIONADA) \u2014 barra medidora de ventana de contexto en TUI/gateway/CLI "
-        "(+1.109 / -22, 25 archivos). Una sola fuente de verdad context_window para 9 proveedores; "
-        "configuraci\u00f3n autopoblada, comando doctor, API del gateway, ContextBar en vivo. Elimin\u00f3 la "
-        "deriva entre superficies \u2014 directamente relevante para el enrutamiento autom\u00e1tico de modelos de Brain2.",
-        "PR #8966 (ABIERTA) \u2014 porta la identidad en vivo del proveedor en los eventos de uso (+2.742 / -141, 20 archivos). "
-        "Correg\u00ed el medidor congelado de 32k en modelos de 1M de tokens; separ\u00e9 el presupuesto de recorte de la "
-        "capacidad del modelo; eventos Usage incondicionales con identidad del proveedor de servicio; desglose de uso "
-        "por proveedor en el marco done \u2014 infraestructura de atribuci\u00f3n de costos para orquestaci\u00f3n multi-LLM.",
-        "PR #8337 (ABIERTA) \u2014 integraci\u00f3n de reportes de agentes herdr (+1.712 / -17, 13 archivos). "
-        "El observador reporta el ciclo de vida del agente (inactivo/trabajando/bloqueado/liberado) v\u00eda JSON-RPC sobre UDS. "
-        "Detecci\u00f3n de entorno sin configuraci\u00f3n, estado bloqueado por puerta de aprobaci\u00f3n, recuperaci\u00f3n de fallos "
-        "v\u00eda pane.release_agent. Infraestructura de coordinaci\u00f3n multiagente; se mapea a la colaboraci\u00f3n humano-agente de Super Agents.",
+        "PR #7946 (FUSIONADA jul 2026) \u2014 context_window como \u00fanica fuente de verdad para 9 proveedores "
+        "(OpenRouter + 8 compatibles con OpenAI); comando doctor, endpoint de gateway, ContextBar web, ctx en CLI y "
+        "widget CtxBar. Revisores: WareWolf-MoonWall, Audacity88, singlerider, JordanTheJet.",
+        "PR #8966 (ABIERTA, 80 commits) \u2014 identidad del proveedor en vivo en eventos de uso (provider_ref, model, "
+        "accepted); ledger usage_by_provider en el frame done; trim separado de la capacidad del modelo. "
+        "Corrige el bug #10736.",
+        "PR #8337 (CERRADA, SUPERSEDED por #10269) \u2014 observador de ciclo de vida v\u00eda JSON-RPC sobre UDS; "
+        "52 commits; cuatro rondas superadas (I/O acotado, entorno, alcance, drenaje); requisitos adoptados en el lifecycle de #10269.",
      ]),
-    ("Ingeniero de Software Senior / QA Lead / Product Owner de Integraciones",
+    ("Ingeniero QA Senior / Test Automation Lead / Product Owner de Integraciones",
      "Knowledgecity LLC  \u00b7  Remoto  \u00b7  AWS / Postgres / React",
      "Dic 2020 \u2013 Ago 2025", [
-        "Product Owner de Integraciones: lanc\u00e9 integraciones con SAP, Oracle, Workday, Coursera, UKG y Zoom "
-        "v\u00eda SAML, OAuth, SFTP y APIs REST personalizadas \u2014 orquestando m\u00faltiples servicios con distintos "
-        "modelos de autenticaci\u00f3n, formatos de datos y sem\u00e1nticas de error. El mismo desaf\u00edo de coordinaci\u00f3n que los sistemas multiagente.",
-        "Constru\u00ed y mantuve pipelines de calidad CI/CD con Cypress, Selenium, Postman, JUnit, Elastic, S3 \u2014 "
-        "un marco de evaluaci\u00f3n para probar escenarios complejos de despliegue en superficies de integraci\u00f3n, backend, API, "
-        "base de datos y frontend.",
-        "Apliqu\u00e9 ingenier\u00eda de prompts de IA y lanc\u00e9 herramientas de chatbot con LLM en producci\u00f3n, "
-        "integr\u00e1ndolas en asistencia al cliente y flujos de automatizaci\u00f3n interna.",
-        "Dise\u00f1\u00e9 marcos de evaluaci\u00f3n, suites de regresi\u00f3n, paneles de salud y alertas "
-        "para medir la din\u00e1mica a nivel de sistema en despliegues multi-entorno.",
-        "Mentoric\u00e9 y capacit\u00e9 al equipo de automatizaci\u00f3n de pruebas; dirig\u00ed revisiones de c\u00f3digo; elev\u00e9 los est\u00e1ndares de ingenier\u00eda.",
+        "Product Owner de Integraciones: SAP, Oracle, Workday, Coursera, UKG y Zoom "
+        "v\u00eda SAML, OAuth, SFTP, webhooks, SCORM, LTI y APIs REST \u2014 m\u00faltiples servicios con distintos "
+        "modelos de autenticaci\u00f3n, formatos de datos y sem\u00e1nticas de error.",
+        "Pipelines CI/CD con Cypress, Selenium, Postman, JUnit, Elastic, S3 y Qase \u2014 "
+        "coordinando en Slack, Jira, Bitbucket y Confluence; evaluaci\u00f3n de despliegues en "
+        "integraci\u00f3n, backend, API, datos y frontend.",
+        "Ingenier\u00eda de prompts y chatbot con recuperaci\u00f3n RAG, guardrails y conformidad SOC 2 "
+        "para soporte al cliente y automatizaci\u00f3n interna.",
+        "Marcos de evaluaci\u00f3n, suites de regresi\u00f3n, paneles de salud y alertas; "
+        "forense de incidentes del equipo azul (blue-team).",
+        "Mentoric\u00e9 al equipo de automatizaci\u00f3n; dirig\u00ed revisiones de c\u00f3digo; elev\u00e9 los est\u00e1ndares de ingenier\u00eda.",
      ]),
-    ("Ingeniero de Software Senior II / Ingenier\u00eda de Preventa",
+    ("Ingeniero de Software Senior II / Preventa",
      "RealNetworks  \u00b7  Seattle, WA  \u00b7  Plataforma de Streaming de Medios",
-     "", [
-        "QA en un equipo de investigaci\u00f3n avanzada evaluando el comportamiento de sistemas distribuidos en "
-        "electrodom\u00e9sticos de consumo, plataformas m\u00f3viles, servidores de streaming y redes celulares \u2014 escenarios complejos y multicomponente.",
-        "Ingenier\u00eda de preventa global: convert\u00ed capacidades del producto en soluciones para clientes en diversos "
-        "entornos t\u00e9cnicos. Capacit\u00e9 nuevos ingresos; lider\u00e9 colaboraci\u00f3n multifuncional.",
+     "1999 \u2013 2001", [
+        "SDET QA en Linux/Unix/Windows/Embedded \u2014 investigaci\u00f3n en electrodom\u00e9sticos, m\u00f3viles, "
+        "servidores de streaming y redes celulares; trabajo de patente TFRCP.",
+        "Preventa global con viajes a Jap\u00f3n y Corea; capacit\u00e9 nuevos ingresos; lider\u00e9 colaboraci\u00f3n multifuncional.",
      ]),
-    ("Ingeniero de Pruebas de Software Senior IV",
-     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows Media Server",
-     "", [
-        "Pruebas de caja blanca y automatizaci\u00f3n para Windows Media Server, Windows 98/NT \u2014 marcos de evaluaci\u00f3n para pruebas complejas de sistemas.",
-        "Depuraci\u00f3n profunda en infraestructura de servidores, protocolos de red y c\u00f3decs multimedia.",
+    ("Senior Software Test Engineer IV",
+     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows Media Server 4/5",
+     "1999", [
+        "Automatizaci\u00f3n de scripts de prueba para builds nocturnas; pruebas de caja blanca en Windows Media Server 4/5.",
      ]),
-    # (IBM 1998 omitido \u2014 una sola vi\u00f1eta, mismo enfoque de fiabilidad cubierto en el rol de Microsoft)
+    ("Software Test Engineer II",
+     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows 98/NT",
+     "1997", [
+        "Instalaci\u00f3n OEM y verificaci\u00f3n de hardware/drivers en Windows 98/NT.",
+     ]),
+    ("Roles Anteriores  \u00b7  IBM / Keene Inc.",
+     "IBM  \u00b7  Kirkland, WA  \u00b7  Keene Inc.  \u00b7  Seattle, WA",
+     "1998  \u00b7  1996", [
+        "IBM, Ingeniero de Pruebas Senior III (1998): servidores de alta disponibilidad; certificaci\u00f3n WHQL de conmutaci\u00f3n por error en cl\u00faster.",
+        "Keene Inc., Agente de Soporte T\u00e9cnico II (1996): tickets de helpdesk de primera l\u00ednea y escalados para Windows 95/NT.",
+     ]),
 ]
 
 SKILLS = [
@@ -840,6 +844,7 @@ EDUCATION = [
     "Grado de Asociado, Victor Valley College",
     "Comisi\u00f3n de Notario de California",
     "Toastmasters International",
+    "High School Diploma, Lucerne Valley High School",
 ]
 
 TAG_SECTIONS = [
@@ -853,20 +858,21 @@ TAG_SECTIONS = [
         "Enrutamiento de Ventana de Contexto", "Atribuci\u00f3n de Costos Multimodelo",
         "MCP (Model Context Protocol)", "Servidor herdr-mcp",
         "Acceso a Herramientas Externas", "Ingenier\u00eda de Prompts",
-        "OpenAI", "Anthropic", "Cohere", "Gemini",
+        "OpenAI", "Anthropic", "RAG", "Gemini",
         "Ollama", "Hugging Face",
     ]),
     ("Backend y Plataforma", [
         "Rust", "Python", "Node.js", "PostgreSQL", "AWS (ECS, S3)",
-        "REST", "GraphQL", "Docker", "Git",
+        "REST", "GraphQL", "Docker", "Git", "Webhooks", "SCORM", "LTI",
     ]),
     ("Evaluaci\u00f3n y Pruebas", [
         "Cypress", "Selenium", "JUnit", "Postman", "Elasticsearch",
         "Suites de Regresi\u00f3n", "Paneles de Salud", "Alertas",
+        "Qase", "Slack", "Jira", "Bitbucket", "Confluence",
     ]),
     ("Autenticaci\u00f3n y Privacidad", [
         "SAML", "OAuth", "OIDC", "Perfiles de Permisos",
-        "Aislamiento de Principal", "Denegar por Defecto",
+        "Aislamiento de Principal", "Denegar por Defecto", "SOC 2",
     ]),
 ]
 

@@ -647,14 +647,14 @@ int_box_style = ParagraphStyle("intbox", fontName=FONT_B, fontSize=10.5, leading
 QR_URL = "https://github.com/eugeneb50/eugeneb50/"
 
 
-def qr_block(size=84):
+def qr_block(size=76):
     """Generate a themed QR PNG of QR_URL and return a right-aligned flowable."""
     fd, path = tempfile.mkstemp(suffix=".png")
     os.close(fd)
     segno.make_qr(QR_URL, error="m").save(
         path, scale=10, dark="#1a1342", light="#ffffff", border=0)
     qr = RLImage(path, width=size, height=size)
-    caption = Paragraph("Scan to view my GitHub profile", qr_cap_style)
+    caption = Paragraph("GitHub \u2014 eugeneb50", qr_cap_style)
     cell = Table([[qr], [caption]], colWidths=[size])
     cell.setStyle(TableStyle([
         ("ALIGN", (0, 0), (-1, -1), "CENTER"),
@@ -669,13 +669,13 @@ def qr_block(size=84):
 
 INTERESTS = [
     ("Renewable Energy",
-     "Solar, storage, and the grid of the future — following the tech and the mission."),
+     "Solar, storage, and the grid of the future."),
     ("Permaculture",
-     "Regenerative design: food forests, rainwater harvesting, and building topsoil at home."),
+     "Food forests, rainwater harvesting, and topsoil."),
     ("Real Estate",
-     "Buy-and-hold multifamily and value-add deals, analyzed with a cash-flow-first lens."),
+     "Buy-and-hold multifamily, cash-flow-first."),
     ("Tango Dancing",
-     "Argentine tango — the embrace, the pause, the musicality of the walk."),
+     "Argentine tango \u2014 embrace, pause, musicality."),
 ]
 
 
@@ -743,7 +743,7 @@ def experience_card(role, company_loc, dates, bullets):
         ("TOPPADDING", (0, 0), (0, 0), 2),
         ("BOTTOMPADDING", (0, 0), (0, 0), 2),
     ]))
-    return [card, Spacer(1, 3)]
+    return [card, Spacer(1, 2)]
 
 # ----------------------------------------------------------------------------
 # Content — Staff AI Engineer, Multi-Agent Frameworks
@@ -757,52 +757,56 @@ SUMMARY = ("Using probabilistic systems to create deterministic solutions reliab
            "that make AI-native platforms real.")
 
 EXPERIENCE = [
-    ("Staff AI Engineer / Agentic Infrastructure Contributor (Open-Source)",
-     "ZeroClaw Labs (github.com/zeroclaw-labs/zeroclaw)  \u00b7  Rust  \u00b7  32.2k stars",
+    ("Staff AI Engineer / Agentic Infrastructure (Open-Source)",
+     "ZeroClaw Labs (github.com/zeroclaw-labs/zeroclaw)  \u00b7  Rust  \u00b7  32.8k stars",
      "2026 \u2013 Present", [
-        "PR #7946 (MERGED) \u2014 context-window meter bar across TUI/gateway/CLI "
-        "(+1,109 / -22, 25 files). One context_window source of truth for 9 providers; auto-populated "
-        "config, doctor command, gateway API, live ContextBar. Removed drift between surfaces \u2014 "
-        "directly relevant to Brain2's automatic model routing.",
-        "PR #8966 (OPEN) \u2014 carry live provider identity on usage events (+2,742 / -141, 20 files). "
-        "Fixed frozen 32k meter on 1M-token models; separated trim budget from model capacity; "
-        "unconditional Usage events with serving-provider identity; per-provider usage breakdown on done frame \u2014 "
-        "cost-attribution infra for multi-LLM orchestration.",
-        "PR #8337 (OPEN) \u2014 herdr agent reporting integration (+1,712 / -17, 13 files). "
-        "Observer reports agent lifecycle (idle/working/blocked/released) via JSON-RPC over UDS. "
-        "Zero-config env detection, approval-gate blocked state, crash recovery via pane.release_agent. "
-        "Multi-agent coordination infrastructure; maps to Super Agents' human-agent collaboration.",
+        "PR #7946 (MERGED Jul 2026) \u2014 context_window source of truth for 9 providers "
+        "(OpenRouter + 8 OpenAI-compatible); doctor command, gateway API, ContextBar. "
+        "Reviewed by WareWolf-MoonWall, Audacity88, singlerider, JordanTheJet.",
+        "PR #8966 (OPEN) \u2014 live provider identity on usage events (provider_ref, model, "
+        "accepted); per-provider ledger on done frame; trim budget split from model capacity. "
+        "Fixes stream-failure fallback #10736.",
+        "PR #8337 (CLOSED, superseded by #10269) \u2014 lifecycle observer via JSON-RPC over UDS. "
+        "Four review rounds cleared (bounded I/O, env discovery, scope gating, terminal drain).",
      ]),
-    ("Senior Software Engineer / QA Lead / Integrations Product Owner",
+    ("Senior QA Engineer / Test Automation Lead / Integrations Product Owner",
      "Knowledgecity LLC  \u00b7  Remote  \u00b7  AWS / Postgres / React",
      "Dec 2020 \u2013 Aug 2025", [
         "Product Owner, Integrations: shipped SAP, Oracle, Workday, Coursera, UKG, and Zoom integrations "
-        "via SAML, OAuth, SFTP, and custom REST APIs \u2014 orchestrating multiple services with different "
-        "auth models, data formats, and error semantics. Same coordination challenge as multi-agent systems.",
-        "Built and maintained CI/CD quality pipelines with Cypress, Selenium, Postman, JUnit, Elastic, S3 \u2014 "
-        "an evaluation framework for testing complex deployment scenarios across integration, backend, API, "
-        "database, and frontend surfaces.",
-        "Applied AI prompt engineering and shipped LLM-powered chatbot tooling in production, "
-        "integrating it into customer-facing assistance and internal automation workflows.",
+        "via SAML, OAuth, SFTP, REST APIs, webhooks, SCORM, and LTI \u2014 one surface across auth models "
+        "and data formats.",
+        "Built and maintained CI/CD quality pipelines with Cypress, Selenium, Postman, JUnit, Qase, Slack, "
+        "Jira, Bitbucket, Confluence, Elastic, S3 \u2014 evaluation frameworks for complex deployment scenarios.",
+        "Helped develop AI support chatbot with RAG retrieval + guardrails (SOC 2); shipped LLM-powered "
+        "tooling into customer-facing assistance and internal automation workflows.",
         "Designed evaluation frameworks, regression suites, health dashboards, and alerting "
-        "to measure system-level dynamics across multi-environment deployments.",
+        "across integration, backend, API, database, and frontend surfaces; joined blue-team incident forensics.",
         "Mentored and trained the test automation team; ran code reviews; raised engineering standards.",
      ]),
-    ("Senior Software Engineer II / Presales Engineering",
+    ("Senior Software Engineer II / Presales",
      "RealNetworks  \u00b7  Seattle, WA  \u00b7  Streaming Media Platform",
-     "", [
-        "QA on an advanced research team evaluating distributed system behavior across consumer "
-        "appliances, mobile platforms, stream servers, and cellular networks \u2014 complex, multi-component scenarios.",
-        "Global presales engineering: turned product capabilities into customer solutions "
-        "across diverse technical environments. Trained new hires; led cross-functional collaboration.",
+     "1999 \u2013 2001", [
+        "SDET QA across Linux/Unix/Windows/Embedded for the streaming media platform; advanced "
+        "research team spanning appliances, mobile, stream servers, cellular networks (TFRCP patent work).",
+        "Global presales engineering with VP sales support and travel to Japan and Korea. "
+        "Trained new hires.",
      ]),
     ("Senior Software Test Engineer IV",
-     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows Media Server",
-     "", [
-        "White-box testing and automation for Windows Media Server, Windows 98/NT \u2014 evaluation frameworks for complex system testing.",
-        "Deep debugging across server infrastructure, network protocols, and media codecs.",
+     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows Media Server 4/5",
+     "1999", [
+        "Nightly build test script automation; white-box testing and development for complex system testing.",
      ]),
-    # (IBM 1998 omitted \u2014 single bullet, same reliability mindset covered in Microsoft role)
+    ("Software Test Engineer II",
+     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows 98/NT",
+     "1997", [
+        "OEM setup and hardware/driver verification across Windows 98/NT releases.",
+     ]),
+    ("Earlier Roles \u2014 Test & Helpdesk",
+     "IBM  \u00b7  Keene Inc.  \u00b7  Kirkland / Seattle, WA",
+     "1996 \u2013 1998", [
+        "IBM Senior Test Engineer III (1998): high-availability servers, WHQL cluster-failover certification.",
+        "Keene Inc. Technical Support Agent II (1996): frontline and escalated helpdesk ticketing, Windows 95/NT.",
+     ]),
 ]
 
 SKILLS = [
@@ -839,6 +843,7 @@ EDUCATION = [
     "Associate Degree, Victor Valley College",
     "California Notary Commission",
     "Toastmasters International",
+    "High School Diploma, Lucerne Valley High School",
 ]
 
 TAG_SECTIONS = [
@@ -850,22 +855,24 @@ TAG_SECTIONS = [
     ]),
     ("LLM, Multi-Model & MCP", [
         "Context Window Routing", "Multi-Model Cost Attribution",
-        "MCP (Model Context Protocol)", "herdr-mcp Server",
-        "External Tool Access", "Prompt Engineering",
-        "OpenAI", "Anthropic", "Cohere", "Gemini",
+        "MCP (Model Context Protocol)",
+        "External Tool Access", "Prompt Engineering", "RAG",
+        "OpenAI", "Anthropic", "Gemini",
         "Ollama", "Hugging Face",
     ]),
     ("Backend & Platform", [
         "Rust", "Python", "Node.js", "PostgreSQL", "AWS (ECS, S3)",
-        "REST", "GraphQL", "Docker", "Git",
+        "REST", "GraphQL", "Docker", "Git", "Slack",
+        "Jira", "Bitbucket", "Confluence",
     ]),
     ("Evaluation & Testing", [
         "Cypress", "Selenium", "JUnit", "Postman", "Elasticsearch",
-        "Regression Suites", "Health Dashboards", "Alerting",
+        "Regression Suites", "Health Dashboards", "Alerting", "Qase",
     ]),
-    ("Auth & Privacy", [
+    ("Auth, Privacy & Integrations", [
         "SAML", "OAuth", "OIDC", "Permission Profiles",
-        "Principal Isolation", "Deny-by-Default",
+        "Principal Isolation", "Deny-by-Default", "SOC 2",
+        "SCORM", "LTI", "Webhooks",
     ]),
 ]
 
@@ -967,7 +974,7 @@ def build():
         story.append(P(e, edu_style, bullet="\u2022"))
 
     # ── Other Interests + GitHub QR (bottom of page 2) ─────────────
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 1))
     bottom_row = Table([[interests_block(FW - 104), qr_block()]],
                        colWidths=[FW - 104, 104])
     bottom_row.setStyle(TableStyle([
