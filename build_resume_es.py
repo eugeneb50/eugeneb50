@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Genera un CV en PDF visualmente dinámico para Eugene L. Buchanan
-   orientado a puestos de Ingeniero de IA Senior — Marcos Multiagente.
+   orientado a puestos SDET Senior / Líder de Automatización QA +
+   evaluador de código IA + ingeniero de integraciones SaaS.
    Usa reportlab con encabezado degradado, barras de habilidades,
    nubes de etiquetas y tarjetas de experiencia.
 """
@@ -179,7 +180,7 @@ class HeaderBand(Flowable):
         # title
         c.setFillColor(colors.HexColor("#e0cfff"))
         c.setFont(FONT, 11)
-        c.drawString(28, H - 64, "Ingeniero de IA Senior  \u2014  Marcos Multiagente e Infraestructura Agéntica")
+        c.drawString(28, H - 64, "Senior SDET / QA Automation + Evaluador IA + Integraciones SaaS")
         # separator
         c.setStrokeColor(colors.white); c.setFillAlpha(0.22); c.setLineWidth(0.5)
         c.line(28, H - 74, pcx - pr - 10, H - 74); c.setFillAlpha(1)
@@ -355,53 +356,53 @@ class SkillRadar(Flowable):
 I18N = [
     # (code, lang-tag, label, font, translations of the 5 STRENGTHS, is_rtl)
     ("en", "en-US", "English", FONT,
-     ["Multi-agent orchestration — design and ship multi-agent systems in production with lifecycle observability.",
-      "Multi-model routing & cost — unify LLM providers behind one context window with per-model cost attribution.",
-      "Evaluation frameworks — build harnesses, regression suites, health dashboards, and alerting.",
-      "LLM integration — prompt engineering and chatbot tooling in shipped products and automation.",
-      "Cross-functional leadership — lead as Product Owner, QA Lead, and presales engineer."],
+     ["SDET & QA automation leadership — hire and train automation teams; own regression suites, dashboards, and alerting.",
+      "AI code evaluator — evaluate AI-generated code; RAG chatbot with guardrails (SOC 2); prompt engineering in production.",
+      "SaaS integrations engineer — ship SAP, Oracle, Workday, Coursera, UKG, Zoom via SAML, OAuth, SFTP, SCORM, LTI.",
+      "White-box & CI/CD testing — Apache/REST/SQL/AWS pipelines with Cypress, Selenium, Postman, JUnit, Qase.",
+      "Cross-functional delivery — lead as Product Owner (backlog, KPIs), QA Lead, and presales engineer."],
      False),
     ("es", "es-ES", "Español", FONT,
-     ["Orquestación multiagente — diseño y entrega de sistemas multiagente en producción con control de ciclo de vida.",
-      "Enrutamiento multimodelo — unifico proveedores de LLM tras una sola ventana de contexto con costo por modelo.",
-      "Marcos de evaluación — construyo bancos de pruebas, suites de regresión, paneles de salud y alertas.",
-      "Integración de LLM — ingeniería de prompts y herramientas de chat en productos y automatización en producción.",
-      "Liderazgo multifuncional — lidero como Product Owner, QA Lead e ingeniero de preventa."],
+     ["Liderazgo SDET y automatización QA — contrato y formo equipos; suites de regresión, paneles de salud y alertas.",
+      "Evaluador de código IA — evalúo código generado por IA; chatbot RAG con guardrails (SOC 2); prompts en producción.",
+      "Ingeniero de integraciones SaaS — SAP, Oracle, Workday, Coursera, UKG, Zoom vía SAML, OAuth, SFTP, SCORM, LTI.",
+      "Pruebas white-box y CI/CD — pipelines Apache/REST/SQL/AWS con Cypress, Selenium, Postman, JUnit, Qase.",
+      "Entrega multifuncional — lidero como Product Owner (backlog, KPIs), QA Lead e ingeniero de preventa."],
      False),
     ("ar", "ar-AE", "العربية", FONT_AR,
-     ["تنسيق متعدد الوكلاء — التصميم وتقديم أنظمة متعددة الوكلاء في الإنتاج مع مراقبة طول العمر.",
-      "توجيه متعدد النماذج — توحيد مزوّدي النماذج اللغوية خلف نافذة سياق واحدة مع احتساب التكلفة لكل نموذج.",
-      "أطر التقييم — بناء منصّات تقييم، ومجموعات انحدار، ولوحات صحية، وتنبيهات تقيس السلوك الفعلي.",
-      "تكامل نُماذج اللغة — هندسة الأوامر وأدوات الدردشة في منتجات تُشحن وتُبني عليها.",
-      "قيادة متعددة التخصصات — القيادة كمالك منتج وقائد ضمان الجودة ومهندس ما قبل البيع."],
+     ["قيادة اختبار الأنظمة والأتمتة — توظيف وتدريب فرق الأتمتة؛ مجموعات الانحدار ولوحات الصحة والتنبيهات.",
+      "مقيّم كود الذكاء الاصطناعي — تقييم الكود المولّد؛ شات بوت RAG مع ضوابط (SOC 2).",
+      "مهندس تكاملات SaaS — SAP وOracle وWorkday وZoom عبر SAML وOAuth وSFTP وSCORM وLTI.",
+      "اختبار الصندوق الأبيض وCI/CD — خطوط Apache/REST/SQL/AWS مع Cypress وSelenium وPostman.",
+      "تسليم متعدد التخصصات — القيادة كمالك منتج وقائد ضمان الجودة ومهندس ما قبل البيع."],
      True),
     ("zh", "zh-CN", "中文", FONT_ZH,
-     ["多智能体编排 — 设计并在生产中交付具有生命周期可观测性的多智能体系统。",
-      "多模型路由与成本 — 将 LLM 提供商统一到一个上下文窗口并核算每个模型的成本。",
-      "评估框架 — 构建测试平台、回归套件、健康仪表板和告警。",
-      "LLM 集成 — 提示工程与聊天工具在产品及自动化中交付落地。",
-      "跨职能领导力 — 以产品负责人、QA 负责人和售前工程师的身份领导团队。"],
+     ["SDET 与 QA 自动化领导力 — 组建和培训自动化团队；回归套件、健康看板与告警。",
+      "AI 代码评估 — 评估 AI 生成代码；RAG 聊天机器人与护栏（SOC 2）；生产级提示工程。",
+      "SaaS 集成工程师 — 交付 SAP、Oracle、Workday、Zoom，经 SAML、OAuth、SFTP、SCORM、LTI。",
+      "白盒与 CI/CD 测试 — Apache/REST/SQL/AWS 流水线，Cypress、Selenium、Postman、JUnit。",
+      "跨职能交付 — 以产品负责人、QA 负责人和售前工程师的身份领导团队。"],
      False),
     ("ru", "ru-RU", "Русский", FONT,
-     ["Мультиагентная оркестрация — проектирую и внедряю мультиагентные системы с наблюдаемостью жизненного цикла.",
-      "Мультимодельная маршрутизация и стоимость — объединяю LLM-провайдеров в одно контекстное окно с учётом стоимости.",
-      "Среды оценки — строю испытательные стенды, регрессионные наборы, панели здоровья и алертинг.",
-      "Интеграция LLM — промпт-инжиниринг и чат-инструменты в выпущенных продуктах и автоматизации.",
-      "Межфункциональное лидерство — лидирую как Product Owner, QA Lead и инженер пресейла."],
+     ["SDET и лидерство в автоматизации QA — нанимаю и обучаю команды; регрессия, дашборды, алертинг.",
+      "Оценка ИИ-кода — проверяю сгенерированный код; RAG-чат-бот с гардрейлами (SOC 2).",
+      "Инженер SaaS-интеграций — SAP, Oracle, Workday, Zoom через SAML, OAuth, SFTP, SCORM, LTI.",
+      "White-box и CI/CD тестирование — Apache/REST/SQL/AWS с Cypress, Selenium, Postman, JUnit.",
+      "Кросс-функциональная поставка — веду как Product Owner, QA Lead и инженер пресейла."],
      False),
     ("de", "de-DE", "Deutsch", FONT,
-     ["Multi-Agenten-Orchestrierung — Design und Auslieferung von Multi-Agenten-Systemen mit Lifecycle-Observability.",
-      "Multi-Modell-Routing und Kosten — LLM-Anbieter in einem Kontextfenster vereinen, Kosten pro Modell zuordenbar.",
-      "Evaluations-Frameworks — Prüfstände, Regressions-Suiten, Health-Dashboards und Alerting.",
-      "LLM-Integration — Prompt-Engineering und Chatbot-Tooling in ausgelieferten Produkten.",
-      "Funktionsübergreifende Führung — als Product Owner, QA Lead und Presales-Ingenieur führen."],
+     ["SDET- & QA-Automatisierungsführung — Teams aufbauen; Regression, Dashboards, Alerting.",
+      "KI-Code-Evaluierung — KI-generierten Code prüfen; RAG-Chatbot mit Guardrails (SOC 2).",
+      "SaaS-Integrationsingenieur — SAP, Oracle, Workday, Zoom via SAML, OAuth, SFTP, SCORM, LTI.",
+      "White-Box- & CI/CD-Tests — Apache/REST/SQL/AWS mit Cypress, Selenium, Postman, JUnit.",
+      "Funktionsübergreifende Lieferung — als Product Owner, QA Lead und Presales-Ingenieur führen."],
      False),
     ("ja", "ja-JP", "日本語", FONT_JA,
-     ["マルチエージェントオーケストレーション — ライフサイクル観測性を持つマルチエージェントシステムを設計し本番提供。",
-      "マルチモデルルーティングとコスト — 複数LLMを一つのコンテキストウィンドウに統合しモデルごとにコストを割り当て。",
-      "評価フレームワーク — テストハーネス、リグレッションスイート、ヘルスダッシュボード、アラートを構築。",
-      "LLM統合 — プロンプトエンジニアリングとチャットツールを本番製品や自動化に組み込み。",
-      "部門横断的リーダーシップ — プロダクトオーナー、QAリード、プリセールスエンジニアとしてリード。"],
+     ["SDET・QA自動化リーダーシップ — 自動化チームを採用・育成；リグレッション、ダッシュボード、アラート。",
+      "AIコード評価 — AI生成コードを評価；RAGチャットボットとガードレール（SOC 2）。",
+      "SaaSインテグレーションエンジニア — SAP、Oracle、Workday、ZoomをSAML等で連携。",
+      "ホワイトボックス・CI/CDテスト — Apache/REST/SQL/AWSをCypress等で検証。",
+      "部門横断デリバリー — プロダクトオーナー、QAリードとしてリード。"],
      False),
 ]
 I18N_DEFAULT = "es"
@@ -748,16 +749,15 @@ def experience_card(role, company_loc, dates, bullets):
 # ----------------------------------------------------------------------------
 # Content — Staff AI Engineer, Multi-Agent Frameworks
 # ----------------------------------------------------------------------------
-SUMMARY = ("Uso sistemas probabilísticos para crear soluciones deterministas con fiabilidad. "
-           "Ese es el centro de mi trabajo: dise\u00f1ar y lanzar infraestructura de IA ag\u00e9ntica "
-           "donde los equipos construyen, despliegan y coordinan agentes inteligentes a gran escala. "
-           "Convierto el comportamiento ambiguo de los modelos en sistemas predecibles, observables "
-           "y bien delimitados en los que los equipos pueden confiar en producci\u00f3n \u2014 orquestaci\u00f3n "
-           "multiagente, enrutamiento multimodelo, evaluaci\u00f3n y los cimientos de privacidad y "
-           "b\u00fasqueda que hacen reales las plataformas nativas de IA.")
+SUMMARY = ("SDET Senior y l\u00edder de automatizaci\u00f3n QA que eval\u00faa c\u00f3digo generado por IA "
+           "e integra SaaS con fiabilidad. En Knowledgecity (dic 2020\u2013ago 2025) contrat\u00e9 y form\u00e9 "
+           "al equipo de automatizaci\u00f3n, fui due\u00f1o de integraciones (SAP, Oracle, Workday, Coursera, "
+           "UKG, Zoom v\u00eda SAML, OAuth, SFTP, REST, webhooks, SCORM, LTI), constru\u00ed suites de regresi\u00f3n "
+           "con paneles de salud y alertas, y ayud\u00e9 a lanzar un chatbot RAG con guardrails (SOC 2). "
+           "Experiencia SDET previa en RealNetworks, Microsoft, IBM y c\u00f3digo abierto Rust.")
 
 EXPERIENCE = [
-    ("Ingeniero de IA Senior / Infraestructura Ag\u00e9ntica",
+    ("SDET Senior / Evaluador de c\u00f3digo IA (C\u00f3digo abierto)",
      "ZeroClaw Labs (github.com/zeroclaw-labs/zeroclaw)  \u00b7  Rust  \u00b7  C\u00f3digo abierto  \u00b7  32.8k stars",
      "2026 \u2013 Presente", [
         "PR #7946 (FUSIONADA jul 2026) \u2014 context_window como \u00fanica fuente de verdad para 9 proveedores "
@@ -810,34 +810,33 @@ EXPERIENCE = [
 ]
 
 SKILLS = [
-    ("Frontend - HTML, XML, Javascript, CSS", 94),
-    ("Marcos Multiagente y Orquestaci\u00f3n", 88),
-    ("Integraci\u00f3n de LLM y Enrutamiento Multimodelo", 90),
-    ("Ciclo de Vida del Agente y Observabilidad", 92),
-    ("Marcos de Evaluaci\u00f3n y Pruebas", 92),
-    ("Ingenier\u00eda Backend (Rust, Python, Node)", 90),
-    ("Ventana de Contexto y Atribuci\u00f3n de Costos", 87),
-    ("Integraci\u00f3n de B\u00fasqueda (Elastic, Postgres)", 85),
-    ("Privacidad de IA, Autenticaci\u00f3n y Protecci\u00f3n de Datos", 82),
+    ("Automatizaci\u00f3n QA \u2014 Cypress, Selenium, JUnit", 94),
+    ("Suites de Regresi\u00f3n, Paneles y Alertas", 92),
+    ("Pruebas API y Backend \u2014 REST, SQL, Postman", 90),
+    ("Integraciones SaaS \u2014 SAP, Oracle, Workday, UKG", 90),
+    ("Evaluaci\u00f3n de c\u00f3digo IA \u2014 RAG, Guardrails", 88),
+    ("SSO e Intercambio \u2014 SAML, OAuth, SFTP, LTI", 88),
+    ("White-Box y CI/CD \u2014 Apache, AWS, React", 87),
+    ("Pruebas de Seguridad y Rendimiento", 85),
+    ("Liderazgo \u2014 Product Owner, QA Lead", 90),
 ]
 
 STRENGTHS = [
-    ("Orquestaci\u00f3n multiagente",
-     "Dise\u00f1o y lanzo sistemas multiagente en producci\u00f3n \u2014 observabilidad del ciclo de vida, "
-     "E/S delimitadas y recuperaci\u00f3n de fallos que mantienen a los agentes auditables, "
-     "controlables y fiables."),
-    ("Enrutamiento multimodelo y costos",
-     "Unifico m\u00faltiples proveedores de LLM tras una sola ventana de contexto con atribuci\u00f3n "
-     "de costos por modelo, para que las decisiones de enrutamiento sean transparentes y responsables."),
-    ("Marcos de evaluaci\u00f3n",
-     "Construyo entornos de evaluaci\u00f3n, suites de regresi\u00f3n, paneles de salud y alertas que "
-     "miden el comportamiento real en sistemas distribuidos."),
-    ("Integraci\u00f3n de LLM",
-     "Llevo la ingenier\u00eda de prompts y las herramientas de chatbot a productos en producci\u00f3n "
-     "y automatizaci\u00f3n interna de los que dependen usuarios reales."),
-    ("Liderazgo multifuncional",
-     "Lidero como Product Owner, QA Lead e ingeniero de preventa \u2014 colaborando a diario con "
-     "PMs, dise\u00f1adores, investigadores e ingenieros."),
+    ("Liderazgo SDET y automatizaci\u00f3n QA",
+     "Contrato y formo equipos de automatizaci\u00f3n \u2014 suites de regresi\u00f3n, paneles de salud y "
+     "alertas en superficies web, API, datos y m\u00f3vil."),
+    ("Evaluador de c\u00f3digo IA",
+     "Eval\u00fao c\u00f3digo generado por IA y comportamiento LLM; chatbot RAG con guardrails (SOC 2); "
+     "prompts en herramientas de soporte en producci\u00f3n."),
+    ("Ingeniero de integraciones SaaS",
+     "Entrego SAP, Oracle, Workday, Coursera, UKG y Zoom v\u00eda SAML, OAuth, SFTP, REST, "
+     "webhooks, SCORM y LTI."),
+    ("Pruebas white-box y CI/CD",
+     "Pruebo pipelines Apache/REST/SQL/AWS con Cypress, Selenium, Postman, JUnit y Qase; "
+     "builds nocturnas; menos deuda t\u00e9cnica."),
+    ("Entrega multifuncional",
+     "Lidero como Product Owner (backlog, KPIs), QA Lead e ingeniero de preventa \u2014 con "
+     "forense de incidentes blue-team."),
 ]
 
 EDUCATION = [
@@ -848,31 +847,30 @@ EDUCATION = [
 ]
 
 TAG_SECTIONS = [
-    ("Multiagente y Orquestaci\u00f3n", [
-        "LangGraph", "Coordinaci\u00f3n Multiagente", "Ciclo de Vida del Agente", "JSON-RPC",
-        "E/S Delimitadas", "Fire-and-Forget", "Sockets de Dominio Unix",
-        "OpenCode", "Codex Agents", "ZeroCode", "Hermes Agent",
-        "Claude Code",
+    ("Automatizaci\u00f3n QA y Pruebas", [
+        "Cypress", "Selenium", "JUnit", "Postman", "Qase",
+        "Suites de Regresi\u00f3n", "Paneles de Salud", "Alertas",
+        "Pruebas White-Box", "Builds Nocturnas", "WHQL", "Planes de Prueba",
     ]),
-    ("LLM, Multimodelo y MCP", [
-        "Enrutamiento de Ventana de Contexto", "Atribuci\u00f3n de Costos Multimodelo",
-        "MCP (Model Context Protocol)", "Servidor herdr-mcp",
-        "Acceso a Herramientas Externas", "Ingenier\u00eda de Prompts",
-        "OpenAI", "Anthropic", "RAG", "Gemini",
+    ("Evaluaci\u00f3n de c\u00f3digo IA y LLM", [
+        "RAG", "Guardrails", "Ingenier\u00eda de Prompts", "Chatbots",
+        "Ventana de Contexto", "Atribuci\u00f3n de Costos",
+        "OpenAI", "Anthropic", "Gemini",
         "Ollama", "Hugging Face",
     ]),
-    ("Backend y Plataforma", [
+    ("Integraciones SaaS y SSO", [
+        "SAP", "Oracle", "Workday", "Coursera", "UKG", "Zoom",
+        "SAML", "OAuth", "SFTP", "SCORM", "LTI", "Webhooks",
+        "APIs REST",
+    ]),
+    ("Cobertura de Pruebas", [
+        "Frontend", "Backend", "M\u00f3vil", "API",
+        "Seguridad", "Rendimiento", "Accesibilidad",
+        "Localizaci\u00f3n", "SOC 2",
+    ]),
+    ("Plataforma y Entrega", [
         "Rust", "Python", "Node.js", "PostgreSQL", "AWS (ECS, S3)",
-        "REST", "GraphQL", "Docker", "Git", "Webhooks", "SCORM", "LTI",
-    ]),
-    ("Evaluaci\u00f3n y Pruebas", [
-        "Cypress", "Selenium", "JUnit", "Postman", "Elasticsearch",
-        "Suites de Regresi\u00f3n", "Paneles de Salud", "Alertas",
-        "Qase", "Slack", "Jira", "Bitbucket", "Confluence",
-    ]),
-    ("Autenticaci\u00f3n y Privacidad", [
-        "SAML", "OAuth", "OIDC", "Perfiles de Permisos",
-        "Aislamiento de Principal", "Denegar por Defecto", "SOC 2",
+        "Apache", "Docker", "Git", "Jira", "Elastic",
     ]),
 ]
 
@@ -885,7 +883,7 @@ def footer(canvas, doc):
     canvas.line(ML, 34, PW - MR, 34)
     canvas.setFont(FONT, 7.5); canvas.setFillColor(MUTE)
     canvas.drawString(ML, 24,
-        "Eugene L. Buchanan  \u00b7  Ingeniero de IA Senior \u2014 Marcos Multiagente")
+        "Eugene L. Buchanan  \u00b7  SDET Senior / Automatizaci\u00f3n QA")
     canvas.drawRightString(PW - MR, 24, "Page %d" % doc.page)
     canvas.restoreState()
 
@@ -897,10 +895,10 @@ def build():
     doc = BaseDocTemplate(out_path, pagesize=letter,
                           leftMargin=ML, rightMargin=MR,
                           topMargin=HEADER_H + TOP_GAP, bottomMargin=BODY_BOTTOM,
-                          title="Eugene L. Buchanan \u2014 Currículum de Ingeniero de IA Senior",
+                          title="Eugene L. Buchanan \u2014 Curr\u00edculum SDET Senior / Automatizaci\u00f3n QA",
                           author="Eugene L. Buchanan",
-                          subject="Ingeniero de IA Senior \u2014 Marcos Multiagente e Infraestructura Agéntica de IA (Apple Valley, CA)",
-                          keywords="Ingeniero de IA Senior, Multiagente, LangGraph, LLM, Rust, Orquestación de Agentes")
+                          subject="SDET Senior / Automatizaci\u00f3n QA + Evaluador de c\u00f3digo IA + Integraciones SaaS (Apple Valley, CA)",
+                          keywords="SDET Senior, Automatizaci\u00f3n QA, Cypress, Selenium, JUnit, Integraciones SaaS, RAG, Rust")
     header_frame = Frame(0, PH - HEADER_H, PW, HEADER_H, leftPadding=0,
                          rightPadding=0, topPadding=0, bottomPadding=0, id="hdr")
     cover_body = Frame(ML, BODY_BOTTOM, FW, (PH - HEADER_H - TOP_GAP) - BODY_BOTTOM,
@@ -932,8 +930,8 @@ def build():
     story.append(Spacer(1, 1))
     bars_col = [SkillBar(label, pct) for label, pct in SKILLS]
     radar_col = [SkillRadar(
-        ["Coordinaci\u00f3n\nMultiagente", "M\u00faltiples\nLLMs", "Orquestaci\u00f3n\nLangGraph",
-         "Marcos de\nEvaluaci\u00f3n", "Privacidad\nde IA", "B\u00fasqueda y\nBackend"],
+        ["Automatizaci\u00f3n\nQA", "Integraciones\nSaaS", "Evaluaci\u00f3n\nc\u00f3digo IA",
+         "Regresi\u00f3n\ny CI/CD", "Cobertura\nde pruebas", "Entrega\ny liderazgo"],
         [90, 88, 94, 92, 84, 86])]
     expertise = Table([[bars_col, radar_col]], colWidths=[FW - 215, 215])
     expertise.setStyle(TableStyle([

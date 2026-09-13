@@ -65,22 +65,23 @@ def job_block(role, meta, bullets):
 # Content — plain English, active voice, acronyms spelled out on first use
 # ----------------------------------------------------------------------------
 SUMMARY = (
-    "Senior software engineer with 25+ years building, shipping, implementing "
-    "and supporting solutions, from streaming media and operating systems to "
-    "learning management integrations and agentic AI infrastructure. Expert in "
-    "quality assurance (QA), test automation, and integrations for ERP, education, "
-    "and streaming platforms. I also bring hands-on IT operations: campus support, "
-    "retail service desk, ticket queues, and software evaluation and migration. "
+    "Senior SDET and QA Automation Lead with 25+ years testing and shipping "
+    "software, from streaming media and operating systems to learning management "
+    "integrations. I lead test automation teams, build regression suites with "
+    "health dashboards and alerting, evaluate AI-generated code, and ship SaaS "
+    "integrations (SAP, Oracle, Workday, Coursera, UKG, Zoom). I also bring "
+    "hands-on IT operations: campus support, retail service desk, ticket queues, "
+    "and software evaluation and migration. "
     "I write clean code, build reliable test systems, and explain complex ideas clearly."
 )
 
 SKILLS = [
-    "<b>Languages and Frameworks:</b> JavaScript, TypeScript, Python, Rust, PHP, Node.js, React, SQL",
-    "<b>Testing and QA:</b> Cypress, Selenium, Postman, JUnit, Qase, white-box testing, regression suites, performance and load testing, accessibility testing, security testing, usability and localization testing",
-    "<b>Cloud, CI/CD and DevOps:</b> AWS (ECS, S3), Apache, CI/CD pipelines, Docker, Git, Bitbucket, Elasticsearch, Unix domain sockets, JSON-RPC",
+    "<b>Testing and QA:</b> Cypress, Selenium, Postman, JUnit, Qase, Software Development Engineer in Test (SDET) practice, white-box testing, regression suites, health dashboards and alerting, performance and load testing, accessibility testing, security testing, usability and localization testing",
+    "<b>AI Code Evaluation and Automation:</b> evaluation of AI-generated code, AI support chatbot with retrieval-augmented generation (RAG) and guardrails, prompt engineering, large language model (LLM) integration in shipped products, AI automation",
     "<b>Integrations and Auth:</b> SAP, Oracle, Workday, Coursera, UKG, Zoom, SAML, OAuth, SFTP, REST APIs, webhooks, SCORM, LTI",
+    "<b>Languages and Frameworks:</b> JavaScript, TypeScript, Python, Rust, PHP, Node.js, React, SQL",
+    "<b>Cloud, CI/CD and DevOps:</b> AWS (ECS, S3), Apache, CI/CD pipelines, Docker, Git, Bitbucket, Elasticsearch, nightly build automation",
     "<b>Collaboration and Tooling:</b> Slack, Jira, Confluence, Scorm Cloud",
-    "<b>AI and Automation:</b> AI automation, AI support chatbot with retrieval-augmented generation (RAG) and guardrails, prompt engineering, large language model (LLM) integration, agentic AI, LangGraph, Model Context Protocol (MCP)",
     "<b>Support and Operations:</b> ticket triage and queue support, retail service desk, campus IT support, security and backup policies, wireless and video surveillance, software evaluation and migration, IT asset tracking",
     "<b>Compliance and Quality Practice:</b> SOC 2 compliance research and implementation, Blue Team incident forensics, technical debt reduction, Standard Operating Procedure (SOP) guides, technical writing",
     "<b>Platforms and Domains:</b> ERP, CRM, learning management systems (LMS), streaming media, enterprise software, alternative energy, real estate",
@@ -97,13 +98,13 @@ def build():
         leftMargin=54, rightMargin=54, topMargin=48, bottomMargin=48,
         title="Eugene Lafayette Buchanan — Resume",
         author="Eugene Lafayette Buchanan",
-        subject="Senior Software Engineer — QA, integrations, IT operations (Apple Valley, CA)",
-        keywords="QA, test automation, integrations, SAP, Oracle, Workday, RAG, SOC 2, Blue Team, SDET, streaming media, WHQL, campus IT support, retail service desk, Geek Squad, knowledge base, SOP, agentic AI, Rust",
+        subject="Senior SDET / QA Automation Lead + AI code evaluator + SaaS integrations engineer (Apple Valley, CA)",
+        keywords="Senior SDET, QA Automation Lead, AI code evaluator, SaaS integrations, SAP, Oracle, Workday, RAG, SOC 2, Blue Team, Cypress, Selenium, JUnit, streaming media, WHQL, campus IT support, retail service desk, Geek Squad, knowledge base, SOP, Rust",
     )
 
     story = []
     story.append(P("Eugene Lafayette Buchanan", name_style))
-    story.append(P("Senior Software Engineer and Technical Consultant", title_style))
+    story.append(P("Senior SDET / QA Automation Lead + AI Code Evaluator + SaaS Integrations Engineer", title_style))
     story.append(P(
         "Apple Valley, CA, San Quintin, Baja California, MX | +1 (909) 545 5384 | "
         "+52 (616) 126 5089 | eugene@serviceofothers.org", contact_style))
@@ -121,7 +122,7 @@ def build():
         "Knowledgecity LLC, Remote, Dec 2020 – Aug 2025",
         [
             "Led QA across integration, frontend, backend, mobile, security, performance, load, API, database, functionality, usability, accessibility, and localization testing. Reduced technical debt and joined Blue Team incident forensics.",
-            "Built and maintained a CI/CD quality pipeline (Apache, REST, SQL, AWS, React) with Cypress, Selenium, Postman, JUnit, Elasticsearch, and S3. Used Slack, Jira, Bitbucket, Confluence, Git, Node, JavaScript, PHP, Scorm Cloud, Elastic, and Qase.",
+            "Built and maintained a CI/CD quality pipeline (Apache, REST, SQL, AWS, React) with Cypress, Selenium, Postman, JUnit, Elasticsearch, and S3. Used Slack, Jira, Bitbucket, Confluence, Git, and Qase.",
             "Hired and trained the test automation team. Built end-to-end regression suites with health dashboards and alert systems for complex deployment scenarios.",
             "Shipped integrations with SAP, Oracle, Workday, Coursera, UKG, and Zoom using SAML, OAuth, SFTP, custom APIs, webhooks, SCORM, and LTI.",
             "Managed dev and test teams, the product backlog, and PDR life cycles with KPI tracking as Integrations Product Owner.",
@@ -202,7 +203,7 @@ def build():
             "Cut budget waste by 53%, replaced corrupt personnel, hired a strong general manager, and blocked a high-risk floodplain stack-and-pack project that later flooded.",
         ]))
     story.extend(job_block(
-        "Open-Source Contributor — Agentic AI Infrastructure",
+        "Open-Source Contributor — AI Code Evaluation and SDET Tooling",
         "ZeroClaw Labs, github.com/zeroclaw-labs/zeroclaw, 32.8k GitHub stars, 2026 – Present",
         [
             "PR #7946 (merged Jul 2026): added the model context window meter bar across the zerocode TUI, gateway agent chat, and command-line interactive mode, with one context_window source of truth covering 9 providers.",
@@ -213,8 +214,7 @@ def build():
     story.extend(section("Education"))
     for e in ["Associate Degree, Victor Valley College",
               "California Notary Commission",
-              "Toastmasters International",
-              "High School Diploma, Lucerne Valley High School"]:
+              "Toastmasters International"]:
         story.append(P(e, edu_style, bullet="\u2022"))
 
     doc.build(story)
