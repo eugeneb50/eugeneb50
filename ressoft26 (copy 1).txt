@@ -1,0 +1,148 @@
+﻿Eugene Lafayette Buchanan
+9411 Candlelight St Apple Valley, CA US Phone: +1 (909) 545 5384
+#6 Calle Coyote Blanco, San Quintin, BC Mexico +52 (616) 126 5089 
+eugene@serviceofothers.org
+
+Relevant Skills
+
+    • Senior Software Engineer – Product Owner, Quality Assurance, Technical & Sales Support, AI automation, integrations, ERP, Learning Management, Streaming Media, compliance. 
+    • Alternative Energy Consultant - Research and development of innovative energy solutions for residential and commercial clients. Sales, engineering, CAD electrical diagrams, site maps, permitting, and contract administration. Experienced in Off-grid/On-grid Wind/Solar/Co-generation systems, as well as air conditioning with phase change materials and cold chain logistics.
+    • Executive Corporate Officer for Public and Private Boards, Proven track record in developing and managing private and public corporations. Demonstrated expertise in local, state, and federal statutes, particularly in real estate, finance, intellectual property, and tax law. Skilled in team development, product management, and property acquisition.
+    • Excellent communication skills with the ability to articulate complex ideas. Strong problem-solving abilities, creative thinking, and high energy levels. Extensive knowledge across various domains, enabling me to work seamlessly from the big picture to the finest details.	
+
+Relevant Experience
+
+Senior Software Engineer 1998-present
+
+Knowledgecity LLC: Product Owner Integrations < Test Automation Lead < Senior Quality Assurance Engineer (Dec2020- Aug2025) 
+   • Product Owner Integrations: Managed development team including design and test, PDR life cycles, backlog, team management with KPI's.
+   • Shipped/ Continued Support for integrations including SAP, Oracle, Workday, Coursera, UKG, Zoom, SAML, OAuth, SFTP, and custom APIs, webhooks, Stripe, Paypal, SCORM, LTI,  
+   • Cross team collaration to integrate AI enhancements, helped developed AI Support chatbot with RAG context retrieval and gaurdrails. SOC 2 compliance research and implementation. 
+   • Hired and trained test automation team; built end to end regression suite with health dashboards and alert systems covering complex deployment scenarios.   
+   • White box testing and development for a CI/CD pipeline on Apache/REST/SQL/AWS with React frontend. Slack, Jira, Bitbucket, Confluence, Cypress, S3, Selenium, Postman, JUnit, Git, Node, JavaScript, PHP, Scorm Cloud, Elastic, Qase.
+   • Ensured quality across integrations, frontend, backend, mobile, security, performance, load, API, database, functionality, usability, accessibility, and localization, including Arabic. Reduced technical debt. Paticapated in Blue team incendent forensics. 
+Geek Squad, Best Buy Victorville, CA - Computer Service Technician 
+    • Ran the retail service desk: logged tickets, triaged walk-ins, tracked units through check-in/repair/pickup, and gave plain-language updates.
+    • Set up new PCs, migrated user data, fixed virus/OS/hardware issues — and matched customers to service plans, accessories, and upgrades. Upselling, customer service, payments and refunds. 
+Amp Computer Apple Valley (2003–2011): Freelance consultant — server/PC sales, ERP, CRM, office automation, websites with frameworks including Django and WordPress sites, custom solutions.
+Lucerne Valley Unified School District (2002): IT Manager 
+    • Provided district wide support for WAN/LAN, Netware servers and window/linux/virtualized desktops, audio/video equipment for 4 campuses.
+    • Ensured compliance with state attendance submission requirements. Data Extract, Transform, and Load, database table locking and certification.  
+RealNetworks, Seattle, WA (1999-2001): Senior Software Engineer II
+    • SDET Quality assurance across Linux/Unix/Windows/Embedded for cutting edge streaming media platform development. 
+    • Advanced research team focused on consumer appliances, mobile platforms, stream servers, cellular networks including TFRCP patent work.  
+    • Global presales engineering for consumer devices, VP sales support include travel to Japan, Korea Contenential USA. New hiring training. 
+Microsoft, Redmond, WA (1999): Senior Software Test Engineer IV 
+     Windows Media Server 4/5. Nightly build test script automation,  
+IBM, Kirkland, WA (1998): Senior Test Engineer III for High Availability Servers. WHQL Certification for cluster failover. 
+Microsoft, Redmond, WA (1997): Software Test Engineer II for Windows 98/NT. OEM Setup Hardware/Driver verification 
+Keene Inc., Seattle, WA (1996): Technical Support Agent II for Windows 95/NT. Frontline and escalated support ticketing. 
+
+Alternative Energy Consultant 2004-Present 
+PhaseSave.com Research and Development, Palm Springs, CA (2017-2021/Present) Partner/Director
+    • Consulting teams for sales engineering, project management, product/vendor sourcing, and contractor management.
+    • Expertise in solar power, air conditioning, phase change materials, cold chain logistics, finance, and tax credits.
+EWSolar.net LLC, Homeland, CA (2014-2016): Vice President Solar
+    • Pioneering the development of large direct commerical/municiple solar-powered water pumping projects.
+Free Energy Resources Inc., Phelan, CA (2013):
+    • Chief Technology Officer (CTO) responsible for developing a Korean solar marketing company. Sales, procurement, and project management, permitting, finance. 
+GRIDNOT Inc., Lucerne Valley, CA (2007-2012) Vice President
+    •  Overseeing teams and vendores for the sales and integration of solar, wind, and geothermal air-conditioning systems.
+OnPoint Power Inc., Norco, CA (2006) Partner 
+    •  PV and Thermal Solar Residential/Light Commercial sales. Pioneered waste-to-energy plant for the City of Norco presenting to city counsil meetings on developing horse manure to energy facility at the waste water plant.  
+Desert Power Inc., Palm Springs, CA (2005) Executive Assistant
+    • Sales and engineering support for renewable energy projects, specializing in PV solar, waste-to-energy, and tri-generation combined electricity-heat-refrigeration. 
+    • Research on Fischer–Tropsch catalystic conversion of syngas to liquids, process stabilization, anti-fowling, hot gas flow control. Absorbsion refrigeration. 
+Solatron Inc., Victorville, CA (2004) Sale Representive 
+    • Inside Inbounded phone sales photo-voltaic systems. Created Excel calulator used office wide, worked on SOP sales scripts.
+
+Business Consultant, Medico Investments LLC. Foremost Senior Care Hesperia, CA 92345 (2013-2016) 
+    •  Recovered a non permitted installation of a photovoltaic system. Worked City for PTO with as built engineering.
+    •  Support Accounting/Medical records software evaulation and migration. 
+    •  Foremost Organization development non-profit and community outreach. Setup bingo licence developed and filed Federal, State and City applications to get approval. Developed and successfully promoted Social Mixer with dance lessons.
+    •  Campus IT support, develop security and backup policies for campus servers and PC's. Upgraded campus video surveillance system for better quality and remote access, installed campus wide wireless. 
+    •  Setup sound and video equipment and MC'ed events in the activity center and main hall.
+    •  Reviewed business plans and strategies and provided direction to reduce procurement, operations and staffing costs. 
+    •  Developed plans and used political connections to get city approval for a bridge onto land locked land for owner. 
+
+Real Estate Professional 1999-Present Real estate investor involved in the redevelopment and management of commercial and residential properties.
+Tierrachain.com Founder – (2023– Present)
+    • Mexican land corporation developing software as a service offerings that uses AI and blockchain to improve real estate exchange in coastal exclusion zones. 
+    • Developing a parallel public records system combined with AI automated compliance filling that meets and exceeds local requirements for arbitrage. 
+    • Integration of Ubiquity.io NFTitle with Bitso.com as payment rails for a fintech service extension to the Heyhom.mx real estate mapping website.  
+    • Improving security and lowering the cost of transaction for foreign and domestic ownership. Simplified fractional ownership and defi finance models.  
+
+President of the Mariana Ranchos County Water Board 2006-2010 California Public Officer.  
+    • California Elected Representative with practical knowledge of public ethics, Roberts Rules of Order, the Brown Act, and state and federal laws governing public agencies. 
+    • Demonstrated expertise in public accounting, insurance, and safety. California JPIA delegate. 
+    • Achieved the distinction of being the youngest water board president in California's history. 
+    • Reduced budget waste by 53% after taking office. Helped with SCADA upgrade for tank and pump sensors and relays. 
+    • Implemented personnel changes to address corruption and hired an excellent General Manager.
+    • Successfully prevented a high-risk floodplain construction project, mitigating a stack and pack disaster that flooded later. 
+
+Open-Source Agentic Infrastructure Contributions 2026-present
+ZeroClaw Labs (github.com/zeroclaw-labs/zeroclaw) — Rust-based agentic AI gateway, 32.8k stars
+    • PR #7946 — feat(runtime): model context window ctx bar for zerocode TUI, gateway agent chat, and CLI interactive mode (MERGED Jul 6, 2026 — 39 commits)
+      Added context_window as single source of truth on ModelProviderConfig with fetch_context_window() covering 9 providers (OpenRouter + 8 OpenAI-compatible); new doctor update-context-windows command and gateway refresh endpoint; gateway WebSocket done frame, web ContextBar, per-turn CLI ctx summary, and zerocode CtxBar widget. Cleared review from WareWolf-MoonWall, Audacity88, singlerider, and JordanTheJet (Fluent i18n across 5 locales, credential forwarding, exact-alias write-back).
+
+    • PR #8337 — feat(observability): herdr agent reporting integration (CLOSED unmerged — 52 commits, 12 files; SUPERSEDED by #10269)
+      Designed and shipped an observer that reports agent lifecycle (idle/working/blocked/released) to herdr persistent terminal sessions via JSON-RPC over Unix domain sockets. Iterated through four rounds of maintainer review, each resolved:
+      - Built fire-and-forget bounded I/O thread (dedicated OS thread with own Tokio runtime) to prevent agent loop hangs on unresponsive sockets
+      - Removed dead config section; switched to pure env-driven discovery (HERDR_ENV, HERDR_SOCKET_PATH, HERDR_PANE_ID)
+      - Gated installation to interactive CLI scope to match advertised blast radius
+      - Reserved terminal queue with stale-snapshot suppression; ordered idle + release_agent delivery with shutdown drain
+      - Additive TurnCompleteAttributed variant preserved the public TurnComplete API shape; multi-agent reporting by alias + pane ID suffix
+      - Replaced Darwin-invalid socket timeout with portable bounded receive loop in the flush regression
+      Formally superseded by JordanTheJet's feat(lifecycle): add bounded command projection (#10269, Draft): its supersede attribution credits #8337's lifecycle and delivery requirements — content-free lifecycle state, turn/foreign-run isolation, stale-state suppression, bounded async delivery, failure isolation, reserved terminal/shutdown intent — as the basis redesigned into the canonical vendor-neutral hooks.lifecycle_commands boundary (no direct code carry-over). Related vendor-neutral lifecycle export tracker #10167.
+      Coordinating with herdr maintainer on a standardized generic agent integration adapter (herdrdev/herdr#811).
+
+    • PR #8966 — feat(agent): carry live provider identity on usage events and resolve context window from the serving provider (MERGED Sep 18, 2026 — 94 commits)
+      TurnEvent::Usage now carries live serving identity (provider_ref, model, accepted flag) so usage, cost, and context-meter attribution follow the provider that actually served the call across fallback and in-turn model switches.
+      - Gateway done frame carries a per-attempt usage_by_provider ledger with scalar cost derived as its sum; accepted/rejected separation enforced in a dedicated UsageFold
+      - Aligned runtime cost pipeline with upstream pricing (per-dimension ModelRates, UnpricedUsage provenance); durable ACP/RPC usage snapshots
+      - Deliberate Reliable single-candidate stream-to-non-stream recovery policy (RetryDecision); every settled billable attempt projected as a Usage event
+      - Separated trim budget (max_context_tokens) from display ceiling (model_context_window wire field) across gateway, RPC, zerocode, and web clients
+      - Fixes pre-output stream-failure fallback bug (#10736); related fallback-telemetry task #9470 (closed upstream by #10003)
+
+Independent MCP Server Project 2026-present
+herdr-mcp (github.com/eugeneb50/herdr-mcp) — Rust MCP (Model Context Protocol) server exposing the herdr terminal-native agent multiplexer as tools
+    • MCP stdio server + HTTP bridge + React web playground
+      - Plugs into Claude Desktop, Cursor, Claude Code, Continue, OpenCode via stdin/stdout JSON-RPC
+      - Axum HTTP bridge serves single-file React playground (run tools, chain recipes, inspect results; no dev server needed)
+    • 51 tools in 10 groups
+      - Discovery (7): status, workspaces, tabs, panes, agents, pane/agent lookup
+      - Lifecycle (5): create workspace/tab, split/close pane, start agent
+      - Read (2) / Write (4): read pane/agent, send text/keys, run command
+      - Sync (3): wait_output, wait pane/agent status
+      - A2A primitives (5): spawn, message, read, wait, list with role/label resolution
+      - Plus session variables, message-trim (10), recipes (3), scheduler (4), folder-key (4), clipboard (2)
+    • Recipe engine + scheduler
+      - Chains tool calls with {{ stepId.result.path }} variable interpolation
+      - Bundled recipe templates; cron-based scheduled recipe runs
+    • Message-trim pipeline for agent-to-agent comms
+      - caveman (lossy style) + pfc1 (lossless Cherokee-syllabary phonetic) compressors
+      - Per-pane trim policies; per-folder PFC1 keys; trim analytics and readiness checks
+    • Live agent registry + thin-CLI architecture
+      - Unix socket event subscriber tracks panes in real time
+      - Shells out to herdr CLI via tokio::process::Command (stable surface, no wire-protocol coupling)
+      - All pane-targeting tools accept pane_id or human label
+    • 4-crate workspace, fully tested
+      - herdr-mcp-core, herdr-mcp-trim, herdr-mcp-server, herdr-mcp-cli
+      - 299 tests passing; clippy clean; kitchen-sink ratatui TUI dashboard with mouse+keyboard nav
+
+Recent Prospecting AI pipeline sample  2026
+Baja Mineral Explorer (encuentralo.mx/baja-mineral) — live turquoise/Cu-Fe satellite prospecting AI for San Quintin Municipio, Baja California, MX.
+    • Shows 3 surveyed targets with desk scores, 36 GPS field pins (CSV), sub-meter Esri World Imagery map sheets, Sentinel-2 10 m spectral screening, SRTM DEM terrain analysis, cross-referenced with SGM El Aguajito 1:50,000 geologic-mineral map (2009).
+    • Member coordinate runner: run any lat/lon against targets, pins, and 14 documented workings; multilingual (EN/ES/ZH/RU).
+
+Websites 
+https://phasesave.com
+https://encuentralo.mx
+https://serviceofothers.org
+https://tierrachain.com
+
+Relevant Education: 
+• California Notary Commission 
+• Toastmasters 
+• Associates Degree from Victor Valley College 
+• High School Diploma from Lucerne Valley High School

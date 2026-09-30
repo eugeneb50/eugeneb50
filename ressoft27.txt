@@ -1,0 +1,529 @@
+# Eugene Lafayette Buchanan
+
+Apple Valley, CA, US | +1 (909) 545-5384 | San Quintín, BC, MX | +52 (616) 126-5089
+eugene@serviceofothers.org | github.com/eugeneb50
+
+---
+## Executive Summary
+
+Senior Software Engineer, Renewable Energy Consultant, Public/Private Corporate Officer, Research Consultant
+A career arc running from breaking ground to model context window metrics.
+Studied mechanical engineering for solar; hired into software at Microsoft out of high school.
+Moving from corporate to freelance to founder, post-covid digital nomad.
+Public officer, California notary, public advocate, volunteer.
+Hopeful planetary visionary at the intersection of software / renewable energy / permaculture planning.
+Enjoys lifelong learning and mastery through the dance of tango.
+
+**Solar and HVAC engineering practice:** permit-ready CAD packages — plot plans,
+single-line electrical diagrams, equipment sizing, string impedance calculations, NEC 690
+compliance and safety calculations, rack load and footing calculations — coordinated through
+licensed-engineer stamping, city plan review, sign-off, and permit to operate. Air
+conditioning estimation, air flow and BTU calculations, building envelope analysis, and
+seasonal thermal load calculation. Passive solar design, azimuth and inclination selection,
+site shading analysis. Custom mechanical engineered parts and fabrication where no catalog
+item fits. Production work now built on AI-aided drafting software.
+
+## At a Glance
+
+| | |
+|---|---|
+| Youngest elected president of a California Water District, preserved property values & water quality, replaced legally troubled staff under the Brown Act.   
+| Help pioneering waste to energy plant in Norco, CA. Had largest direct solar fired VFD AC well conversion 30hp in Southern California for a brief time. 
+| Bring world most efficent monobloc air conditioner/water heater with thermal shelving to California market.
+| Saved clients 10 of millions of dollars in energy costs in renewable energy career arc. 
+| Current researching waterless cooling with PCM's and clean waste valorization in developing nation setting. 
+| Open source contributor Agentic harness research -> https://github.com/zeroclaw-labs/zeroclaw/pull/8966
+| Banned from the now AI slop fest Linkedin for arguing against face masking childern during 2021 COVID cancel fest.
+---
+
+## Core Competencies
+
+**Software Engineering & Architecture** — C, C++, Rust, Java, JavaScript, PHP, Python, SQL ·
+software development life cycle (SDLC) · systems and application architecture · product
+design and product development · prototyping · design patterns · algorithms · debugging and
+root cause analysis · troubleshooting · technical documentation
+
+**Quality Engineering** — quality assurance · quality control · quality management · quality
+standards · test planning · test cases · manual and automated testing · white-box testing ·
+end-to-end regression testing · load and performance testing · security testing ·
+accessibility testing · usability testing · localization and internationalization (incl.
+right-to-left Arabic) · defect triage · blue-team incident forensics
+
+**Test Automation & DevOps** — continuous integration and continuous delivery (CI/CD) ·
+end-to-end test automation · regression suite design · build and release automation ·
+white-box test development · test dashboards and alerting · Selenium · Cypress · Postman ·
+JUnit · Postman/Newman · Qase · Jira · Bitbucket · Confluence · Git · Node · AWS · Apache ·
+REST · S3 · Elastic · Linux · Unix · Windows · NetWare
+
+**Enterprise Integration & APIs** — API and API design · REST APIs · web services ·
+webhooks · SAML · OAuth · SCIM · LTI · SCORM · SFTP · ETL / extract, transform, load ·
+authentication and user-record exchange · systems of record integration (SAP, Oracle,
+Workday, UKG, Coursera) · payment integration (Stripe, PayPal) · video conferencing (Zoom) ·
+SaaS · HRIS · data migration · legacy integration
+
+**AI & Automation** — retrieval-augmented generation (RAG) · guardrails · context retrieval ·
+AI support automation · agentic AI · Model Context Protocol (MCP) · tool and function calling ·
+agent lifecycle orchestration · agent-to-agent communication · observability · usage and cost
+attribution · SOC 2 controls
+
+**Data, GIS & Geospatial** — data analysis · data management · data quality · data collection ·
+data entry · datasets · reporting and reporting requirements · spatial analysis ·
+Sentinel-2 multispectral imaging · SRTM digital elevation modeling · GPS field data (CSV) ·
+GIS · Esri World Imagery · geologic and mineral mapping
+
+**Leadership & Product** — product ownership and product management · backlog and roadmap
+management · SDLC ownership · key performance indicators (KPIs) · stakeholder management ·
+business stakeholders · vendor management · client relationships · cross-functional teams ·
+hiring, training, and coaching · release management · requirements gathering · design
+reviews · technical and non-technical communication
+
+**Solar Design & Permitting** — photovoltaic and solar thermal system design · off-grid and
+on-grid systems · CAD plot plans · single-line electrical diagrams · equipment sizing ·
+string impedance calculations · NEC 690 compliance and safety calculations · rack load
+calculations · footing calculations · licensed-engineer stamping coordination · electrical
+permit packages · city plan review · permit to operate · interconnection and utility
+coordination · custom mechanical engineered parts · contract administration · EPC
+documentation · AI-aided drafting · technical sales engineering
+
+**HVAC, Building & Thermal Analysis** — air conditioning estimation · air flow and BTU
+calculations · building envelope analysis · seasonal thermal load calculations · passive
+solar design · solar azimuth and inclination · site shading analysis · solar thermal ·
+phase-change materials · thermal energy storage · heat pumps · absorption and evaporative
+cooling · co-generation and tri-generation · heat transfer · cold-chain logistics
+
+**Engineering, Energy & Facilities** — mechanical engineering · electrical engineering ·
+electrical design · CAD and AutoCAD · instrumentation · SCADA · VFD and motor control ·
+waste-to-energy · Fischer-Tropsch synthesis · syngas conditioning · hot gas flow control ·
+anti-fouling · construction and installation · commissioning · project management · project
+delivery · procurement and sourcing · operations management
+
+**Governance, Finance & Compliance** — annual budget and budget management · cost reduction ·
+financial management · financial statements · financial reporting · regulatory compliance ·
+regulations and regulatory requirements · public policy · internal controls · governance ·
+risk management and risk assessment · contracts · procurement and purchase orders ·
+reconciliation · general ledger and public accounting · auditing and internal audit ·
+litigation · permits and permitting · grant and tax credit applications · legal and
+legislation · policy development · nonprofit governance
+
+**Business, Sales & Operations** — business analysis · business systems · business process
+improvement · process improvement · cost reduction and performance improvement · small
+business ownership · startup and startup operations · financial performance · procurement ·
+vendor and contractor management · sales operations and sales management · account
+management · client services and customer service · customer-facing support · retail
+operations · help desk and technical support · ticketing and escalation · project planning ·
+proposal and RFP development · market and technical prospecting · presentations · public
+speaking and emceeing · media relations · press coverage · social media · e-commerce
+and ecommerce · ERP · CRM · HRIS · Microsoft Office and MS Excel · spreadsheets
+
+---
+
+## Track I — Software Engineering
+
+### Knowledgecity LLC — Product Owner, Integrations
+*Senior Quality Assurance Engineer → Test Automation Lead (years 2–4) → Product Owner, Integrations*
+*December 2020 – August 2025 · Position eliminated; independent since.*
+
+- **Owned the integrations roadmap as Product Owner** with two dedicated software developers,
+  two test engineers, and direct access to the design team, carrying the full SDLC from
+  backlog and business requirements through design, build, test, and release against written
+  KPIs — and holding the direct relationships with external partners, clients, vendors, and
+  internal stakeholders that each integration depended on.
+- **Delivered and maintained a portfolio of enterprise integrations** where the core work
+  was authentication and user-record exchange with enterprise systems of record: SAP,
+  Oracle, Workday, UKG, and Coursera over SAML, OAuth, SFTP, REST, custom APIs, and
+  webhooks, with Stripe and PayPal for payment processing. **SCIM, SCORM, and LTI** extended
+  coverage across HRIS and learning management platforms. **Zoom** was the deepest build of
+  the set, adding native video conferencing as a first-class capability rather than a
+  link-out. Owned the decision to continue support on each integration rather than retire
+  it, which kept live customer traffic off manual workarounds.
+- **Shipped an AI support assistant with retrieval-augmented generation and guardrails,**
+  working cross-functional with engineering on context retrieval design and the guardrail
+  layer, and researched and implemented the SOC 2 control changes that carried the work
+  through compliance review.
+- **Built the test automation function from nothing** as Test Automation Lead in years two
+  through four: recruited, hired, and trained the engineers, then built an end-to-end
+  regression suite with health dashboards and alerting across complex deployment scenarios,
+  so regressions surfaced on a dashboard instead of in a customer ticket.
+- **Owned white-box test development against a CI/CD pipeline** on Apache, REST, SQL, and AWS
+  behind a React front end. Toolchain: Cypress, Selenium, Postman, JUnit, Git, Node,
+  JavaScript, PHP, Elastic, Qase, Slack, Jira, Bitbucket, Confluence, SCORM Cloud, S3.
+- **Set the quality bar across every surface** — integrations, front end, back end, mobile,
+  information security, performance, load, API, database, functional, usability,
+  accessibility, and localization including right-to-left Arabic — and drove down
+  accumulated technical debt.
+- **Participated in blue-team incident forensics and technical investigations,** working each
+  failure to root cause rather than symptom.
+
+### Independent Software Engineer — Freelance
+*September 2025 – Present*
+
+- **Web and AI development across a portfolio of client projects,** taking each from scoping
+  and business requirements through build, deployment, and support: a business system for a
+  lapidary shop, real estate operations in Nevada County, a project for an animal shelter in
+  San Quintín, and an AI literacy program delivered from a storefront on an existing
+  e-commerce site.
+- **Bid and priced solar engineering engagements** through PhaseSave, and developed the
+  prospecting AI sample (below) as a portfolio piece rather than a client deliverable.
+
+### Geek Squad, Best Buy — Computer Service Technician
+*Victorville, CA*
+
+- **Ran the retail service desk end to end:** logged tickets, triaged walk-ins, handled
+  phone and in-store customer service, tracked units through check-in, repair, and pickup,
+  and gave customers plain-language status updates instead of technical ones.
+- **Built and repaired PCs** — assembled and configured new systems, migrated user data, and
+  resolved virus, operating system, and hardware failures — then matched customers to the
+  right service plans, accessories, and upgrades, handling payment and refunds directly.
+- **Handled customer service and escalations simultaneously,** which is where the
+  troubleshooting discipline in the rest of this document started.
+
+### Lucerne Valley Unified School District — IT Manager
+*Lucerne Valley, CA · 2002*
+
+- **Provided district-wide IT and IT infrastructure support for four campuses** across WAN
+  and LAN, NetWare servers, and Windows, Linux, and virtualized desktops, plus the audio and
+  video systems in every classroom.
+- **Met state reporting obligations for attendance submission** by owning the ETL path into
+  the state system, including data entry, data quality, database table locking, and
+  certification testing against a compliance deadline that could not slip.
+- **Set the technical standard** for a small district with no IT department behind it.
+
+### Amp Computer — Freelance Consultant
+*Apple Valley, CA · 2003 – 2011*
+
+- **Consulted and sold for eight years** covering server and PC hardware, ERP, CRM, and
+  office automation, then moved into web development with Django and WordPress sites and
+  custom client solutions — hardware to software inside one small business.
+- **Owned client relationships end to end:** scope, build, delivery, documentation, and
+  ongoing support.
+
+### RealNetworks — Senior Software Engineer II, Streaming Media Platform
+*Seattle, WA · 1999 – 2001*
+
+- **Started on front-end SDET** for the consumer platform, testing the Windows player, then
+  joined the advanced research team covering servers, embedded, Linux, and Unix back-end
+  testing and research.
+- **Tested decode stream optimization across a variety of architectures including ARM**,
+  programming directly on Nokia handsets — Psion 9210 Communicators running EPOC and
+  Pocket PC — by flashing builds to the device, capturing crash and memory-allocation logs
+  off-target, and reproducing playback stalls under low-bandwidth and low-memory conditions.
+  That isolated media pipeline defects which simulator-based testing had been passing,
+  because the failure existed only on the device.
+- **Validated scalable pre-compressed video streaming technology** through hands-on testing
+  and field feedback during development, and participated in development troubleshooting
+  reviews that shaped functionality. The work underlies granted RealNetworks patent
+  **US 7,075,986**, *"Method and apparatus for providing scalable pre-compressed digital
+  video with reduced quantization based artifacts."* Tested and validated the technology;
+  not a named inventor.
+- **Delivered presales engineering for the embedded Linux consumer electronics stack**,
+  demonstrating software and hardware internationally with the VP of Sales in Japan, Korea,
+  and Continental US.
+- **Advanced research on consumer appliances, mobile platforms, stream servers, and cellular
+  networks,** and onboarded new hires into the SDET harness.
+
+### Microsoft — Senior Software Test Engineer IV
+*Redmond, WA · 1999*
+
+- **Automated nightly build test scripts and verification for Windows Media Server 4 and 5** —
+  the streaming media product line, and a direct lead-in to RealNetworks.
+
+### IBM — Senior Test Engineer III, High Availability Servers
+*Kirkland, WA · 1998*
+
+- **Drove WHQL certification testing for high-availability cluster servers** by exercising
+  RAID configurations under sustained high-load webserver traffic while injecting simulated
+  drive failures — proving failover held under real production load rather than idle test
+  conditions, with no data or service lost across controller, array, and host failure.
+- **Designed the failure-injection and load test harness** the certification evidence was
+  generated from.
+
+### Microsoft — Software Test Engineer II, Windows 98 / NT
+*Redmond, WA · 1997*
+
+- **Verified OEM setup across hardware and driver combinations** for Windows 98 and NT, so
+  machines shipped to OEMs booted and configured correctly on first delivery.
+
+### Keene Inc. — Technical Support Agent II, Windows 95 / NT
+*Seattle, WA · 1996*
+
+- **Handled frontline and escalated support ticketing** for Windows 95 and NT, learning to
+  reproduce and isolate faults from a customer's description — the root cause discipline
+  everything above is built on.
+
+---
+
+## Track II — Open Source & Independent Projects
+
+### ZeroClaw Labs — Open-Source Contributor, Agentic AI Gateway
+*github.com/zeroclaw-labs/zeroclaw · Rust agentic AI gateway, 32.8k stars · 2026 – Present*
+
+- **PR #7946 — context window meter (MERGED Jul 6, 2026; 39 commits).** Made
+  `context_window` the single source of truth on `ModelProviderConfig` with
+  `fetch_context_window()` across 9 providers (OpenRouter plus 8 OpenAI-compatible); added a
+  `doctor update-context-windows` command and a gateway refresh endpoint; shipped the gateway
+  WebSocket done frame, the web ContextBar, a per-turn CLI context summary, and the zerocode
+  CtxBar widget. Cleared review from four maintainers covering internationalization across
+  5 locales, credential forwarding, and exact-alias write-back.
+- **PR #8966 — serving provider usage identity (MERGED Sep 18, 2026; 94 commits).** Made
+  `TurnEvent::Usage` carry the live serving identity (provider, model, accepted flag) so
+  usage, cost, and context-meter attribution follow the provider that actually served the
+  call across fallback chains and in-turn model switches. Included a per-attempt
+  `usage_by_provider` ledger in the gateway done frame, accepted/rejected separation in a
+  dedicated `UsageFold`, alignment of the runtime cost pipeline with upstream pricing
+  (`ModelRates`, `UnpricedUsage` provenance), durable ACP and RPC usage snapshots, a
+  deliberate single-candidate stream-to-non-stream recovery policy with every settled
+  billable attempt projected as a usage event, and separation of trim budget from display
+  ceiling across gateway, RPC, zerocode, and web. Also fixed a pre-output stream-failure
+  fallback bug (#10736).
+- **PR #8337 — herdr agent reporting integration (CLOSED, superseded by #10269; 52 commits).**
+  Designed and shipped an observer reporting agent lifecycle (idle, working, blocked,
+  released) to persistent terminal sessions over JSON-RPC on Unix domain sockets, and
+  iterated through four rounds of maintainer review — isolating I/O onto a bounded
+  fire-and-forget thread so an unresponsive socket could not hang the agent loop, replacing
+  a dead config section with environment-driven discovery, gating installation to interactive
+  CLI scope to match advertised blast radius, and reserving the terminal queue with
+  stale-snapshot suppression and ordered shutdown drain. Superseded upstream; the superseding
+  maintainer credited this work's lifecycle and delivery requirements as the basis for the
+  canonical vendor-neutral `hooks.lifecycle_commands` boundary. Coordinating with the herdr
+  maintainer on a standardized agent integration adapter (herdrdev/herdr#811).
+
+### herdr-mcp — Author
+*github.com/eugeneb50/herdr-mcp · Rust Model Context Protocol server · 2026 – Present*
+
+- **Built a 51-tool MCP server in Rust** across 10 tool groups, exposing a terminal-native
+  agent multiplexer as callable tools, and shipped an **Axum HTTP bridge with a single-file
+  React playground** so tools can be run, recipes chained, and results inspected with no dev
+  server.
+- **Plugs into Claude Desktop, Cursor, Claude Code, Continue, and OpenCode** over stdin and
+  stdout JSON-RPC, so the same tool surface works in every host without a separate
+  integration.
+- **Tool surface:** discovery (7 — status, workspaces, tabs, panes, agents, and lookup),
+  lifecycle (5 — create workspace or tab, split or close pane, start agent), read (2) and
+  write (4) including run command, sync (3 — wait for output or status), agent-to-agent
+  primitives (5 — spawn, message, read, wait, list with role and label resolution), plus
+  message-trim (10), recipes (3), scheduler (4), folder-key (4), and clipboard (2).
+- **Built the recipe engine and cron scheduler:** chains tool calls with
+  `{{ stepId.result.path }}` variable interpolation, ships bundled recipe templates, and
+  runs scheduled recipes on cron.
+- **Built the message-trim pipeline** for agent-to-agent communication with two compressors
+  — caveman (lossy, style) and pfc1 (lossless, Cherokee-syllabary phonetic) — with per-pane
+  trim policies, per-folder PFC1 keys, and trim analytics and readiness checks.
+- **Designed for a stable surface:** a Unix socket event subscriber tracks panes in real time
+  for the live agent registry, and the server shells out to the herdr CLI via
+  `tokio::process::Command`, so there is no wire-protocol coupling to maintain. Every
+  pane-targeting tool accepts either a pane ID or a human-readable label.
+- **4-crate workspace, fully tested:** herdr-mcp-core, herdr-mcp-trim, herdr-mcp-server,
+  herdr-mcp-cli. **299 tests passing, clippy clean**, plus a kitchen-sink ratatui TUI
+  dashboard with mouse and keyboard navigation.
+
+### Baja Mineral Explorer — Prospecting AI Pipeline
+*encuentralo.mx/baja-mineral · 2026*
+
+- **Built a live turquoise and copper-iron satellite prospecting pipeline** for San Quintín,
+  Baja California — desk scores for 3 surveyed targets, 36 GPS field pins exported to CSV,
+  sub-meter Esri World Imagery map sheets, Sentinel-2 10 m spectral screening, and SRTM DEM
+  terrain analysis, cross-referenced against the SGM El Aguajito 1:50,000 geologic and mineral
+  map (2009).
+- **Wrote the coordinate runner** so any latitude and longitude can be run against the
+  targets, the pins, and 14 documented workings, with output in English, Spanish, Chinese,
+  and Russian.
+
+---
+## Track III — Public Office & Corporate Governance ### Executive Corporate Officer — Public and Private Boards
+*1999 – Present*
+
+- **Developed and managed private and public corporations** across real estate, finance,
+  intellectual property, and tax law, with hands-on work in team development, product
+  management, and property acquisition.
+- **Practiced in local, state, and federal regulatory frameworks** — the same
+  permit-and-record discipline that appears in the water district and energy tracks.
+
+### President, Board of Directors — Mariana Ranchos County Water District
+*Apple Valley, CA · 2006 – 2010*
+*California public agency. Youngest president in the district's history.*
+
+- **Cut operating expenditures 53% on a $16 million annual district budget while
+  explicitly protecting capital expenditure projects — reversing multi-year growth in
+  operations, staffing, and procurement, optimizing the infrastructure program.
+- **Governed a public agency under the Brown Act and open-meetings law across a term that
+  included active litigation: published agendas with §54954.2 accommodation notices,
+  conducted §54957 closed sessions with required reporting, and revised the Board of
+  Directors Handbook and personnel policy to match.
+- **Rebuilt district operations:** replaced the General Manager, tightened purchasing and
+  personnel policy, and moved water testing and monitoring to trained staff — changes made
+  through the board process, documented on the public record.
+- **Helped with SCADA upgrade for tank and pump sensors and relays, adding remote
+  telemetry and automated control to district facilities.
+- **Prevented a high-risk floodplain development** by keeping a stack-and-pack project out
+  of the approval path. The same basin flooded later, which validated the decision on
+  operational rather than environmental grounds, presevered property values. 
+- **Served as a California JPIA delegate**, working within the district's insurance and
+  risk-coverage program, and applied working knowledge of public accounting and safety
+  regulation to board oversight.
+
+
+Advisor to Federal non-profit Trinity Concepts Inc. 
+ 
+https://greatnonprofits.org/org/trinity-concepts-inc
+Help parties secure Federal Tax credits for air contitioning and solar research including Yogurtland in Pasadena
+several private residences in Palm Springs.
+Advised on regulatory strategy, helped with federal filings, did tech and web support for americanaid.org 
+Involved with direct action during Bluecut Fires in Wrightwood.  
+ 
+## Track IV — Renewable Energy Consulting
+
+### PhaseSave.com — Partner / Director, Research and Development
+*Palm Springs, CA · 2017 – 2021, Present*
+
+- **Produces permit-ready solar packages in CAD:** plot plans, single-line electrical
+  diagrams, equipment sizing, string impedance calculations, and NEC 690 compliance and
+  safety calculations, plus rack load and footing calculations for site-specific
+  structures. Coordinates licensed-engineer review and stamping, then runs the package
+  through city plan review to sign-off and permit to operate. Produces packages on
+  AI-aided drafting software.
+- **Designs and fabricates custom mechanical engineered parts** where a catalog item does
+  not fit — racking and mounting hardware and site-specific assemblies.
+- **Estimates and sizes cooling loads for air conditioning work** — air flow and BTU
+  calculations, building envelope analysis, and seasonal thermal load calculation for
+  desert and data center applications.
+- **Directs R&D and consulting delivery** across sales engineering, project management,
+  product and vendor sourcing, and contractor management, with technical depth in solar
+  power, air conditioning, phase-change materials, cold-chain logistics, finance, and tax
+  credits.
+- **Brought Monobloc air-to-water heat pumps into California** as a sales and engineering
+  representative, supporting deployment and commissioning.
+- **Pioneering waterless phase-change material thermal shelving** for cooling loads across
+  desert air conditioning and data center applications.
+
+### EWSolar.net LLC — Vice President, Solar
+*Homeland, CA · 2014 – 2016*
+
+- **Sold and developed large direct solar-fired VFD air-conditioning pumping projects at
+  30HP and above,** taking projects from concept through customer approval and field
+  deployment.
+
+### Free Energy Resources Inc. — Chief Technology Officer
+*Phelan, CA · 2013*
+
+- **Built and ran a Korean solar marketing company as CTO,** owning sales, procurement,
+  project management, permitting, and finance across an international operation.
+
+### GRIDNOT Inc. — Vice President
+*Lucerne Valley, CA · 2007 – 2012*
+
+- **Oversaw teams and vendors** for the sales and integration of solar, wind, and geothermal
+  air-conditioning systems across multi-technology portfolios.
+- **Did the passive solar design work** — solar azimuth and inclination selection and site
+  shading analysis for each installation.
+- **Sold more than $32 million in solar, wind, and air-conditioning installations.**
+
+### OnPoint Power Inc. — Partner
+*Norco, CA · 2006*
+
+- **Sold and engineered residential and light-commercial photovoltaic and thermal solar.**
+- **Pioneered a waste-to-energy proposal for the City of Norco in 2006,** presenting the
+  concept to city council at an agendized public meeting on converting horse manure at the
+  wastewater plant into energy. Chevron subsequently developed and built the facility.
+
+### Desert Power Inc. — Executive Assistant, Sales and Engineering Support
+*Palm Springs, CA · 2005*
+
+- **Supported renewable energy projects** across PV solar, waste-to-energy, and
+  tri-generation combined electricity, heat, and refrigeration.
+- **Researched Fischer-Tropsch catalytic conversion of syngas to liquids** — process
+  stabilization, anti-fouling, hot gas flow control, and absorption refrigeration.
+
+### Solatron Inc. — Sales Representative
+*Victorville, CA · 2004*
+
+- **Ran inside inbound phone sales for photovoltaic systems** and built an Excel sales
+  calculator adopted office-wide, plus the standard operating procedures and sales scripts
+  the team worked from.
+
+---
+
+## Track V — Ventures, Consulting & Real Estate ### Real Estate Professional — Investor
+*1999 – Present*
+
+- **Invested in, redeveloped, and managed commercial and residential properties** in
+  Southern California and Baja California, covering acquisition, due diligence, financing,
+  and property management.
+
+
+### Tierrachain.com — Founder
+*2023 – Present*
+
+- **Developing a Mexican land corporation and SaaS platform** using AI and blockchain to
+  improve real estate exchange in coastal exclusion zones.
+- **Designing a parallel public-records system** with AI-automated compliance filing that
+  meets and exceeds local regulatory requirements and creates arbitrage value.
+- **Integrated Ubiquity.io NFTitle with Bitso.com as payment rails** for a fintech service
+  extension to the Heyhom.mx real estate mapping site.
+- **Improving information security and lowering transaction cost** for foreign and domestic
+  ownership, and simplifying fractional ownership and DeFi finance models for the same
+  market.
+
+### Business Consultant — Medico Investments LLC / Foremost Senior Care
+*Hesperia, CA · 2013 – 2016*
+
+- **Recovered a non-permitted photovoltaic installation** by working the City on a
+  permit-to-operate backed by as-built engineering — bringing an unapproved system into
+  regulatory compliance and back online.
+- **Supported accounting and medical-records software** through evaluation and data
+  migration in a healthcare setting where record accuracy and privacy were non-negotiable.
+- **Developed a nonprofit and community outreach program for Foremost,** obtaining a gaming
+  license and filing Federal, State, and City applications to secure approval, then launched
+  and promoted a social mixer with dance lessons.
+- **Owned campus IT and information security:** wrote security and backup policy for campus
+  servers and workstations, upgraded the campus video surveillance system for image quality
+  and remote access, and installed campus-wide wireless networking.
+- **Provided audiovisual and event production** — set up sound and video and MC'd events in
+  the activity center and main hall, using Toastmasters training for public speaking in
+  front of residents and staff.
+- **Reviewed business plans and reduced procurement, operating, and staffing costs** for
+  ownership, and advised on strategic direction.
+- **Obtained municipal approval for a bridge access to landlocked property,** working the
+  entitlement process to resolve a parcel with no legal access.
+
+
+---
+
+## Education
+
+- Associate of Science, **Mechanical Engineering** — Victor Valley College, 1994 – 1996
+- High School Diploma — Lucerne Valley High School
+
+## Certifications & Credentials
+
+- **WHQL certification testing**, high-availability cluster servers — IBM, 1998
+- **California Notary Public** — commissioned
+- **White-box testing, CI/CD, and SOC 2 control implementation** — Knowledgecity
+
+## Publications & Press
+
+- Patent technology validated: **US 7,075,986**, *"Method and apparatus for providing
+  scalable pre-compressed digital video with reduced quantization based artifacts"*
+  (RealNetworks, granted 2006; assigned to Intel 2012; expired 2018) — tested and validated
+  during development; not a named inventor.
+- *Los Angeles Times*, February 2012 — coverage of the Norco horse-manure-to-energy facility
+  Chevron built, following the 2006 proposal presented to the Norco City Council.
+- Chiltrix air-to-water heat pump technical reference — PhaseSave technical material.
+
+## Communications & Community
+
+- **Toastmasters** member — public speaking and emcee training, applied to MC'ing resident
+  events and teaching tango classes in Yucca Valley.
+- **Competitive Argentine tango** — 20+ years of continuous study and practice.
+- **Bilingual English and Spanish**, including right-to-left Arabic localization work on
+  production software.
+- **Public speaking, presentations, and media relations** for residents, boards, clients,
+  and city councils.
+
+## Websites
+
+- phasesave.com — renewable energy R&D and consulting
+- encuentralo.mx — tourism and commerce platform (hosts the mineral prospecting AI and the
+  AI literacy program)
+- serviceofothers.org 
+- tierrachain.com — land and real-estate exchange platform
+- github.com/eugeneb50 — herdr-mcp and open-source contributions

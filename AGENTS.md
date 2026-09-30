@@ -1,24 +1,28 @@
 # AGENTS.md — eugeneb50 Resume Generator
 
 ## Project Overview
-Personal portfolio project: Python scripts generate a polished PDF resume, an ATS-friendly resume, and a cover letter using **reportlab** + **Pillow**. Targeted at Staff AI Engineer roles.
+Personal portfolio project: Python scripts generate polished PDF resumes (Staff AI Engineer visual in English + Spanish, IT Support Specialist ops visual), ATS-friendly graphics-free resumes, and a cover letter using **reportlab** + **Pillow**. Targeted at Staff AI Engineer roles, with the ops track positioned for IT Support Specialist roles.
 
 ## Quick Commands
 
 | Task | Command |
 |------|---------|
-| Build general resume | `./.venv/bin/python build_resume.py` |
+| Build general resume (EN visual) | `./.venv/bin/python build_resume.py` |
+| Build general resume (ES visual) | `./.venv/bin/python build_resume_es.py` |
 | Build ATS-friendly resume | `./.venv/bin/python build_resume_ats.py` |
 | Build ops (IT Support) resume | `./.venv/bin/python build_resume_ops.py` |
 | Build ops ATS resume | `./.venv/bin/python build_resume_ops_ats.py` |
 | Build cover letter | `./.venv/bin/python build_cover.py` |
 | Build all | `./.venv/bin/python build_resume.py && ./.venv/bin/python build_cover.py` |
 
-Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Resume_ATS.pdf`, `Eugene_Buchanan_Resume_Ops.pdf`, `Eugene_Buchanan_Resume_Ops_ATS.pdf`, `Eugene_Buchanan_Cover_Letter.pdf`
+Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Resume_ES.pdf`, `Eugene_Buchanan_Resume_ATS.pdf`, `Eugene_Buchanan_Resume_Ops.pdf`, `Eugene_Buchanan_Resume_Ops_ATS.pdf`, `Eugene_Buchanan_Cover_Letter.pdf`
 
 ## ATS-Friendly Resume (`build_resume_ats.py`)
 - Deliberately graphics-free: single column, no images/charts/tables, standard section headings, one font family (Helvetica base-14), "Month YYYY" dates, acronyms spelled out on first use, plain-English copy rewritten with the deslop skill.
-- Content source: `/home/producer32/obsidian/resume/ressoft26.txt` (general-employment full resume).
+- Full job history, source-faithful, no invented claims (HIPAA/IAM/Okta/RBAC/PII material removed — none of it is in the source). Software-Engineering section in chronological flow: Knowledgecity → Business Consultant/Medico/Foremost → Geek Squad → Freelance AMP → IT Manager → RealNetworks → Microsoft/IBM/Keene; then Additional Roles (Alternative Energy → Tierrachain → Water Board → ZeroClaw with all 4 PR statuses) → Education. 3 pages.
+- Tight section spacing (`h2` spaceBefore 6, `job` spaceBefore 5, bullets spaceAfter 1) + no trailing spacer — the file is at exactly 3 pages; additions will spill. Dropping the HS diploma line or trimming the KC toolchain bullet are the approved levers.
+- **Employer-facing copy rule (no negative disclaimers):** rendered PDF text must NEVER contain "no X claim", "honest gap", "gap vs. requisition", or any sentence advertising what the candidate lacks. Missing JD keywords are handled by omission + positive transferable framing (show the adjacent real experience, never name the missing tech as a deficiency). Gap analysis lives ONLY in script docstrings/comments as build notes — it must not leak into `SUMMARY`, `SKILLS`, `PARAGRAPHS`, `QUALIFICATIONS`, or any `story.append()` content.
+- **STAR bullets + no port trivia:** experience bullets follow STAR in one short line each — Situation (the problem), Task/Action (what was built), Result (the outcome). Never print internal port numbers (e.g. `:7676`) or other run-local trivia in employer-facing copy.
 
 ## Environment
 - **Python**: 3.14 (via `.venv`)
@@ -28,9 +32,7 @@ Outputs: `Eugene_Buchanan_Resume.pdf`, `Eugene_Buchanan_Resume_ATS.pdf`, `Eugene
 
 ## Architecture Notes
 - **No shared module** — each script duplicates the design system (colors, flowables, helpers). Changes to visual style must be applied in all files.
-- **Three-page visual layout**: page 1 (header band + summary + skills + tags + Key Strengths panel) + page 2 lead (`IT Operations & Compliance`: `SKILLS_OPS` bars + `TAGS_OPS` cloud, then Experience incl. Foremost Senior Care card) + page 3 (rest of Experience, Education, interests + QR footer). Keep page-1 additions minimal — `L10nPanel` cannot split, so ~10pt overflow pushes the whole panel to page 2.
-- **ATS builder exists** (`build_resume_ats.py`): longer graphics-free resume (3 pages) with full IAM/HIPAA/lifecycle keyword coverage; rebuild it alongside the visual resumes.
-- **Ops resumes** (`build_resume_ops.py` → 2-page visual; `build_resume_ops_ats.py` → graphics-free ATS twin): IT Support Specialist positioning around Ticket/User/Document Life Cycle Management. Deliberately **HIPAA-free** — no HIPAA/PII/medical-migration content anywhere. Uses a static boxed `strengths_block()` instead of `L10nPanel` (no form fields, no `arabic_reshaper`/`python-bidi`/CID-font deps); ZeroClaw kept to one short card framed as support-tooling value.
+- **Page-budget discipline**: all PDFs are at exact page counts (EN 2, ES 2, ATS 3, Ops 2, Ops ATS 2). Page 2 of the EN visual has ~0pt slack and page 2 of the visual ops resume has ~8pt slack; the ATS files rely on tight spacing (`h2` spaceBefore 6, `job` spaceBefore 5, bullets spaceAfter 1) and no trailing spacers — verify with pypdf after any content change.
 
 ## Key Design System Components (duplicated across scripts)
 - `HeaderBand` / `LetterHead` — gradient header with circular photo/monogram
