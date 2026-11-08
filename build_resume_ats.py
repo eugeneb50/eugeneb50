@@ -4,7 +4,7 @@
 Deliberately graphics-free: single column, no images/charts/tables, standard
 section headings, one font family (Helvetica base-14), "Month YYYY" dates,
 acronyms spelled out on first use, plain-English copy (deslop skill).
-Content source: /home/producer32/obsidian/resume/ressoft26.txt
+Content source: ressoft27.txt (single source of truth). Revised Nov 8, 2026.
 """
 
 import os
@@ -67,7 +67,8 @@ def job_block(role, meta, bullets):
 SUMMARY = (
     "Senior SDET and QA Automation Lead with 25+ years testing and shipping "
     "software, from streaming media and operating systems to learning management "
-    "integrations. I lead test automation teams, build regression suites with "
+    "integrations, now training and evaluating frontier AI models as an Expert AI "
+    "Trainer at micro1. I lead test automation teams, build regression suites with "
     "health dashboards and alerting, evaluate AI-generated code, and ship SaaS "
     "integrations (SAP, Oracle, Workday, Coursera, UKG, Zoom). I also bring "
     "hands-on IT operations: campus support, retail service desk, ticket queues, "
@@ -77,11 +78,11 @@ SUMMARY = (
 
 SKILLS = [
     "<b>Testing and QA:</b> Cypress, Selenium, Postman, JUnit, Qase, Software Development Engineer in Test (SDET) practice, white-box testing, regression suites, health dashboards and alerting, performance and load testing, accessibility testing, security testing, usability and localization testing",
-    "<b>AI Code Evaluation and Automation:</b> evaluation of AI-generated code, AI support chatbot with retrieval-augmented generation (RAG) and guardrails, prompt engineering, large language model (LLM) integration in shipped products, AI automation",
+    "<b>AI Code Evaluation and Automation:</b> AI model training and evaluation against defined quality criteria, evaluation of AI-generated code, AI support chatbot with retrieval-augmented generation (RAG) and guardrails, prompt engineering, large language model (LLM) integration in shipped products, AI automation",
     "<b>Integrations and Auth:</b> SAP, Oracle, Workday, Coursera, UKG, Zoom, SAML, OAuth, SFTP, REST APIs, webhooks, SCORM, LTI",
     "<b>Languages and Frameworks:</b> JavaScript, TypeScript, Python, Rust, PHP, Node.js, React, SQL",
     "<b>Cloud, CI/CD and DevOps:</b> AWS (ECS, S3), Apache, CI/CD pipelines, Docker, Git, Bitbucket, Elasticsearch, nightly build automation",
-    "<b>Collaboration and Tooling:</b> Slack, Jira, Confluence, Scorm Cloud",
+    "<b>Collaboration and Tooling:</b> Slack, Jira, Confluence, SCORM Cloud",
     "<b>Support and Operations:</b> ticket triage and queue support, retail service desk, campus IT support, security and backup policies, wireless and video surveillance, software evaluation and migration, IT asset tracking",
     "<b>Compliance and Quality Practice:</b> SOC 2 compliance research and implementation, Blue Team incident forensics, technical debt reduction, Standard Operating Procedure (SOP) guides, technical writing",
     "<b>Platforms and Domains:</b> ERP, CRM, learning management systems (LMS), streaming media, enterprise software, alternative energy, real estate",
@@ -118,15 +119,22 @@ def build():
 
     story.extend(section("Work Experience — Software Engineering"))
     story.extend(job_block(
+        "Expert AI Trainer, Senior Software Engineer",
+        "micro1, Remote (contract), Sep 2026 – Present",
+        [
+            "Train and evaluate frontier AI models on senior engineering work, grading model-generated code, designs, and reasoning against defined quality criteria and documenting each defect for training.",
+            "Certified by assessment in System Architecture, Software Testing, and quality evaluation at volume.",
+        ]))
+    story.extend(job_block(
         "Senior QA Engineer / Test Automation Lead / Product Owner — Integrations",
         "Knowledgecity LLC, Remote, Dec 2020 – Aug 2025",
         [
             "Led QA across integration, frontend, backend, mobile, security, performance, load, API, database, functionality, usability, accessibility, and localization testing. Reduced technical debt and joined Blue Team incident forensics.",
-            "Built and maintained a CI/CD quality pipeline (Apache, REST, SQL, AWS, React) with Cypress, Selenium, Postman, JUnit, Elasticsearch, and S3. Used Slack, Jira, Bitbucket, Confluence, Git, and Qase.",
-            "Hired and trained the test automation team. Built end-to-end regression suites with health dashboards and alert systems for complex deployment scenarios.",
+            "Built and maintained a CI/CD quality pipeline (Apache, REST, SQL, AWS, React) with Cypress, Selenium, Postman, JUnit, and Qase.",
+            "Built the test automation function from nothing: recruited, hired, and trained the engineers. Built end-to-end regression suites with health dashboards and alert systems for complex deployment scenarios.",
             "Shipped integrations with SAP, Oracle, Workday, Coursera, UKG, and Zoom using SAML, OAuth, SFTP, custom APIs, webhooks, SCORM, and LTI.",
-            "Managed dev and test teams, the product backlog, and PDR life cycles with KPI tracking as Integrations Product Owner.",
-            "Helped develop an AI support chatbot with retrieval-augmented generation (RAG) context retrieval and guardrails. Researched and implemented SOC 2 compliance.",
+            "As Integrations Product Owner, led two developers and two test engineers through the full software development life cycle against written KPIs.",
+            "Shipped an AI support assistant with retrieval-augmented generation (RAG) and guardrails, working with engineering on context retrieval, and implemented the SOC 2 controls it passed compliance review on.",
         ]))
     story.extend(job_block(
         "Business Consultant — Campus IT and Community Programs",
@@ -134,22 +142,21 @@ def build():
         [
             "Provided campus IT support: wrote security and backup policies for campus servers and PCs, upgraded video surveillance for better quality and remote access, and installed campus-wide wireless. Set up sound and video equipment and MC'ed events.",
             "Evaluated and migrated accounting and medical-records software.",
-            "Built the nonprofit and community outreach program: set up the bingo license, filed federal, state, and city applications, and ran a community social program with dance lessons.",
-            "Recovered a non-permitted photovoltaic installation and worked with the city for permission to operate using as-built engineering.",
-            "Reviewed business plans and cut procurement, operations, and staffing costs. Won city approval for a bridge to landlocked land.",
+            "Brought a non-permitted solar installation to city permit to operate using as-built engineering.",
+            "Reviewed business plans and cut procurement, operations, and staffing costs; built a nonprofit community outreach program and won city approval for a bridge to landlocked land.",
         ]))
     story.extend(job_block(
         "Computer Service Technician — Geek Squad",
         "Best Buy, Victorville, CA, 2007",
         [
             "Ran the retail service desk: logged tickets, triaged walk-in customers, tracked units through check-in, repair, and pickup, and gave plain-language status updates.",
-            "Set up new PCs, migrated user data, and fixed virus, operating system, and hardware issues, while recommending service plans, accessories, and upgrades. Handled upselling, customer service, payments, and refunds.",
+            "Set up new PCs, migrated user data, and fixed virus, operating system, and hardware issues; handled service plans, payments, and refunds.",
         ]))
     story.extend(job_block(
         "Freelance IT Consultant",
         "Amp Computer, Apple Valley, CA, 2003 – 2011",
         [
-            "Sold and supported servers and PCs. Configured ERP and CRM systems, office automation, and custom solutions.",
+            "Sold and supported servers and PCs; configured ERP, CRM, and office automation systems.",
         ]))
     story.extend(job_block(
         "IT Manager",
@@ -163,15 +170,15 @@ def build():
         "RealNetworks, Seattle, WA, 1999 – 2001",
         [
             "Ran Software Development Engineer in Test (SDET) quality assurance across Linux, Unix, Windows, and embedded systems for a streaming media platform.",
-            "Served on an advanced research team focused on consumer appliances, mobile platforms, stream servers, and cellular networks, including TFRCP patent work.",
-            "Provided global presales engineering for consumer devices with vice president sales support, including travel to Japan, Korea, and the continental United States. Trained new hires.",
+            "Served on the advanced research team (appliances, mobile, stream servers, cellular networks) and validated the scalable video streaming technology behind RealNetworks patent US 7,075,986.",
+            "Delivered global presales engineering for consumer devices with the VP of Sales in Japan, Korea, and the United States. Trained new hires.",
         ]))
     story.extend(job_block(
         "Earlier Software Test Engineering and Support Roles",
         "Microsoft, IBM, Keene Inc., 1996 – 1999",
         [
             "Microsoft, Redmond, WA (1999): Senior Software Test Engineer IV, Windows Media Server versions 4 and 5; nightly build test script automation.",
-            "IBM, Kirkland, WA (1998): Senior Test Engineer III for high-availability servers; WHQL certification for cluster failover.",
+            "IBM, Kirkland, WA (1998): Senior Test Engineer III; WHQL cluster-failover certification for high-availability servers.",
             "Microsoft, Redmond, WA (1997): Software Test Engineer II for Windows 98 and Windows NT; original equipment manufacturer (OEM) setup and hardware/driver verification.",
             "Keene Inc., Seattle, WA (1996): Technical Support Agent II for Windows 95 and Windows NT; frontline and escalated support ticketing.",
         ]))
@@ -180,13 +187,13 @@ def build():
         "Alternative Energy Consultant",
         "2004 – Present",
         [
-            "PhaseSave.com, Palm Springs, CA (2017 – 2021 / Present): Partner and Director of research and development, sales engineering, project management, product and vendor sourcing, and contractor management. Expertise in solar power, air conditioning, phase-change materials, cold chain logistics, finance, and tax credits.",
-            "EWSolar.net LLC, Homeland, CA (2014 – 2016): Vice President, pioneering large-scale solar-powered water pumping projects for commercial and municipal customers.",
+            "PhaseSave.com, Palm Springs, CA (2017 – 2021 / Present): Partner and Director of research and development, sales engineering, project management, product and vendor sourcing, and contractor management. Runs air conditioning engineering: building envelope, heat load and heat loss, air flow and BTU sizing, and hydraulic pressure-drop calculations; developing phase-change material thermal shelving.",
+            "EWSolar.net LLC, Homeland, CA (2014 – 2016): Vice President, direct solar-fired variable frequency drive (VFD) well pumping projects at 30HP and above, with pumps sized from site peak sun hours and storage reservoirs sized to daily pumping volume.",
             "Free Energy Resources Inc., Phelan, CA (2013): Chief Technology Officer of a Korean solar marketing company; sales, procurement, project management, permitting, and finance.",
             "GRIDNOT Inc., Lucerne Valley, CA (2007 – 2012): Vice President, sales and integration of solar, wind, and geothermal air-conditioning systems.",
-            "OnPoint Power Inc., Norco, CA (2006): Partner, residential and light-commercial solar sales; pioneered a horse-manure waste-to-energy plant proposal presented to city council meetings.",
-            "Desert Power Inc., Palm Springs, CA (2005): Executive Assistant, sales and engineering support for solar, waste-to-energy, and tri-generation projects; research on Fischer-Tropsch syngas conversion, process stabilization, and absorption refrigeration.",
-            "Solatron Inc., Victorville, CA (2004): Sales Representative, inbound phone sales of photovoltaic systems; built an Excel calculator adopted office-wide and worked on SOP sales scripts.",
+            "OnPoint Power Inc., Norco, CA (2006): Partner, residential and light-commercial solar; pioneered a waste-to-energy proposal to city council.",
+            "Desert Power Inc., Palm Springs, CA (2005): Executive Assistant, solar, waste-to-energy, and tri-generation support; Fischer-Tropsch syngas research.",
+            "Solatron Inc., Victorville, CA (2004): Sales Representative; built an office-wide Excel solar sales calculator.",
         ]))
     story.extend(job_block(
         "Founder — Land Technology",
@@ -199,22 +206,20 @@ def build():
         "Elected Board President",
         "Mariana Ranchos County Water Board, 2006 – 2010",
         [
-            "California public officer and elected board president, the youngest in California history; versed in public ethics, Roberts Rules of Order, the Brown Act, and state and federal agency law. California JPIA delegate with public accounting, insurance, and safety expertise.",
-            "Cut budget waste by 53%, replaced corrupt personnel, hired a strong general manager, and blocked a high-risk floodplain stack-and-pack project that later flooded.",
+            "California public officer and elected board president, the youngest in the district's history; versed in public ethics, Roberts Rules of Order, the Brown Act, and state and federal agency law. California JPIA delegate with public accounting, insurance, and safety expertise.",
+            "Cut operating expenditures 53% on a $16 million annual budget while protecting capital projects; replaced the General Manager, tightened purchasing and personnel policy, and kept a high-risk floodplain project out of the approval path before the basin later flooded.",
         ]))
     story.extend(job_block(
         "Open-Source Contributor — AI Code Evaluation and SDET Tooling",
         "ZeroClaw Labs, github.com/zeroclaw-labs/zeroclaw, 32.8k GitHub stars, 2026 – Present",
         [
-            "PR #7946 (merged Jul 2026): added the model context window meter bar across the zerocode TUI, gateway agent chat, and command-line interactive mode, with one context_window source of truth covering 9 providers.",
-            "PR #8966 (open): carrying live provider identity on usage events so usage, cost, and context-meter attribution follow the serving provider across fallback and model switches.",
-            "PR #8337 (closed, superseded by #10269): built an observer reporting agent lifecycle states over JSON-RPC on Unix domain sockets; cleared four rounds of maintainer review, and its requirements were adopted into the vendor-neutral lifecycle design.",
+            "PR #7946 (merged Jul 2026): built the context window meter across TUI, gateway, and CLI for 9 providers.",
+            "PR #8966 (merged Sep 2026): carried live provider identity on usage events so usage, cost, and context-meter attribution follow the serving provider across fallback and model switches.",
         ]))
 
     story.extend(section("Education"))
-    for e in ["Associate Degree, Victor Valley College",
-              "California Notary Commission",
-              "Toastmasters International"]:
+    for e in ["Associate of Science, Mechanical Engineering, Victor Valley College",
+              "California Notary Commission; Toastmasters International"]:
         story.append(P(e, edu_style, bullet="\u2022"))
 
     doc.build(story)

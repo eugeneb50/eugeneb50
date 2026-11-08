@@ -749,25 +749,29 @@ def experience_card(role, company_loc, dates, bullets):
 # ----------------------------------------------------------------------------
 # Content — Staff AI Engineer, Multi-Agent Frameworks
 # ----------------------------------------------------------------------------
-SUMMARY = ("Senior SDET and QA Automation Lead who evaluates AI-generated code and ships "
-           "SaaS integrations reliably. At Knowledgecity (Dec 2020\u2013Aug 2025) I hired and trained "
-           "the automation team, owned integrations (SAP, Oracle, Workday, Coursera, UKG, Zoom via "
-           "SAML, OAuth, SFTP, REST, webhooks, SCORM, LTI), built regression suites with health "
-           "dashboards and alerting, and helped ship a RAG support chatbot with guardrails (SOC 2). "
-           "Earlier SDET work spans RealNetworks, Microsoft, IBM, and open-source Rust AI tooling.")
+SUMMARY = ("Senior SDET and QA Automation Lead, now an Expert AI Trainer at micro1 grading "
+           "frontier-model code against defined quality criteria. At Knowledgecity (Dec 2020\u2013Aug "
+           "2025) I built the automation team, owned SAP, Oracle, Workday, Coursera, UKG, and Zoom "
+           "integrations (SAML, OAuth, SFTP, REST, SCORM, LTI), built regression suites with "
+           "dashboards and alerting, and shipped a RAG support assistant with guardrails (SOC 2). "
+           "Earlier SDET work: RealNetworks, Microsoft, IBM, and open-source Rust AI tooling.")
 
 EXPERIENCE = [
+    ("Expert AI Trainer, Senior Software Engineer",
+     "micro1  \u00b7  Remote  \u00b7  Contract",
+     "Sep 2026 \u2013 Present", [
+        "Grade frontier-model code, designs, and reasoning against defined criteria, documenting each "
+        "defect for training. Certified in System Architecture and Software Testing.",
+     ]),
     ("Senior SDET / AI Code Evaluator (Open-Source)",
      "ZeroClaw Labs (github.com/zeroclaw-labs/zeroclaw)  \u00b7  Rust  \u00b7  32.8k stars",
      "2026 \u2013 Present", [
         "PR #7946 (MERGED Jul 2026) \u2014 context_window source of truth for 9 providers "
-        "(OpenRouter + 8 OpenAI-compatible); doctor command, gateway API, ContextBar. "
-        "Reviewed by WareWolf-MoonWall, Audacity88, singlerider, JordanTheJet.",
-        "PR #8966 (OPEN) \u2014 live provider identity on usage events (provider_ref, model, "
+        "(OpenRouter + 8 OpenAI-compatible); doctor command, gateway API, ContextBar; cleared "
+        "review from four maintainers.",
+        "PR #8966 (MERGED Sep 2026) \u2014 live provider identity on usage events (provider, model, "
         "accepted); per-provider ledger on done frame; trim budget split from model capacity. "
         "Fixes stream-failure fallback #10736.",
-        "PR #8337 (CLOSED, superseded by #10269) \u2014 lifecycle observer via JSON-RPC over UDS. "
-        "Four review rounds cleared (bounded I/O, env discovery, scope gating, terminal drain).",
      ]),
     ("Senior QA Engineer / Test Automation Lead / Integrations Product Owner",
      "Knowledgecity LLC  \u00b7  Remote  \u00b7  AWS / Postgres / React",
@@ -777,29 +781,26 @@ EXPERIENCE = [
         "and data formats.",
         "Built and maintained CI/CD quality pipelines with Cypress, Selenium, Postman, JUnit, Qase, Slack, "
         "Jira, Bitbucket, Confluence, Elastic, S3 \u2014 evaluation frameworks for complex deployment scenarios.",
-        "Helped develop AI support chatbot with RAG retrieval + guardrails (SOC 2); shipped LLM-powered "
-        "tooling into customer-facing assistance and internal automation workflows.",
+        "Shipped an AI support assistant with RAG retrieval + guardrails, working with engineering on "
+        "context retrieval and the guardrail layer; implemented the SOC 2 controls it passed review on.",
         "Designed evaluation frameworks, regression suites, health dashboards, and alerting "
         "across integration, backend, API, database, and frontend surfaces; joined blue-team incident forensics.",
-        "Mentored and trained the test automation team; ran code reviews; raised engineering standards.",
+        "Built the test automation function from nothing: recruited, hired, and trained the team; as "
+        "Product Owner led two developers and two test engineers against written KPIs.",
      ]),
     ("Senior Software Engineer II / Presales",
      "RealNetworks  \u00b7  Seattle, WA  \u00b7  Streaming Media Platform",
      "1999 \u2013 2001", [
         "SDET QA across Linux/Unix/Windows/Embedded for the streaming media platform; advanced "
-        "research team spanning appliances, mobile, stream servers, cellular networks (TFRCP patent work).",
+        "research team; validated the scalable video streaming technology behind patent US 7,075,986.",
         "Global presales engineering with VP sales support and travel to Japan and Korea. "
         "Trained new hires.",
      ]),
-    ("Senior Software Test Engineer IV",
-     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows Media Server 4/5",
-     "1999", [
-        "Nightly build test script automation; white-box testing and development for complex system testing.",
-     ]),
-    ("Software Test Engineer II",
-     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows 98/NT",
-     "1997", [
-        "OEM setup and hardware/driver verification across Windows 98/NT releases.",
+    ("Senior Software Test Engineer IV / Software Test Engineer II",
+     "Microsoft  \u00b7  Redmond, WA  \u00b7  Windows Media Server 4/5, Windows 98/NT",
+     "1997, 1999", [
+        "1999: nightly build test script automation and white-box testing for Windows Media Server 4/5.",
+        "1997: OEM setup and hardware/driver verification across Windows 98/NT releases.",
      ]),
     ("Earlier Roles \u2014 Test & Helpdesk",
      "IBM  \u00b7  Keene Inc.  \u00b7  Kirkland / Seattle, WA",
@@ -840,10 +841,9 @@ STRENGTHS = [
 ]
 
 EDUCATION = [
-    "Associate Degree, Victor Valley College",
+    "Associate of Science, Mechanical Engineering \u2014 Victor Valley College",
     "California Notary Commission",
     "Toastmasters International",
-    "High School Diploma, Lucerne Valley High School",
 ]
 
 TAG_SECTIONS = [
