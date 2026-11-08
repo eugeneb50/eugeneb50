@@ -29,6 +29,7 @@ I turn ambiguous model behavior into predictable, observable, bounded systems te
 
 ## 🔭 Currently Working On
 
+- 🧠 **[micro1](https://www.micro1.ai)** — Expert AI Trainer, Senior Software Engineer (since Sept 2026): evaluating frontier-model code and designs against defined quality criteria. Certified in System Architecture and Software Testing.
 - 🦀 **[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw)** — Infastructure grade Autonomous agent runtimes in Rust (context-window metering, multi-provider usage identity, agent lifecycle).
 - 🤖 **[herdr](https://github.com/ogulcancelik/herdr)** — multi-agent terminal multiplexer with JSON-RPC agent2agent A2A reporting.
 - 🔌 **[herdr-mcp](https://github.com/eugeneb50/herdr-mcp)** — Rust MCP server exposing the herdr CLI to AI agents and a postman like playground.
