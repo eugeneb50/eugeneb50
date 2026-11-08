@@ -21,6 +21,7 @@ Other canonical links:
 | GitHub | https://github.com/eugeneb50 · https://github.com/serviceofothers |
 | Resume (visual, 2 pages) | `Eugene_Buchanan_Resume.pdf` |
 | Resume (ATS, 3 pages) | `Eugene_Buchanan_Resume_ATS.pdf` |
+| micro1 (Eugene's current role; referral link for anyone applying) | https://refer.micro1.ai/referral/jobs?referralCode=f37e666c-3197-407b-9542-1bcb6c7af83e&utm_source=referral&utm_medium=share&utm_campaign=job_referral |
 | Renewable energy consulting | https://phasesave.com |
 | Land and real estate exchange | https://www.tierrachain.com |
 

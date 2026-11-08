@@ -5,7 +5,7 @@
 
 **Staff AI Engineer · Agentic AI Infrastructure · Rust Developer**
 
-> Designing and scaling agentic frameworks, developer tools, and enterprise SaaS integrations. Expert AI Trainer at micro1, contributor to the [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) autonomous agent runtime, and founder of [Service of Others](https://serviceofothers.org): open-source infrastructure for community resilience.
+> Designing and scaling agentic frameworks, developer tools, and enterprise SaaS integrations. Expert AI Trainer at [micro1](https://refer.micro1.ai/referral/jobs?referralCode=f37e666c-3197-407b-9542-1bcb6c7af83e&utm_source=referral&utm_medium=share&utm_campaign=job_referral), contributor to the [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) autonomous agent runtime, and founder of [Service of Others](https://serviceofothers.org): open-source infrastructure for community resilience.
 
 [![Service of Others](https://img.shields.io/badge/serviceofothers.org-Mutual%20Assured%20Abundance-0e7c75?style=flat&logo=leaflet&logoColor=white)](https://serviceofothers.org)
 [![Location](https://img.shields.io/badge/Apple%20Valley%2C%20CA%20%2F%20San%20Quint%C3%ADn%2C%20MX-1a1342?style=flat&logo=googlemaps&logoColor=white)](https://www.google.com/maps/place/Apple+Valley,+CA)
@@ -28,7 +28,7 @@ I turn ambiguous model behavior into predictable, observable, bounded systems th
 
 ## 🔭 Currently Working On
 
-- 🧠 **[micro1](https://www.micro1.ai)**: Expert AI Trainer, Senior Software Engineer (since Sept 2026). I evaluate frontier-model code and designs against defined quality criteria. Certified in System Architecture and Software Testing.
+- 🧠 **[micro1](https://refer.micro1.ai/referral/jobs?referralCode=f37e666c-3197-407b-9542-1bcb6c7af83e&utm_source=referral&utm_medium=share&utm_campaign=job_referral)**: Expert AI Trainer, Senior Software Engineer (since Sept 2026). I evaluate frontier-model code and designs against defined quality criteria. Certified in System Architecture and Software Testing. Want to do this work too? [Apply to micro1 with my referral link →](https://refer.micro1.ai/referral/jobs?referralCode=f37e666c-3197-407b-9542-1bcb6c7af83e&utm_source=referral&utm_medium=share&utm_campaign=job_referral)
 - 🌱 **[Service of Others](https://serviceofothers.org)**: "Build parallel options for your community." Open-source, federated, offline-first infrastructure for community resilience in water, food, energy, knowledge, and fabrication, organized as Sovereign Living Nodes. MIT-licensed. [Get involved →](https://serviceofothers.org/get-involved)
 - 🦀 **[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw)**: infrastructure-grade autonomous agent runtime in Rust (context-window metering, multi-provider usage identity, agent lifecycle).
 - 🤖 **[herdr](https://github.com/ogulcancelik/herdr)**: multi-agent terminal multiplexer with JSON-RPC agent-to-agent reporting.
@@ -63,7 +63,7 @@ I turn ambiguous model behavior into predictable, observable, bounded systems th
 
 | Years | Role | Where |
 |---|---|---|
-| 2026–Present | Expert AI Trainer, Senior Software Engineer | micro1 |
+| 2026–Present | Expert AI Trainer, Senior Software Engineer | [micro1](https://refer.micro1.ai/referral/jobs?referralCode=f37e666c-3197-407b-9542-1bcb6c7af83e&utm_source=referral&utm_medium=share&utm_campaign=job_referral) |
 | 2025–Present | Independent Software Engineer and open-source contributor | ZeroClaw, herdr-mcp, Tierrachain.com |
 | 2020–2025 | Senior QA Engineer → Test Automation Lead → Product Owner, Integrations | Knowledgecity LLC |
 | 2003–2016 | Business Consultant (campus IT, records software migration) and Freelance IT Consultant | Foremost Senior Care, Amp Computer |
