@@ -28,7 +28,7 @@ I turn ambiguous model behavior into predictable, observable, bounded systems th
 
 ## 🔭 Currently Working On
 
-- 🧠 **[micro1](https://refer.micro1.ai/referral/jobs?referralCode=f37e666c-3197-407b-9542-1bcb6c7af83e&utm_source=referral&utm_medium=share&utm_campaign=job_referral)**: Expert AI Trainer, Senior Software Engineer (since Sept 2026). I evaluate frontier-model code and designs against defined quality criteria. Certified in System Architecture and Software Testing. Want to do this work too? [Apply to micro1 with my referral link →](https://refer.micro1.ai/referral/jobs?referralCode=f37e666c-3197-407b-9542-1bcb6c7af83e&utm_source=referral&utm_medium=share&utm_campaign=job_referral)
+- 🧠 **[micro1](https://refer.micro1.ai/referral/jobs?referralCode=f37e666c-3197-407b-9542-1bcb6c7af83e&utm_source=referral&utm_medium=share&utm_campaign=job_referral)**: Expert AI Trainer, Senior Software Engineer (since Sept 2026). I evaluate frontier-model code and designs against defined quality criteria. Certified in System Architecture and Software Testing.
 - 🌱 **[Service of Others](https://serviceofothers.org)**: "Build parallel options for your community." Open-source, federated, offline-first infrastructure for community resilience in water, food, energy, knowledge, and fabrication, organized as Sovereign Living Nodes. MIT-licensed. [Get involved →](https://serviceofothers.org/get-involved)
 - 🦀 **[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw)**: infrastructure-grade autonomous agent runtime in Rust (context-window metering, multi-provider usage identity, agent lifecycle).
 - 🤖 **[herdr](https://github.com/ogulcancelik/herdr)**: multi-agent terminal multiplexer with JSON-RPC agent-to-agent reporting.
