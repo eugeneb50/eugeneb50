@@ -99,12 +99,17 @@ BODY_W = FW
 # ----------------------------------------------------------------------------
 # Circular profile photo (masked PNG)
 # ----------------------------------------------------------------------------
-def make_circular_photo(src_jpg, size=240):
+def make_circular_photo(src_jpg, size=360, zoom=0.9, cy_frac=0.40):
+    """Circular headshot. The square crop is ``zoom`` x the short side, centred
+    horizontally and at ``cy_frac`` of the height, so a portrait-orientation
+    pic.jpg keeps the face (not the chest) in the circle."""
     try:
         im = Image.open(src_jpg).convert("RGBA")
         w, h = im.size
-        m = min(w, h)
-        left, top = (w - m) // 2, (h - m) // 2
+        m = int(min(w, h) * zoom)
+        cx, cy = w // 2, int(h * cy_frac)
+        left = max(0, min(w - m, cx - m // 2))
+        top = max(0, min(h - m, cy - m // 2))
         im = im.crop((left, top, left + m, top + m)).resize((size, size), Image.LANCZOS)
         mask = Image.new("L", (size, size), 0)
         ImageDraw.Draw(mask).ellipse((0, 0, size - 1, size - 1), fill=255)

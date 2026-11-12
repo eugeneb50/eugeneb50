@@ -1,0 +1,4 @@
+# Private documents: pay letters, background checks. Never commit.
+micro1/
+__pycache__/
+.venv/
